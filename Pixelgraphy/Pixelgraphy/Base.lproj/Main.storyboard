@@ -163,10 +163,10 @@ an @purchase.edu e-mail</string>
             </objects>
             <point key="canvasLocation" x="-611" y="794"/>
         </scene>
-        <!--View Controller - Login Support-->
+        <!--Login Support View Controller - Login Support-->
         <scene sceneID="fGE-0Z-fxl">
             <objects>
-                <viewController id="Yip-cB-BAn" sceneMemberID="viewController">
+                <viewController id="Yip-cB-BAn" customClass="LoginSupportViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qa4-78-Coc"/>
                         <viewControllerLayoutGuide type="bottom" id="cdi-SI-jLf"/>
@@ -174,9 +174,59 @@ an @purchase.edu e-mail</string>
                     <view key="view" contentMode="scaleToFill" id="QNf-m1-a9z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cus-vK-h5C">
+                                <rect key="frame" x="43" y="161" width="235" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you forgot your password,  enter your e-mail below to begin recovery" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="uyp-gW-Oiv">
+                                <rect key="frame" x="43" y="82" width="235" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSm-2B-38l">
+                                <rect key="frame" x="88" y="219" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Recover Password">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="RecoverPasswordTouchUp:" destination="Yip-cB-BAn" eventType="touchUpInside" id="2tJ-9F-JGc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBE-YN-UEl">
+                                <rect key="frame" x="43" y="384" width="235" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you forgot your username,  enter your e-mail below to retrieve it" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="Zv9-Nl-rfI">
+                                <rect key="frame" x="43" y="305" width="235" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InX-jc-TFT">
+                                <rect key="frame" x="88" y="442" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Recover Username">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="RecoverUsernameTouchUp:" destination="Yip-cB-BAn" eventType="touchUpInside" id="4rC-LJ-hMn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login Support" id="RI9-AC-SLX"/>
+                    <connections>
+                        <outlet property="RecoverPasswordText" destination="cus-vK-h5C" id="rmS-Mm-dKW"/>
+                        <outlet property="RecoverUsernameText" destination="IBE-YN-UEl" id="Fen-B8-rSA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfB-E9-hKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,7 +331,7 @@ an @purchase.edu e-mail</string>
             </objects>
             <point key="canvasLocation" x="1061" y="393"/>
         </scene>
-        <!--Table View Controller - The Shit-->
+        <!--Table View Controller - More stuff-->
         <scene sceneID="4z0-Z5-j7j">
             <objects>
                 <tableViewController id="9Mp-4d-bUQ" sceneMemberID="viewController">
@@ -308,17 +358,17 @@ an @purchase.edu e-mail</string>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="The Shit" id="FXZ-dT-JwH"/>
+                    <navigationItem key="navigationItem" title="More stuff" id="FXZ-dT-JwH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IT-f7-yrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1116" y="1081"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller-->
         <scene sceneID="vhf-dW-Qd9">
             <objects>
                 <navigationController definesPresentationContext="YES" id="mkv-N4-kxb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="YFD-PO-Tc9"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="YFD-PO-Tc9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Paf-2E-qgs">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
