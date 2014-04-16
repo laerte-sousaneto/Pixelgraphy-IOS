@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-- (IBAction)BeginEditingUsername:(UITextField *)sender;
-- (IBAction)BeginEditingPassword:(UITextField *)sender;
 
 @end

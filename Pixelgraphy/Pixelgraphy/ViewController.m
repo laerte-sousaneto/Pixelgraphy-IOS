@@ -26,13 +26,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)BeginEditingUsername:(UITextField *)sender
-{
-    
-}
-
-- (IBAction)BeginEditingPassword:(UITextField *)sender
-{
-    
-}
 @end
