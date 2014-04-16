@@ -37,7 +37,12 @@
 
 - (IBAction)RegisterTouchUp:(UIButton *)sender
 {
-    if(![self checkPassReqs:[_PassOneTextField text] secondPassword:[_PassTwoTextField text]])
+    if([[_UsernameTextField text] isEqualToString:@""])
+    {
+        //Tiggered if username field is empty
+        NSLog(@"Please specify a username");
+    }
+    else if(![self checkPassReqs:[_PassOneTextField text] secondPassword:[_PassTwoTextField text]])
     {
         //This is triggered if the entered password does not have at least 8 characters, at least 1 capital letter and at least 1 number
         NSLog(@"Password does not meet requirements");
@@ -47,13 +52,15 @@
         //This is triggered if the two passwords do not match
         NSLog(@"Passwords do not match");
     }
-    else if(false)
+    else if(![self verifyPurchaseEmail:[_EmailTextField text]])
     {
-        
+        //This is triggered if the email is not an @purchase.edu email
+        NSLog(@"Email must be an @purchase.edu email");
     }
     else
     {
         //AT THIS POINT WE CAN SUBMIT THE DATA TO THE PHP FILES TO BEGIN REGISTERING
+        NSLog(@"DATA CHECKS OUT, SENDING TO SERVER");
     }
 }
 
@@ -91,6 +98,13 @@
 
 - (bool)verifyPurchaseEmail:(NSString *)email
 {
-    return false;
+    if([email rangeOfString:@"@purchase.edu"].location == NSNotFound)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 @end
