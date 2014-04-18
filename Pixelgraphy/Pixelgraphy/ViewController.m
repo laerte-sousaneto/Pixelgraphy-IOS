@@ -26,4 +26,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)LoginTouchUp:(UIButton *)sender
+{
+    if ([[_UsernameRO text] isEqualToString:@""] || [[_PasswordRO text] isEqualToString:@""])
+    {
+        NSLog(@"Username and/pr password field is blank");
+    }
+    else
+    {
+        //Send the username and password to php files
+        if (true) //This should not always be treue, this should check and see if the login was successful
+        {
+            //Login successful
+            [self performSegueWithIdentifier:@"TabbedVC" sender:self];
+        }
+        else
+        {
+            //Login failed
+        }
+    }
+}
 @end

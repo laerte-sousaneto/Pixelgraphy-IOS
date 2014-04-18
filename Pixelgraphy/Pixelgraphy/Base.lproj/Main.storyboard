@@ -39,7 +39,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9FC-aT-tUT" kind="modal" id="ykA-qx-IHE"/>
+                                    <action selector="LoginTouchUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QUn-aN-NrH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H32-ZD-xe9">
@@ -68,18 +68,23 @@
                                 <rect key="frame" x="85" y="202" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyE-3o-D1e">
                                 <rect key="frame" x="85" y="240" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="bce-ts-f8A"/>
+                    <connections>
+                        <outlet property="PasswordRO" destination="iyE-3o-D1e" id="jpF-IR-dIy"/>
+                        <outlet property="UsernameRO" destination="ocz-o1-uvd" id="3Ht-QW-ViH"/>
+                        <segue destination="9FC-aT-tUT" kind="modal" identifier="TabbedVC" id="ZIR-SV-3aP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,10 +252,10 @@ an @purchase.edu e-mail</string>
             </objects>
             <point key="canvasLocation" x="1061" y="-268"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - TabbedVC-->
         <scene sceneID="GJu-QT-cOx">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="9FC-aT-tUT" sceneMemberID="viewController">
+                <tabBarController title="TabbedVC" definesPresentationContext="YES" id="9FC-aT-tUT" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Oo3-Lt-xtu">

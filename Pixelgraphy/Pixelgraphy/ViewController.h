@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)LoginTouchUp:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UITextField *UsernameRO;
+@property (weak, nonatomic) IBOutlet UITextField *PasswordRO;
 
 @end
