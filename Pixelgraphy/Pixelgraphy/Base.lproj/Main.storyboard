@@ -83,7 +83,7 @@
                     <connections>
                         <outlet property="PasswordRO" destination="iyE-3o-D1e" id="jpF-IR-dIy"/>
                         <outlet property="UsernameRO" destination="ocz-o1-uvd" id="3Ht-QW-ViH"/>
-                        <segue destination="9FC-aT-tUT" kind="modal" identifier="TabbedVC" id="ZIR-SV-3aP"/>
+                        <segue destination="9FC-aT-tUT" kind="modal" identifier="TabbedVC" modalTransitionStyle="crossDissolve" id="ZIR-SV-3aP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
