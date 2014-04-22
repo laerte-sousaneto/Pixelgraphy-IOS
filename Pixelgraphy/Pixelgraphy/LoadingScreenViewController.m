@@ -80,5 +80,13 @@
     NSLog(@"There was an error");
 }
 
+//If pushed back to login screen
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"BackToLogin"])
+    {
+        ViewController *controller = (ViewController *)segue.destinationViewController;
+        controller.failedLoginCallback = true;
+    }
+}
 
 @end

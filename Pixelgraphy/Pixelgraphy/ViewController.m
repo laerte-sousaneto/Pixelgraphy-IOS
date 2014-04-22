@@ -21,6 +21,20 @@
 	// Do any additional setup after loading the view, typically from a nib
     
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (_failedLoginCallback) {
+        UIAlertView* anAlert = [ [UIAlertView alloc]
+                                initWithTitle:@"Whoops"
+                                message:@"Incorrect Username/Password Specified"
+                                delegate:self
+                                cancelButtonTitle:@"OK"
+                                otherButtonTitles:nil
+                                ];
+        [anAlert show];
+    }
+    _failedLoginCallback = false;
+}
 -(void)beforeSend
 {
     //Implement what should happend before request is made.
@@ -46,21 +60,17 @@
 {
     if ([[_UsernameRO text] isEqualToString:@""] || [[_PasswordRO text] isEqualToString:@""])
     {
-        NSLog(@"Username and/pr password field is blank");
+        UIAlertView* anAlert = [ [UIAlertView alloc]
+                                initWithTitle:@"Error"
+                                message:@"Username and/or password field is blank."
+                                delegate:self
+                                cancelButtonTitle:@"OK"
+                                otherButtonTitles: nil
+                                ];
+        [anAlert show];
     }
     else
     {
-        /*
-        AccountManager* accountManager = [AccountManager initWithUsername:[_UsernameRO text] andPassowrd:[_PasswordRO text]];
-        [accountManager setDelegate:self];
-        [accountManager checkUsername];
-        [NSThread sleepForTimeInterval:1.0];
-        if (_userValidated)
-        {
-            [self performSegueWithIdentifier:@"TabbedVC" sender:self];
-        }
-         */
-        
         [self performSegueWithIdentifier:@"TabbedVC" sender:self];
         
     }

@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *UsernameRO;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordRO;
 
+@property bool failedLoginCallback;
+
 @end
