@@ -25,6 +25,7 @@
 {
     NSMutableURLRequest* request = [self setupConnection:_pageURL];
     
+    [_delegate beforeSend];
     
     [NSURLConnection sendAsynchronousRequest:request
                     queue:[[NSOperationQueue alloc]init]
@@ -37,6 +38,7 @@
 {
     NSMutableURLRequest* request = [self setupConnection:_pageURL withPostString:postString];
     
+    [_delegate beforeSend];
     
     [NSURLConnection sendAsynchronousRequest:request
                     queue:[[NSOperationQueue alloc]init]

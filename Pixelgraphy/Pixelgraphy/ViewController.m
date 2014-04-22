@@ -25,6 +25,10 @@
     [accountManager checkUsername];
     
 }
+-(void)beforeSend
+{
+    //Implement what should happend before request is made.
+}
 -(void)onSuccess:(NSData*)data;
 {
      NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
