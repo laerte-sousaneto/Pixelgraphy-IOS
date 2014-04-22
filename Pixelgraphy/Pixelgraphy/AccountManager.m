@@ -43,9 +43,23 @@
     
     NSString* postString = [NSString stringWithFormat:@"&username=%@&password=%@",username,password];
     
-    
+    http = [HttpRequest initWithURL:url];
+    [http setDelegate:_delegate];
     [http setPageURL:url];
     [http sendHttpRequest:postString];
 }
 
+-(void)registerUsername:(NSString *)username Passowrd1:(NSString *)password1 Password2:(NSString *)password2 Email:(NSString *)email
+{
+    url = [NSURL URLWithString:@"http://pixelgraphy.net/PHP/register_check.php"];
+    
+    NSString* postString = [NSString stringWithFormat:@"&username=%@&password1=%@&password2=%@&email=%@"
+                            ,username,password1,password2,email];
+    
+    
+    http = [HttpRequest initWithURL:url];
+    [http setDelegate:_delegate];
+    [http setPageURL:url];
+    [http sendHttpRequest:postString];
+}
 @end

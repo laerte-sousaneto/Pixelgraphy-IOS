@@ -7,6 +7,7 @@
 //
 
 #import "VerifyFieldsViewController.h"
+#import "AccountManager.h"
 
 @interface VerifyFieldsViewController ()
 
@@ -26,6 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    AccountManager* accountManager = [[AccountManager alloc]init];
+    [accountManager setDelegate:self];
+    //[accountManager registerUsername:@"doido" Passowrd1:@"1234" Password2:@"1234" Email:@"sousa.lae@gmail.com"];
 	// Do any additional setup after loading the view.
 }
 
@@ -106,5 +110,21 @@
     {
         return true;
     }
+}
+
+//HttpRequest protocol callback functions
+-(void)beforeSend
+{
+    //Implement what should happend before request is made.
+}
+-(void)onSuccess:(NSData*)data;
+{
+     NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSLog(@"%@",result);
+}
+-(void)onError:(NSError*)connectionError
+{
+    //some code
+    NSLog(@"There was an error");
 }
 @end

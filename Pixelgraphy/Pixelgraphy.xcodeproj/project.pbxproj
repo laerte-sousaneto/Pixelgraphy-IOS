@@ -140,10 +140,10 @@
 				8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */,
 				AA10C6F51905F8D700BC36E3 /* HttpRequest.h */,
 				AA10C6F61905F8D700BC36E3 /* HttpRequest.m */,
-				AA8B8D3418BC4218005C1C53 /* Images.xcassets */,
-				AA8B8D2318BC4218005C1C53 /* Supporting Files */,
 				AA10C6FB1906173A00BC36E3 /* AccountManager.h */,
 				AA10C6FC1906173A00BC36E3 /* AccountManager.m */,
+				AA8B8D3418BC4218005C1C53 /* Images.xcassets */,
+				AA8B8D2318BC4218005C1C53 /* Supporting Files */,
 			);
 			path = Pixelgraphy;
 			sourceTree = "<group>";
