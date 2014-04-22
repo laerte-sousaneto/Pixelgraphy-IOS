@@ -29,7 +29,8 @@
 {
      NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     NSLog(@"%@",result);
-    if ([result isEqualToString:@"true"]) {
+    if ([result isEqualToString:@"true"])
+    {
         userValidated = true;
     }
     
@@ -57,7 +58,8 @@
         [accountManager setDelegate:self];
         [accountManager checkUsername];
         [NSThread sleepForTimeInterval:1.0];
-        if (userValidated) {
+        if (userValidated)
+        {
             [self performSegueWithIdentifier:@"TabbedVC" sender:self];
         }
         
