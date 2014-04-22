@@ -20,11 +20,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    NSURL* url = [NSURL URLWithString:@"http://pixelgraphy.net/"];
+    NSURL* url = [NSURL URLWithString:@"http://pixelgraphy.net/PHP/login_check.php"];
     
     _httpRequest = [HttpRequest initWithURL:url];
     
-    [_httpRequest sendHttpRequest];
+    [_httpRequest sendHttpRequest:@"&username=laerte&password=1234"];
     
     
 }

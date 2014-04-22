@@ -14,5 +14,5 @@
 
 +(HttpRequest*)initWithURL:(NSURL*)url;
 -(void)sendHttpRequest;
-
+-(void)sendHttpRequest:(NSString*)postString;
 @end

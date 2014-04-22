@@ -33,7 +33,6 @@
                     completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
                     {
                         [self completeHandler:data];
-            
                     }];
 }
 -(void)sendHttpRequest:(NSString*)postString
@@ -79,5 +78,6 @@
     
     return request;
 }
+
 
 @end
