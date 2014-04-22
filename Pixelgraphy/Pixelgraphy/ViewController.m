@@ -57,7 +57,11 @@
         if (true) //This should not always be treue, this should check and see if the login was successful
         {
             //Login successful
+            LoadingScreenViewController *LSVC = [[LoadingScreenViewController alloc] init];
+            LSVC.username = [_UsernameRO text];
+            LSVC.password = [_PasswordRO text];
             [self performSegueWithIdentifier:@"TabbedVC" sender:self];
+            
         }
         else
         {

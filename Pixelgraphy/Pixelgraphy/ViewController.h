@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoadingScreenViewController.h"
 
 @interface ViewController : UIViewController<NSURLConnectionDelegate>
 - (IBAction)LoginTouchUp:(UIButton *)sender;
