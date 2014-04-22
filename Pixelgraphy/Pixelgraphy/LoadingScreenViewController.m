@@ -94,8 +94,9 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"BackToLogin"])
     {
-        ViewController *controller = (ViewController *)segue.destinationViewController;
-        controller.failedLoginCallback = true;
+        UINavigationController *controller = (UINavigationController *)segue.destinationViewController;
+        ViewController *loginvc = (ViewController *)controller.topViewController;
+        loginvc.failedLoginCallback = true;
     }
 }
 

@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uS3-A6-4JX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1853" y="42"/>
+            <point key="canvasLocation" x="-1833" y="42"/>
         </scene>
         <!--View Controller - Login-->
         <scene sceneID="ufC-wZ-h7g">
@@ -83,7 +83,7 @@
                     <connections>
                         <outlet property="PasswordRO" destination="iyE-3o-D1e" id="jpF-IR-dIy"/>
                         <outlet property="UsernameRO" destination="ocz-o1-uvd" id="3Ht-QW-ViH"/>
-                        <segue destination="AiB-8c-dNF" kind="modal" identifier="TabbedVC" modalTransitionStyle="crossDissolve" id="67s-B9-KKT"/>
+                        <segue destination="AiB-8c-dNF" kind="modal" identifier="TabbedVC" id="xeS-l2-DKq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -255,7 +255,7 @@ an @purchase.edu e-mail</string>
         <!--Loading Screen View Controller-->
         <scene sceneID="Nwk-Pa-0pz">
             <objects>
-                <viewController id="AiB-8c-dNF" customClass="LoadingScreenViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="AiB-8c-dNF" customClass="LoadingScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yka-rY-yLO"/>
                         <viewControllerLayoutGuide type="bottom" id="4gx-Bs-qGY"/>
@@ -279,9 +279,11 @@ an @purchase.edu e-mail</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ioh-qE-B00"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="9FC-aT-tUT" kind="modal" identifier="TabbedVC2" modalTransitionStyle="crossDissolve" id="csF-Rk-U8H"/>
-                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="BackToLogin" modalTransitionStyle="crossDissolve" id="S1A-d4-Hz7"/>
+                        <segue destination="4uL-fs-HPR" kind="modal" identifier="BackToLogin" modalTransitionStyle="crossDissolve" id="5Lt-qv-Xnq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZxF-OF-SKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -526,7 +528,4 @@ an @purchase.edu e-mail</string>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="S1A-d4-Hz7"/>
-    </inferredMetricsTieBreakers>
 </document>
