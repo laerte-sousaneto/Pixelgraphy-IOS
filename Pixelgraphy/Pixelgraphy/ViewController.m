@@ -56,6 +56,7 @@
             LoadingScreenViewController *LSVC = [[LoadingScreenViewController alloc] init];
             LSVC.username = [_UsernameRO text];
             LSVC.password = [_PasswordRO text];
+            NSLog(LSVC.username);
             [self performSegueWithIdentifier:@"TabbedVC" sender:self];
             
         }
