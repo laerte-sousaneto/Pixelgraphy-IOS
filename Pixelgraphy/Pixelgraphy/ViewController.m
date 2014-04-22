@@ -19,6 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib
+    _userValidated = false;
     
 }
 -(void)beforeSend
@@ -29,9 +30,14 @@
 {
      NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     NSLog(@"%@",result);
+<<<<<<< HEAD
     if ([result isEqualToString:@"true"])
     {
         userValidated = true;
+=======
+    if ([result isEqualToString:@"true"]) {
+        _userValidated = true;
+>>>>>>> c3c9a74bef0ecbc9641afd417969abddfe45ef69
     }
     
 }
@@ -58,7 +64,11 @@
         [accountManager setDelegate:self];
         [accountManager checkUsername];
         [NSThread sleepForTimeInterval:1.0];
+<<<<<<< HEAD
         if (userValidated)
+=======
+        if (_userValidated)
+>>>>>>> c3c9a74bef0ecbc9641afd417969abddfe45ef69
         {
             [self performSegueWithIdentifier:@"TabbedVC" sender:self];
         }
