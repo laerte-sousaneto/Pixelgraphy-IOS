@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */; };
 		8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025A18FEE403005D22A9 /* VerifyFieldsViewController.m */; };
 		8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025D18FF00B7005D22A9 /* LoginSupportViewController.m */; };
 		AA10C6F71905F8D700BC36E3 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AA10C6F61905F8D700BC36E3 /* HttpRequest.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8BBD6A4D19061E730013BACB /* LoadingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScreenViewController.h; sourceTree = "<group>"; };
+		8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScreenViewController.m; sourceTree = "<group>"; };
 		8BD9025918FEE403005D22A9 /* VerifyFieldsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyFieldsViewController.h; sourceTree = "<group>"; };
 		8BD9025A18FEE403005D22A9 /* VerifyFieldsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyFieldsViewController.m; sourceTree = "<group>"; };
 		8BD9025C18FF00B7005D22A9 /* LoginSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginSupportViewController.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				8BD9025A18FEE403005D22A9 /* VerifyFieldsViewController.m */,
 				AA8B8D3118BC4218005C1C53 /* ViewController.h */,
 				AA8B8D3218BC4218005C1C53 /* ViewController.m */,
+				8BBD6A4D19061E730013BACB /* LoadingScreenViewController.h */,
+				8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */,
 				AA10C6F51905F8D700BC36E3 /* HttpRequest.h */,
 				AA10C6F61905F8D700BC36E3 /* HttpRequest.m */,
 				AA8B8D3418BC4218005C1C53 /* Images.xcassets */,
@@ -266,6 +271,7 @@
 			files = (
 				AA8B8D3318BC4218005C1C53 /* ViewController.m in Sources */,
 				AA10C6F71905F8D700BC36E3 /* HttpRequest.m in Sources */,
+				8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */,
 				AA8B8D2D18BC4218005C1C53 /* AppDelegate.m in Sources */,
 				8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */,
 				8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */,

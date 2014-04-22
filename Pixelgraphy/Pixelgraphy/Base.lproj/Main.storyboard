@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4uL-fs-HPR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4uL-fs-HPR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uS3-A6-4JX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1162" y="46"/>
+            <point key="canvasLocation" x="-1853" y="42"/>
         </scene>
         <!--View Controller - Login-->
         <scene sceneID="ufC-wZ-h7g">
@@ -83,12 +83,12 @@
                     <connections>
                         <outlet property="PasswordRO" destination="iyE-3o-D1e" id="jpF-IR-dIy"/>
                         <outlet property="UsernameRO" destination="ocz-o1-uvd" id="3Ht-QW-ViH"/>
-                        <segue destination="9FC-aT-tUT" kind="modal" identifier="TabbedVC" modalTransitionStyle="crossDissolve" id="ZIR-SV-3aP"/>
+                        <segue destination="AiB-8c-dNF" kind="modal" identifier="TabbedVC" modalTransitionStyle="crossDissolve" id="67s-B9-KKT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-547" y="46"/>
+            <point key="canvasLocation" x="-1238" y="42"/>
         </scene>
         <!--Verify Fields View Controller - Register-->
         <scene sceneID="Axo-yx-kAt">
@@ -166,7 +166,7 @@ an @purchase.edu e-mail</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUw-a4-KSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-611" y="794"/>
+            <point key="canvasLocation" x="-1302" y="790"/>
         </scene>
         <!--Login Support View Controller - Login Support-->
         <scene sceneID="fGE-0Z-fxl">
@@ -212,7 +212,7 @@ an @purchase.edu e-mail</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfB-E9-hKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-145" y="794"/>
+            <point key="canvasLocation" x="-836" y="790"/>
         </scene>
         <!--View Controller - Global Feed-->
         <scene sceneID="NqE-oz-Kl1">
@@ -251,6 +251,41 @@ an @purchase.edu e-mail</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ma-ZG-icX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1061" y="-268"/>
+        </scene>
+        <!--Loading Screen View Controller-->
+        <scene sceneID="Nwk-Pa-0pz">
+            <objects>
+                <viewController id="AiB-8c-dNF" customClass="LoadingScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yka-rY-yLO"/>
+                        <viewControllerLayoutGuide type="bottom" id="4gx-Bs-qGY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Poy-HP-nwv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LZo-PC-w8d">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logging in..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taS-RT-Nac">
+                                <rect key="frame" x="113" y="227" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="9FC-aT-tUT" kind="modal" identifier="TabbedVC2" modalTransitionStyle="crossDissolve" id="csF-Rk-U8H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZxF-OF-SKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-544" y="42"/>
         </scene>
         <!--Tab Bar Controller - TabbedVC-->
         <scene sceneID="GJu-QT-cOx">
