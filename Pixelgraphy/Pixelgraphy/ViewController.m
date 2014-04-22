@@ -7,10 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "HttpRequest.h"
+#import "AccountManager.h"
 
 @interface ViewController ()
-    @property HttpRequest* httpRequest;
+
 @end
 
 @implementation ViewController
@@ -19,13 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
-    NSURL* url = [NSURL URLWithString:@"http://pixelgraphy.net/PHP/login_check.php"];
     
-    _httpRequest = [HttpRequest initWithURL:url];
-    [_httpRequest setDelegate:self];
-    [_httpRequest sendHttpRequest:@"&username=laerte&password=1234"];
-    
+    AccountManager* accountManager = [AccountManager initWithUsername:@"laerte" andPassowrd:@"1234"];
+    [accountManager setDelegate:self];
+    [accountManager checkUsername];
     
 }
 -(void)onSuccess:(NSData*)data;
@@ -36,6 +33,7 @@
 -(void)onError:(NSError*)connectionError
 {
     //some code
+    NSLog(@"There was an error");
 }
 - (void)didReceiveMemoryWarning
 {

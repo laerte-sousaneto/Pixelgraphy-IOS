@@ -10,6 +10,7 @@
 		8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025A18FEE403005D22A9 /* VerifyFieldsViewController.m */; };
 		8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025D18FF00B7005D22A9 /* LoginSupportViewController.m */; };
 		AA10C6F71905F8D700BC36E3 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AA10C6F61905F8D700BC36E3 /* HttpRequest.m */; };
+		AA10C6FD1906173A00BC36E3 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA10C6FC1906173A00BC36E3 /* AccountManager.m */; };
 		AA8B8D1D18BC4218005C1C53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B8D1C18BC4218005C1C53 /* Foundation.framework */; };
 		AA8B8D1F18BC4218005C1C53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B8D1E18BC4218005C1C53 /* CoreGraphics.framework */; };
 		AA8B8D2118BC4218005C1C53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B8D2018BC4218005C1C53 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 		8BD9025D18FF00B7005D22A9 /* LoginSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginSupportViewController.m; sourceTree = "<group>"; };
 		AA10C6F51905F8D700BC36E3 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HttpRequest.h; path = ../HttpRequest.h; sourceTree = "<group>"; };
 		AA10C6F61905F8D700BC36E3 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HttpRequest.m; path = ../HttpRequest.m; sourceTree = "<group>"; };
+		AA10C6FB1906173A00BC36E3 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
+		AA10C6FC1906173A00BC36E3 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		AA8B8D1918BC4218005C1C53 /* Pixelgraphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pixelgraphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8B8D1C18BC4218005C1C53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA8B8D1E18BC4218005C1C53 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +137,8 @@
 				AA10C6F61905F8D700BC36E3 /* HttpRequest.m */,
 				AA8B8D3418BC4218005C1C53 /* Images.xcassets */,
 				AA8B8D2318BC4218005C1C53 /* Supporting Files */,
+				AA10C6FB1906173A00BC36E3 /* AccountManager.h */,
+				AA10C6FC1906173A00BC36E3 /* AccountManager.m */,
 			);
 			path = Pixelgraphy;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				AA8B8D3318BC4218005C1C53 /* ViewController.m in Sources */,
 				AA10C6F71905F8D700BC36E3 /* HttpRequest.m in Sources */,
 				AA8B8D2D18BC4218005C1C53 /* AppDelegate.m in Sources */,
+				AA10C6FD1906173A00BC36E3 /* AccountManager.m in Sources */,
 				8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */,
 				8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */,
 				AA8B8D2918BC4218005C1C53 /* main.m in Sources */,
