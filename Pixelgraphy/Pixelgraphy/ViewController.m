@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "HttpRequest.h"
 
 @interface ViewController ()
-
+    @property HttpRequest* httpRequest;
 @end
 
 @implementation ViewController
@@ -18,6 +19,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    NSURL* url = [NSURL URLWithString:@"http://pixelgraphy.net/"];
+    
+    _httpRequest = [HttpRequest initWithURL:url];
+    
+    [_httpRequest sendHttpRequest];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
