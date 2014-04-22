@@ -10,8 +10,6 @@
 
 @interface HttpRequest()
 
-    @property NSMutableData* responseData;
-    
 @end
 
 @implementation HttpRequest

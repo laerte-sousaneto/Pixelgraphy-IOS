@@ -11,6 +11,7 @@
 @interface HttpRequest : NSObject
 
 @property NSURL* pageURL;
+@property NSMutableData* responseData;
 @property id delegate;
 
 +(HttpRequest*)initWithURL:(NSURL*)url;
