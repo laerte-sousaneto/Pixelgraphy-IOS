@@ -29,13 +29,10 @@
 {
      NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     NSLog(@"%@",result);
-    [self loginCheckedOut:result];
-}
--(void)loginCheckedOut:(NSString*)s
-{
-    if ([s isEqualToString:@"true"]) {
-        [self performSegueWithIdentifier:@"TabbedVC" sender:self];
+    if ([result isEqualToString:@"true"]) {
+        userValidated = true;
     }
+    
 }
 -(void)onError:(NSError*)connectionError
 {
@@ -59,6 +56,11 @@
         AccountManager* accountManager = [AccountManager initWithUsername:[_UsernameRO text] andPassowrd:[_PasswordRO text]];
         [accountManager setDelegate:self];
         [accountManager checkUsername];
+        [NSThread sleepForTimeInterval:1.0];
+        if (userValidated) {
+            [self performSegueWithIdentifier:@"TabbedVC" sender:self];
+        }
+        
     }
 }
 @end

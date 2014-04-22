@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "LoadingScreenViewController.h"
 
+bool userValidated = false;
+
 @interface ViewController : UIViewController<NSURLConnectionDelegate>
+
 - (IBAction)LoginTouchUp:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *UsernameRO;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordRO;
