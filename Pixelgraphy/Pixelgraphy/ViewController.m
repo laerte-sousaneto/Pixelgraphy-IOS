@@ -54,6 +54,7 @@
     }
     else
     {
+        /*
         AccountManager* accountManager = [AccountManager initWithUsername:[_UsernameRO text] andPassowrd:[_PasswordRO text]];
         [accountManager setDelegate:self];
         [accountManager checkUsername];
@@ -62,7 +63,19 @@
         {
             [self performSegueWithIdentifier:@"TabbedVC" sender:self];
         }
+         */
         
+        [self performSegueWithIdentifier:@"TabbedVC" sender:self];
+        
+    }
+}
+//Sends data to loading screen
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"TabbedVC"])
+    {
+        LoadingScreenViewController *controller = (LoadingScreenViewController *)segue.destinationViewController;
+        controller.username = [_UsernameRO text];
+        controller.password = [_PasswordRO text];
     }
 }
 @end

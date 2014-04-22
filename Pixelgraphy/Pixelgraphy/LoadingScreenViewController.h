@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
 
 @interface LoadingScreenViewController : UIViewController
 @property(nonatomic) NSString *username;
