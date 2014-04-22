@@ -27,6 +27,8 @@
     
     return newAccountManager;
 }
+
+//Check if username passed to this class matches any entry on the database.
 -(void)checkUsername
 {
     url = [NSURL URLWithString:@"http://pixelgraphy.net/PHP/login_check.php"];
@@ -37,6 +39,8 @@
     [http setPageURL:url];
     [http sendHttpRequest:postString];
 }
+
+//check if username and password passed matches any entry on the database
 -(void)checkUsername:(NSString *)username andPassword:(NSString *)password
 {
     url = [NSURL URLWithString:@"http://pixelgraphy.net/PHP/login_check.php"];
@@ -49,6 +53,7 @@
     [http sendHttpRequest:postString];
 }
 
+//registers a user with respective username, password, and email into the database.
 -(void)registerUsername:(NSString *)username Passowrd1:(NSString *)password1 Password2:(NSString *)password2 Email:(NSString *)email
 {
     url = [NSURL URLWithString:@"http://pixelgraphy.net/PHP/register_check.php"];

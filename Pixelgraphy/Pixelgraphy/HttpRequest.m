@@ -21,6 +21,8 @@
     
     return newHttpRequest;
 }
+
+//Retrieves a page from the connection url.
 -(void)sendHttpRequest
 {
     NSMutableURLRequest* request = [self setupConnection:_pageURL];
@@ -34,6 +36,8 @@
                         [_delegate onSuccess:data];
                     }];
 }
+
+//Passes a post request to the url page
 -(void)sendHttpRequest:(NSString*)postString
 {
     NSMutableURLRequest* request = [self setupConnection:_pageURL withPostString:postString];
@@ -48,6 +52,7 @@
                     }];
 }
 
+//Setup connection with url and post data in string format
 -(NSMutableURLRequest*)setupConnection:(NSURL*)url withPostString:(NSString*)postString
 {
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc]init];
@@ -64,6 +69,7 @@
     return request;
 }
 
+//setup connection with url. (will only retrieve its html content)
 -(NSMutableURLRequest*)setupConnection:(NSURL*)url
 {
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc]init];
