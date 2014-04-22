@@ -19,7 +19,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib
-    _userValidated = false;
     
 }
 -(void)beforeSend
@@ -30,9 +29,6 @@
 {
      NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     NSLog(@"%@",result);
-    if ([result isEqualToString:@"true"]) {
-        _userValidated = true;
-    }
     
 }
 -(void)onError:(NSError*)connectionError

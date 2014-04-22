@@ -13,4 +13,7 @@
 @property(nonatomic) NSString *username;
 @property(nonatomic) NSString *password;
 
+@property bool userValidated;
+@property bool userFalsified;
+
 @end

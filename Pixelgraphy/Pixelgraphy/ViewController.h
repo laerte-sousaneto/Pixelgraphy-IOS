@@ -16,5 +16,4 @@
 @property (weak, nonatomic) IBOutlet UITextField *UsernameRO;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordRO;
 
-@property bool userValidated;
 @end
