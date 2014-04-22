@@ -11,8 +11,15 @@
 @interface HttpRequest : NSObject
 
 @property NSURL* pageURL;
+@property id delegate;
 
 +(HttpRequest*)initWithURL:(NSURL*)url;
 -(void)sendHttpRequest;
 -(void)sendHttpRequest:(NSString*)postString;
+
+@end
+
+@interface NSObject(HttpDelegate)
+    -(void)onSuccess:(NSData*)data;
+    -(void)onError:(NSError*)connectionError;
 @end

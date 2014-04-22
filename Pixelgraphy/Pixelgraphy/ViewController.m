@@ -23,12 +23,20 @@
     NSURL* url = [NSURL URLWithString:@"http://pixelgraphy.net/PHP/login_check.php"];
     
     _httpRequest = [HttpRequest initWithURL:url];
-    
+    [_httpRequest setDelegate:self];
     [_httpRequest sendHttpRequest:@"&username=laerte&password=1234"];
     
     
 }
-
+-(void)onSuccess:(NSData*)data;
+{
+     NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSLog(@"%@",result);
+}
+-(void)onError:(NSError*)connectionError
+{
+    //some code
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

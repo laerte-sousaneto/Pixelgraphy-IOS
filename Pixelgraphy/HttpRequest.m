@@ -32,7 +32,7 @@
                     queue:[[NSOperationQueue alloc]init]
                     completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
                     {
-                        [self completeHandler:data];
+                        [_delegate onSuccess:data];
                     }];
 }
 -(void)sendHttpRequest:(NSString*)postString
@@ -44,16 +44,10 @@
                     queue:[[NSOperationQueue alloc]init]
                     completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
                     {
-                        [self completeHandler:data];
-            
+                        [_delegate onSuccess:data];
                     }];
 }
 
--(void)completeHandler:(NSData*)data
-{
-    NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    NSLog(@"%@",result);
-}
 -(NSMutableURLRequest*)setupConnection:(NSURL*)url withPostString:(NSString*)postString
 {
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc]init];
