@@ -52,7 +52,7 @@
     
     
     NSData* postData = [postString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString* postLength = [NSString stringWithFormat:@"%ld", [postData length]];
+    NSString* postLength = [NSString stringWithFormat:@"%ld", (unsigned long)[postData length]];
     
     [request setURL:url];
     [request setHTTPBody:postData];
