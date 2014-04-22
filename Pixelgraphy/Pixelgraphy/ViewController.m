@@ -18,11 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    AccountManager* accountManager = [AccountManager initWithUsername:@"laerte" andPassowrd:@"1234"];
-    [accountManager setDelegate:self];
-    [accountManager checkUsername];
+	// Do any additional setup after loading the view, typically from a nib
     
 }
 -(void)beforeSend
@@ -33,6 +29,13 @@
 {
      NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     NSLog(@"%@",result);
+    [self loginCheckedOut:result];
+}
+-(void)loginCheckedOut:(NSString*)s
+{
+    if ([s isEqualToString:@"true"]) {
+        [self performSegueWithIdentifier:@"TabbedVC" sender:self];
+    }
 }
 -(void)onError:(NSError*)connectionError
 {
@@ -53,21 +56,9 @@
     }
     else
     {
-        //Send the username and password to php files
-        if (true) //This should not always be treue, this should check and see if the login was successful
-        {
-            //Login successful
-            LoadingScreenViewController *LSVC = [[LoadingScreenViewController alloc] init];
-            LSVC.username = [_UsernameRO text];
-            LSVC.password = [_PasswordRO text];
-            NSLog(LSVC.username);
-            [self performSegueWithIdentifier:@"TabbedVC" sender:self];
-            
-        }
-        else
-        {
-            //Login failed
-        }
+        AccountManager* accountManager = [AccountManager initWithUsername:[_UsernameRO text] andPassowrd:[_PasswordRO text]];
+        [accountManager setDelegate:self];
+        [accountManager checkUsername];
     }
 }
 @end
