@@ -32,9 +32,19 @@
     AccountManager* accountManager = [AccountManager initWithUsername:[self username] andPassowrd:[self password]];
     [accountManager setDelegate:self];
     [accountManager checkUsername];
+    /*
+    NSTimer *t = [NSTimer scheduledTimerWithTimeInterval: 2.0
+                                                  target: self
+                                                selector:@selector(timeout:)
+                                                userInfo: nil repeats:NO];
+     */
 	// Do any additional setup after loading the view.
 }
-
+/*
+-(void)timeout:(NSTimer *)timer {
+    [self performSegueWithIdentifier:@"BackToLogin" sender:self];
+}
+ */
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
