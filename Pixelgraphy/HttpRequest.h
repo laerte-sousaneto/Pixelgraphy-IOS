@@ -23,4 +23,5 @@
 @interface NSObject(HttpDelegate)
     -(void)onSuccess:(NSData*)data;
     -(void)onError:(NSError*)connectionError;
+    -(void)beforeSend;
 @end
