@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "AccountManager.h"
 
 @interface ProfileViewController ()
 
@@ -27,7 +28,9 @@
 {
     [super viewDidLoad];
     _ScrollViewRO.contentSize =CGSizeMake(320, 1000);
-	// Do any additional setup after loading the view.
+    //The below two lines are how to access the UUID after it is saved after a successful login
+    NSUserDefaults *data = [NSUserDefaults standardUserDefaults];
+    NSLog(@"%@", [data stringForKey:@"uuid"]);
 }
 
 - (void)didReceiveMemoryWarning

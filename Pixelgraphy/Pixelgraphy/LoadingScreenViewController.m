@@ -76,10 +76,12 @@
 {
     NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     NSString* first = [[result componentsSeparatedByString:@" "] objectAtIndex:0];
-    NSLog(@"%@",first);
-    if (![first isEqualToString:@"Error:"]) {
+    //NSLog(@"%@",first);
+    if (![first isEqualToString:@"Error:"])
+    {
+        NSUserDefaults *saveData = [NSUserDefaults standardUserDefaults];
+        [saveData setObject:result forKey:@"uuid"];
         _userValidated = true;
-        
     }
     else
     {
