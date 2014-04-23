@@ -24,8 +24,8 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ufu-QV-BaT"/>
-                        <viewControllerLayoutGuide type="bottom" id="VPJ-m8-bbX"/>
+                        <viewControllerLayoutGuide type="top" id="y3v-6l-LUK"/>
+                        <viewControllerLayoutGuide type="bottom" id="eSu-V5-hRh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -95,8 +95,8 @@
             <objects>
                 <viewController id="bvv-hj-wAG" customClass="VerifyFieldsViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7RZ-Gq-6gX"/>
-                        <viewControllerLayoutGuide type="bottom" id="FpE-EE-0Ef"/>
+                        <viewControllerLayoutGuide type="top" id="1vA-Ov-yve"/>
+                        <viewControllerLayoutGuide type="bottom" id="hE4-ID-5vZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VTr-v3-8wk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -173,8 +173,8 @@ an @purchase.edu e-mail</string>
             <objects>
                 <viewController id="Yip-cB-BAn" customClass="LoginSupportViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UZF-2o-N6k"/>
-                        <viewControllerLayoutGuide type="bottom" id="sAn-Nt-043"/>
+                        <viewControllerLayoutGuide type="top" id="vRr-Ke-fDo"/>
+                        <viewControllerLayoutGuide type="bottom" id="0wy-Fb-28I"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QNf-m1-a9z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -219,8 +219,8 @@ an @purchase.edu e-mail</string>
             <objects>
                 <viewController id="MOk-fz-msS" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="EBp-Ro-WCi"/>
-                        <viewControllerLayoutGuide type="bottom" id="YJp-g0-H0x"/>
+                        <viewControllerLayoutGuide type="top" id="Vpe-G3-jPM"/>
+                        <viewControllerLayoutGuide type="bottom" id="JJJ-ii-Lfj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jsN-K8-FnY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -257,29 +257,25 @@ an @purchase.edu e-mail</string>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1146" id="7az-7A-OSR"/>
-                                            <constraint firstAttribute="width" constant="320" id="KAd-oR-ddq"/>
+                                            <constraint firstAttribute="height" constant="1146" id="Xng-8V-w24"/>
+                                            <constraint firstAttribute="width" constant="320" id="jtM-Ts-1Qu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="zqw-HJ-4YW" firstAttribute="leading" secondItem="Nop-Bk-8CK" secondAttribute="leading" id="JZL-0D-eEN"/>
-                                    <constraint firstAttribute="bottom" secondItem="zqw-HJ-4YW" secondAttribute="bottom" id="QME-E0-oW2"/>
-                                    <constraint firstItem="zqw-HJ-4YW" firstAttribute="top" secondItem="Nop-Bk-8CK" secondAttribute="top" id="TQo-0g-rKC"/>
-                                    <constraint firstAttribute="trailing" secondItem="zqw-HJ-4YW" secondAttribute="trailing" id="hCp-ds-Jly"/>
+                                    <constraint firstItem="zqw-HJ-4YW" firstAttribute="top" secondItem="Nop-Bk-8CK" secondAttribute="top" id="3zy-oB-uEJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="zqw-HJ-4YW" secondAttribute="trailing" id="N05-eZ-Y4P"/>
+                                    <constraint firstItem="zqw-HJ-4YW" firstAttribute="leading" secondItem="Nop-Bk-8CK" secondAttribute="leading" id="gq7-Uk-mwE"/>
+                                    <constraint firstAttribute="bottom" secondItem="zqw-HJ-4YW" secondAttribute="bottom" id="kBH-rM-xoC"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Nop-Bk-8CK" firstAttribute="top" secondItem="jsN-K8-FnY" secondAttribute="top" id="1l8-B6-3nF"/>
-                            <constraint firstItem="Nop-Bk-8CK" firstAttribute="leading" secondItem="jsN-K8-FnY" secondAttribute="leading" id="HDx-kk-kue"/>
-                            <constraint firstItem="Nop-Bk-8CK" firstAttribute="top" secondItem="jsN-K8-FnY" secondAttribute="top" id="Ofa-yv-5Hg"/>
-                            <constraint firstAttribute="bottom" secondItem="Nop-Bk-8CK" secondAttribute="bottom" id="YxJ-R1-vMC"/>
-                            <constraint firstAttribute="trailing" secondItem="Nop-Bk-8CK" secondAttribute="trailing" id="aoz-48-Bk3"/>
-                            <constraint firstAttribute="bottom" secondItem="Nop-Bk-8CK" secondAttribute="bottom" id="asZ-X2-unU"/>
-                            <constraint firstItem="Nop-Bk-8CK" firstAttribute="leading" secondItem="jsN-K8-FnY" secondAttribute="leading" id="nxD-HL-ttm"/>
-                            <constraint firstAttribute="trailing" secondItem="Nop-Bk-8CK" secondAttribute="trailing" id="tAc-f5-iHP"/>
+                            <constraint firstAttribute="trailing" secondItem="Nop-Bk-8CK" secondAttribute="trailing" id="D5b-XX-EwZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Nop-Bk-8CK" secondAttribute="bottom" id="uCj-fj-wI2"/>
+                            <constraint firstItem="Nop-Bk-8CK" firstAttribute="top" secondItem="jsN-K8-FnY" secondAttribute="top" id="x68-Dg-UpW"/>
+                            <constraint firstItem="Nop-Bk-8CK" firstAttribute="leading" secondItem="jsN-K8-FnY" secondAttribute="leading" id="zCz-gs-wiI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Global Feed" id="Y7u-vV-My2"/>
@@ -293,8 +289,8 @@ an @purchase.edu e-mail</string>
             <objects>
                 <viewController id="Bvr-6c-U2F" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FKv-Ml-gbB"/>
-                        <viewControllerLayoutGuide type="bottom" id="PWx-um-GMW"/>
+                        <viewControllerLayoutGuide type="top" id="0ut-Fm-sNN"/>
+                        <viewControllerLayoutGuide type="bottom" id="1p8-IM-cFf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wca-16-CWo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -312,8 +308,8 @@ an @purchase.edu e-mail</string>
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="AiB-8c-dNF" customClass="LoadingScreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mXN-nJ-Dm4"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gl7-Au-rpo"/>
+                        <viewControllerLayoutGuide type="top" id="412-9K-qQu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y04-TY-6fD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Poy-HP-nwv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -373,18 +369,18 @@ an @purchase.edu e-mail</string>
             <objects>
                 <viewController id="00s-K4-UXJ" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ved-uE-co9"/>
-                        <viewControllerLayoutGuide type="bottom" id="E1D-Pu-Vem"/>
+                        <viewControllerLayoutGuide type="top" id="N99-8N-AcP"/>
+                        <viewControllerLayoutGuide type="bottom" id="0bj-gs-fCl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="H1L-UH-oKm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-OX-M4a">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-OX-M4a">
                                 <rect key="frame" x="0.0" y="-3" width="320" height="573"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jE-ju-HUW">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jE-ju-HUW">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="759"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -443,11 +439,27 @@ an @purchase.edu e-mail</string>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="hTR-nI-QgR"/>
+                                            <constraint firstAttribute="height" constant="759" id="jGK-av-3oc"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1jE-ju-HUW" secondAttribute="trailing" id="3rx-7v-yAn"/>
+                                    <constraint firstAttribute="bottom" secondItem="1jE-ju-HUW" secondAttribute="bottom" id="GaL-BK-wzz"/>
+                                    <constraint firstItem="1jE-ju-HUW" firstAttribute="top" secondItem="v5b-OX-M4a" secondAttribute="top" id="Lka-em-V03"/>
+                                    <constraint firstItem="1jE-ju-HUW" firstAttribute="leading" secondItem="v5b-OX-M4a" secondAttribute="leading" id="u5H-l3-HyP"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v5b-OX-M4a" firstAttribute="top" secondItem="H1L-UH-oKm" secondAttribute="top" id="34g-AO-GLV"/>
+                            <constraint firstAttribute="trailing" secondItem="v5b-OX-M4a" secondAttribute="trailing" id="A3V-cJ-Siw"/>
+                            <constraint firstAttribute="bottom" secondItem="v5b-OX-M4a" secondAttribute="bottom" id="GxW-8L-qVg"/>
+                            <constraint firstItem="v5b-OX-M4a" firstAttribute="leading" secondItem="H1L-UH-oKm" secondAttribute="leading" id="hzM-I5-mHK"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" id="4oZ-Qx-Iao"/>
                     <connections>
@@ -471,8 +483,8 @@ an @purchase.edu e-mail</string>
             <objects>
                 <viewController id="eEi-ni-lvh" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="W2R-pf-UKM"/>
-                        <viewControllerLayoutGuide type="bottom" id="Sjy-sM-cDf"/>
+                        <viewControllerLayoutGuide type="top" id="lgA-Sw-lzg"/>
+                        <viewControllerLayoutGuide type="bottom" id="ryc-7j-1AI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Bb9-Xo-Wrv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
