@@ -12,6 +12,7 @@
 
 @property NSString* username;
 @property NSString* password;
+@property NSString* uuid;
 @property id delegate;
 
 +(AccountManager*) initWithUsername:(NSString *)username andPassowrd:(NSString *)password;

@@ -75,9 +75,11 @@
 -(void)onSuccess:(NSData*)data;
 {
     NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    NSLog(@"%@",result);
-    if ([result isEqualToString:@"true"]) {
+    NSString* first = [[result componentsSeparatedByString:@" "] objectAtIndex:0];
+    NSLog(@"%@",first);
+    if (![first isEqualToString:@"Error:"]) {
         _userValidated = true;
+        
     }
     else
     {
