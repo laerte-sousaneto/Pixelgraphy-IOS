@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _ScrollViewRO.contentSize =CGSizeMake(320, 1000);
 	// Do any additional setup after loading the view.
 }
 
