@@ -368,7 +368,15 @@ an @purchase.edu e-mail</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" id="4oZ-Qx-Iao"/>
                     <connections>
+                        <outlet property="BioTextView" destination="nfx-lg-uTS" id="bbB-M6-0z4"/>
+                        <outlet property="HobbiesTextView" destination="OG8-yt-6fL" id="Nsc-vi-IPo"/>
+                        <outlet property="Hometown" destination="5RH-iZ-kBs" id="koZ-a8-KLE"/>
+                        <outlet property="Majors" destination="mHU-Nn-dY0" id="XkE-ie-f1v"/>
+                        <outlet property="ProfileImage" destination="3If-zO-J5n" id="oJO-4L-LyA"/>
                         <outlet property="ScrollViewRO" destination="v5b-OX-M4a" id="MET-pV-nYl"/>
+                        <outlet property="Username" destination="s6X-ia-LrO" id="qrf-bk-KaP"/>
+                        <outlet property="dob" destination="FmV-JS-VLg" id="RxU-YD-Ahe"/>
+                        <outlet property="email" destination="CUb-YX-j2U" id="xke-lf-i4n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hn-lJ-pPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
