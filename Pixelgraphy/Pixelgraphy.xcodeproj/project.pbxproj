@@ -13,6 +13,8 @@
 		8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025D18FF00B7005D22A9 /* LoginSupportViewController.m */; };
 		AA10C6FD1906173A00BC36E3 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA10C6FC1906173A00BC36E3 /* AccountManager.m */; };
 		AA10C7001906297500BC36E3 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AA10C6FF1906297500BC36E3 /* HttpRequest.m */; };
+		AA2C0AC919087E6E00F184EA /* MyPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2C0AC819087E6E00F184EA /* MyPhotoCell.m */; };
+		AA2C0ACC19087F7700F184EA /* MyPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2C0ACB19087F7700F184EA /* MyPhotosViewController.m */; };
 		AA8B8D1D18BC4218005C1C53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B8D1C18BC4218005C1C53 /* Foundation.framework */; };
 		AA8B8D1F18BC4218005C1C53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B8D1E18BC4218005C1C53 /* CoreGraphics.framework */; };
 		AA8B8D2118BC4218005C1C53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B8D2018BC4218005C1C53 /* UIKit.framework */; };
@@ -52,6 +54,10 @@
 		AA10C6FC1906173A00BC36E3 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		AA10C6FE1906297500BC36E3 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
 		AA10C6FF1906297500BC36E3 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
+		AA2C0AC719087E6E00F184EA /* MyPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotoCell.h; sourceTree = "<group>"; };
+		AA2C0AC819087E6E00F184EA /* MyPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoCell.m; sourceTree = "<group>"; };
+		AA2C0ACA19087F7700F184EA /* MyPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotosViewController.h; sourceTree = "<group>"; };
+		AA2C0ACB19087F7700F184EA /* MyPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotosViewController.m; sourceTree = "<group>"; };
 		AA8B8D1918BC4218005C1C53 /* Pixelgraphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pixelgraphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8B8D1C18BC4218005C1C53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA8B8D1E18BC4218005C1C53 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +155,10 @@
 				AA10C6FC1906173A00BC36E3 /* AccountManager.m */,
 				AA8B8D3418BC4218005C1C53 /* Images.xcassets */,
 				AA8B8D2318BC4218005C1C53 /* Supporting Files */,
+				AA2C0AC719087E6E00F184EA /* MyPhotoCell.h */,
+				AA2C0AC819087E6E00F184EA /* MyPhotoCell.m */,
+				AA2C0ACA19087F7700F184EA /* MyPhotosViewController.h */,
+				AA2C0ACB19087F7700F184EA /* MyPhotosViewController.m */,
 			);
 			path = Pixelgraphy;
 			sourceTree = "<group>";
@@ -281,7 +291,9 @@
 			files = (
 				AA8B8D3318BC4218005C1C53 /* ViewController.m in Sources */,
 				8B2746FE19083519005CE38F /* ProfileViewController.m in Sources */,
+				AA2C0AC919087E6E00F184EA /* MyPhotoCell.m in Sources */,
 				AA10C7001906297500BC36E3 /* HttpRequest.m in Sources */,
+				AA2C0ACC19087F7700F184EA /* MyPhotosViewController.m in Sources */,
 				8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */,
 				AA8B8D2D18BC4218005C1C53 /* AppDelegate.m in Sources */,
 				AA10C6FD1906173A00BC36E3 /* AccountManager.m in Sources */,
