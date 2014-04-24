@@ -11,7 +11,7 @@
 #import "DataRequest.h"
 #import "PhotoInfo.h"
 
-@interface MyPhotosViewController () <UITableViewDataSource>
+@interface MyPhotosViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) NSMutableArray* data;
 
@@ -107,7 +107,11 @@
 {
     return self.data.count;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.contentView.backgroundColor =[UIColor darkGrayColor];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
