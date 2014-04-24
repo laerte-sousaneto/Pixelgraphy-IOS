@@ -48,4 +48,19 @@
                         otherButtonTitles:@"Take photo", @"Camera Roll", nil]
      showInView:self.view];
 }
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0)
+    {
+        NSLog(@"Photo from camera");
+    }
+    else if(buttonIndex == 1)
+    {
+        NSLog(@"Photo from camera roll");
+    }
+    else
+    {
+        NSLog(@"This should never trigger");
+    }
+}
 @end
