@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37B296E0190963450087D4AD /* UploadPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B296DF190963450087D4AD /* UploadPhotoViewController.m */; };
 		8B2746FE19083519005CE38F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2746FD19083519005CE38F /* ProfileViewController.m */; };
 		8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */; };
 		8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025A18FEE403005D22A9 /* VerifyFieldsViewController.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37B296DE190963450087D4AD /* UploadPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadPhotoViewController.h; sourceTree = "<group>"; };
+		37B296DF190963450087D4AD /* UploadPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadPhotoViewController.m; sourceTree = "<group>"; };
 		8B2746FC19083519005CE38F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		8B2746FD19083519005CE38F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		8BBD6A4D19061E730013BACB /* LoadingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScreenViewController.h; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				AA8B8D2B18BC4218005C1C53 /* AppDelegate.h */,
 				AA8B8D2C18BC4218005C1C53 /* AppDelegate.m */,
 				AA8B8D2E18BC4218005C1C53 /* Main.storyboard */,
+				37B296DE190963450087D4AD /* UploadPhotoViewController.h */,
+				37B296DF190963450087D4AD /* UploadPhotoViewController.m */,
 				8B2746FC19083519005CE38F /* ProfileViewController.h */,
 				8B2746FD19083519005CE38F /* ProfileViewController.m */,
 				8BD9025C18FF00B7005D22A9 /* LoginSupportViewController.h */,
@@ -299,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B296E0190963450087D4AD /* UploadPhotoViewController.m in Sources */,
 				AA8B8D3318BC4218005C1C53 /* ViewController.m in Sources */,
 				8B2746FE19083519005CE38F /* ProfileViewController.m in Sources */,
 				AA2C0AC919087E6E00F184EA /* MyPhotoCell.m in Sources */,

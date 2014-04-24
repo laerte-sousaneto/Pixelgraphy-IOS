@@ -39,5 +39,9 @@
     [http setPageURL:url];
     [http sendHttpRequest:postString];
 }
+-(void)getProfileData
+{
+    //Gotta make profile data return as JSON first before I can do this
+}
 
 @end

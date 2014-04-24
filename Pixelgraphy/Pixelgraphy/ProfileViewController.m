@@ -8,6 +8,8 @@
 
 #import "ProfileViewController.h"
 #import "AccountManager.h"
+#import "DataRequest.h"
+#import "PhotoInfo.h"
 
 @interface ProfileViewController ()
 
