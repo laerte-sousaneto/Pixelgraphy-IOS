@@ -63,9 +63,16 @@
         PhotoInfo* photoInfo = [PhotoInfo initWithID:ID Name:name Description:description URL:url Date:date];
         
         [self.data addObject:photoInfo];
+        
+        //return to the main thread and update table view
+        dispatch_async(dispatch_get_main_queue(),^
+        {
+            [self.tableView reloadData];
+        });
+        
     }
     
-    [self.tableView reloadData];
+    
     
 }
 -(void)onError:(NSError*)connectionError
@@ -76,17 +83,22 @@
 {
 
 }
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString* CellIdentifier = @"Cell";
     NSInteger row = indexPath.row;
     PhotoInfo* photoInfo = self.data[row];
     
-    MyPhotoCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    MyPhotoCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSData* urlData = [NSData dataWithContentsOfURL:photoInfo.URL];
-    UIImage* img = [[UIImage alloc] initWithData:urlData];
+    if(cell == nil)
+    {
+        cell = [[MyPhotoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+    }
     
-    cell.imageView.image = img;
+    cell.imageView.image = photoInfo.image;
     cell.title.text = photoInfo.name;
     
     return cell;

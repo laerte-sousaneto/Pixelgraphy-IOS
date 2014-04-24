@@ -20,6 +20,9 @@
     [newPhotoInfo setURL:URL];
     [newPhotoInfo setDate:date];
     
+    NSData* urlData = [NSData dataWithContentsOfURL:URL];
+    [newPhotoInfo setImage:[[UIImage alloc] initWithData:urlData]];
+    
     return newPhotoInfo;
 }
 
