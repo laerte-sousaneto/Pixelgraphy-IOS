@@ -10,7 +10,7 @@
 
 @implementation MyPhotoCell
 
-
+@synthesize imageView;
 - (void)awakeFromNib
 {
     // Initialization code

@@ -538,6 +538,9 @@ an @purchase.edu e-mail</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Photos" id="wJi-7Q-l6Q"/>
+                    <connections>
+                        <outlet property="tableView" destination="vZI-eP-h1f" id="gD6-HO-Vuz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v57-zd-bLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

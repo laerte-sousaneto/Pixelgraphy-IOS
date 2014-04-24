@@ -8,9 +8,13 @@
 
 #import "MyPhotosViewController.h"
 #import "MyPhotoCell.h"
+#import "DataRequest.h"
+#import "PhotoInfo.h"
 
 @interface MyPhotosViewController () <UITableViewDataSource>
+
 @property (nonatomic,strong) NSMutableArray* data;
+
 @end
 
 @implementation MyPhotosViewController
@@ -28,54 +32,65 @@
 {
     [super viewDidLoad];
     
-     
-    static NSInteger count = 1000;
+    self.data = [[NSMutableArray alloc] init];
     
-    self.data = [[NSMutableArray alloc] initWithCapacity:count];
-
-    NSMutableArray* urls = [[NSMutableArray alloc]init];
+    NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
+    NSString* userID = [userInfo stringForKey:@"uuid"];
     
-    [urls addObject:@"http://pixelgraphy.net/user_home/534effd7b8de7_home/535152125d7a9_homepage.jpg"];
-    [urls addObject:@"http://pixelgraphy.net/user_home/534effd7b8de7_home/535152125d7a9_homepage.jpg"];
-    [urls addObject:@"http://pixelgraphy.net/user_home/534effd7b8de7_home/535152125d7a9_homepage.jpg"];
-    [urls addObject:@"http://pixelgraphy.net/user_home/534effd7b8de7_home/535152125d7a9_homepage.jpg"];
-    [urls addObject:@"http://pixelgraphy.net/user_home/534effd7b8de7_home/535152125d7a9_homepage.jpg"];
-    [urls addObject:@"http://pixelgraphy.net/user_home/534effd7b8de7_home/535152125d7a9_homepage.jpg"];
-    [urls addObject:@"http://pixelgraphy.net/user_home/534effd7b8de7_home/535152125d7a9_homepage.jpg"];
-    [urls addObject:@"http://pixelgraphy.net/user_home/534effd7b8de7_home/535152125d7a9_homepage.jpg"];
+    //DataRequest* data = [DataRequest initWithUserID:@"52a89642c025c"];
+    DataRequest* data = [DataRequest initWithUserID:userID];
     
-    for(NSInteger i = 0; i < [urls count]; i++)
+    [data setDelegate:self];
+    [data getUserPhotos];
+    // Do any additional setup after loading the view.
+}
+-(void)onSuccess:(NSData*)data
+{
+    NSError* jsonError;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+    
+    
+    for(NSDictionary* entry in json)
     {
-        id path = [urls objectAtIndex:i];
-        NSURL* url = [NSURL URLWithString:path];
-        NSData* data = [NSData dataWithContentsOfURL:url];
-        UIImage* img = [[UIImage alloc] initWithData:data];
-        [self.data addObject:img];
+        NSString* ID = [entry objectForKey:@"ID"];
+        NSString* name = [entry objectForKey:@"name"];
+        NSString* description = [entry objectForKey:@"description"];
+        NSString* directory = [NSString stringWithFormat:@"http://pixelgraphy.net/%@",[entry objectForKey:@"directory"]];
+        NSString* date = [entry objectForKey:@"date"];
+        
+        NSURL* url = [NSURL URLWithString:directory];
+        
+        PhotoInfo* photoInfo = [PhotoInfo initWithID:ID Name:name Description:description URL:url Date:date];
+        
+        [self.data addObject:photoInfo];
     }
     
-    // Do any additional setup after loading the view.
+    [self.tableView reloadData];
+    
+}
+-(void)onError:(NSError*)connectionError
+{
+    NSLog(@"error");
+}
+-(void)beforeSend
+{
+
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = indexPath.row;
-    UIImage* data = self.data[row];
+    PhotoInfo* photoInfo = self.data[row];
     
-    MyPhotoCell* cell = [tableView dequeueReusableCellWithIdentifier:CellID];
+    MyPhotoCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    cell.backgroundColor = [UIColor whiteColor];
-    //cell.textLabel.text = data;
-    cell.imageView.image = data;
+    NSData* urlData = [NSData dataWithContentsOfURL:photoInfo.URL];
+    UIImage* img = [[UIImage alloc] initWithData:urlData];
     
-    
-    
-    /*if([data isEqualToString:@"5"])
-    {
-        cell.backgroundColor = [UIColor orangeColor];
-    }*/
+    cell.imageView.image = img;
+    cell.title.text = photoInfo.name;
     
     return cell;
 }
-static NSString* CellID = @"Cell";
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.data.count;
