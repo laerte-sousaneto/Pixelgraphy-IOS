@@ -60,7 +60,7 @@
     }
     else
     {
-        NSLog(@"This should never trigger");
+        NSLog(@"User Canceled");
     }
 }
 @end

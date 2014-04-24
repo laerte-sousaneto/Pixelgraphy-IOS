@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uS3-A6-4JX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1833" y="42"/>
+            <point key="canvasLocation" x="-1797" y="61"/>
         </scene>
         <!--View Controller - Login-->
         <scene sceneID="ufC-wZ-h7g">
@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1238" y="42"/>
+            <point key="canvasLocation" x="-1202" y="61"/>
         </scene>
         <!--Verify Fields View Controller - Register-->
         <scene sceneID="Axo-yx-kAt">
@@ -166,7 +166,7 @@ an @purchase.edu e-mail</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUw-a4-KSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1302" y="790"/>
+            <point key="canvasLocation" x="-1202" y="862"/>
         </scene>
         <!--Login Support View Controller - Login Support-->
         <scene sceneID="fGE-0Z-fxl">
@@ -212,7 +212,7 @@ an @purchase.edu e-mail</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfB-E9-hKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-836" y="790"/>
+            <point key="canvasLocation" x="-734" y="862"/>
         </scene>
         <!--View Controller - Global Feed-->
         <scene sceneID="NqE-oz-Kl1">
@@ -270,7 +270,7 @@ an @purchase.edu e-mail</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hq9-1q-Oz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615" y="-264"/>
+            <point key="canvasLocation" x="627" y="-268"/>
         </scene>
         <!--Upload Photo View Controller - Upload Photo-->
         <scene sceneID="kZE-N2-XGz">
@@ -359,7 +359,7 @@ an @purchase.edu e-mail</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZxF-OF-SKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-544" y="42"/>
+            <point key="canvasLocation" x="-536" y="61"/>
         </scene>
         <!--Tab Bar Controller - TabbedVC-->
         <scene sceneID="GJu-QT-cOx">
@@ -571,6 +571,44 @@ an @purchase.edu e-mail</string>
             </objects>
             <point key="canvasLocation" x="1061" y="393"/>
         </scene>
+        <!--View Controller - Edit Profile-->
+        <scene sceneID="R57-H4-hnG">
+            <objects>
+                <viewController id="gIr-GJ-IC9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Rl-8o-HYn"/>
+                        <viewControllerLayoutGuide type="bottom" id="B3C-2T-THA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3K6-Wh-jrz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="tpU-1a-Y0G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQD-U9-trt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1746" y="494"/>
+        </scene>
+        <!--View Controller - Contact Us-->
+        <scene sceneID="r11-ad-VOT">
+            <objects>
+                <viewController id="4g9-q9-HsM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a9c-SO-agC"/>
+                        <viewControllerLayoutGuide type="bottom" id="8CJ-nF-fMB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8sB-f9-qQr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contact Us" id="LJ7-Nb-x6I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PyM-gj-aQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2162" y="494"/>
+        </scene>
         <!--Table View Controller - More stuff-->
         <scene sceneID="4z0-Z5-j7j">
             <objects>
@@ -605,6 +643,9 @@ an @purchase.edu e-mail</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gIr-GJ-IC9" kind="push" id="MaU-xD-Zzq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="WAA-8T-73H" style="IBUITableViewCellStyleDefault" id="c4k-Sv-PhO">
                                         <rect key="frame" x="0.0" y="130" width="320" height="44"/>
@@ -622,6 +663,9 @@ an @purchase.edu e-mail</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="xf6-9O-Klw" kind="push" id="429-A1-788"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="d56-8H-Vcc" style="IBUITableViewCellStyleDefault" id="xkd-dN-8ba">
                                         <rect key="frame" x="0.0" y="174" width="320" height="44"/>
@@ -639,6 +683,9 @@ an @purchase.edu e-mail</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="PUY-cx-zKS" kind="push" id="8yg-VX-6Sd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -660,6 +707,9 @@ an @purchase.edu e-mail</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4g9-q9-HsM" kind="push" id="8wU-RM-RLP"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="mCL-rc-uem" style="IBUITableViewCellStyleDefault" id="7Eg-Ff-pAE">
                                         <rect key="frame" x="0.0" y="284" width="320" height="44"/>
@@ -677,6 +727,9 @@ an @purchase.edu e-mail</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Tgh-MR-BjD" kind="push" id="PtO-es-2Cv"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Bb6-hw-JY1" style="IBUITableViewCellStyleDefault" id="K8b-ar-C8C">
                                         <rect key="frame" x="0.0" y="328" width="320" height="44"/>
@@ -694,6 +747,9 @@ an @purchase.edu e-mail</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="rbE-0A-Y4p" kind="push" id="NZH-pF-iiB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -724,7 +780,83 @@ an @purchase.edu e-mail</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IT-f7-yrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="1081"/>
+            <point key="canvasLocation" x="1061" y="1081"/>
+        </scene>
+        <!--View Controller - Profile Pic-->
+        <scene sceneID="y9S-nV-MTl">
+            <objects>
+                <viewController id="xf6-9O-Klw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ctc-OV-La6"/>
+                        <viewControllerLayoutGuide type="bottom" id="jd6-pu-v0R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gl4-yk-DoD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile Pic" id="ke4-a9-hn1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K2t-mN-Oap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1746" y="1176"/>
+        </scene>
+        <!--View Controller - Help Topics-->
+        <scene sceneID="D3c-Hy-01k">
+            <objects>
+                <viewController id="Tgh-MR-BjD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q67-xL-GoE"/>
+                        <viewControllerLayoutGuide type="bottom" id="AJj-h7-zsW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n8N-rS-m7w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help Topics" id="8oC-VE-ruI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sht-cU-WV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2162" y="1176"/>
+        </scene>
+        <!--View Controller - App Settings-->
+        <scene sceneID="sQT-Zt-67f">
+            <objects>
+                <viewController id="PUY-cx-zKS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wVQ-RQ-l76"/>
+                        <viewControllerLayoutGuide type="bottom" id="EaQ-Ca-qbf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lsn-7q-1KK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="App Settings" id="g7D-Ut-bgk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4r1-Ye-r44" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1746" y="1889"/>
+        </scene>
+        <!--View Controller - About-->
+        <scene sceneID="Km5-at-zVK">
+            <objects>
+                <viewController id="rbE-0A-Y4p" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rnR-lC-M9C"/>
+                        <viewControllerLayoutGuide type="bottom" id="2eW-Cc-ga4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RJ5-RL-kJz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="I2V-ck-gPN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0vf-ZB-hEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2162" y="1889"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vhf-dW-Qd9">
@@ -740,7 +872,7 @@ an @purchase.edu e-mail</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LaA-lP-utk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="582" y="1081"/>
+            <point key="canvasLocation" x="627" y="1081"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
