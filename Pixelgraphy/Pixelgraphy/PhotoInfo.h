@@ -10,4 +10,11 @@
 
 @interface PhotoInfo : NSObject
 
+@property (nonatomic,strong) NSString* ID;
+@property (nonatomic,strong) NSString* name;
+@property (nonatomic,strong) NSString* description;
+@property (nonatomic,strong) NSURL* URL;
+@property (nonatomic,strong) NSString* date;
+
++(PhotoInfo*)initWithID:(NSString*)ID Name:(NSString*)name Description:(NSString*)description URL:(NSURL*)URL Date:(NSString*)date;
 @end

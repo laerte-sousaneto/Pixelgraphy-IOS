@@ -10,4 +10,17 @@
 
 @implementation PhotoInfo
 
++(PhotoInfo*)initWithID:(NSString *)ID Name:(NSString *)name Description:(NSString *)description URL:(NSURL *)URL Date:(NSString *)date
+{
+    PhotoInfo* newPhotoInfo =[[PhotoInfo alloc]init];
+    
+    [newPhotoInfo setID:ID];
+    [newPhotoInfo setName:name];
+    [newPhotoInfo setDescription:description];
+    [newPhotoInfo setURL:URL];
+    [newPhotoInfo setDate:date];
+    
+    return newPhotoInfo;
+}
+
 @end
