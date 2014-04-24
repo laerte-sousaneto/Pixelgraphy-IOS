@@ -503,25 +503,30 @@ an @purchase.edu e-mail</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Qc-sM-all">
-                                                    <rect key="frame" x="54" y="7" width="213" height="168"/>
+                                                    <rect key="frame" x="20" y="7" width="280" height="168"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xw6-l7-7fK">
                                                     <rect key="frame" x="62" y="183" width="196" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
+                                                    <color key="textColor" red="0.0032034139310000002" green="0.93251103940000002" blue="0.28219376029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="0.38199486459999998" green="0.50424423159999998" blue="0.57124660329999999" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
+                                                    <color key="shadowColor" red="0.0032034139310000002" green="0.93251103940000002" blue="0.28219376029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bj8-jF-nuX">
-                                                    <rect key="frame" x="137" y="218" width="46" height="30"/>
+                                                    <rect key="frame" x="54" y="218" width="213" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button">
+                                                    <state key="normal" title="More Details">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.21195204656044436" green="0.80985924636241979" blue="0.93251103940000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.38199486461049892" green="0.50424423164836207" blue="0.57124660326086962" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageView" destination="5Qc-sM-all" id="kH2-oB-EbM"/>
