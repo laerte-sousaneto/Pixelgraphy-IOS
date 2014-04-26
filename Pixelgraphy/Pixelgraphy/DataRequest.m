@@ -39,6 +39,15 @@
     [http setPageURL:url];
     [http sendHttpRequest:postString];
 }
+-(void)getGlobalPhotos
+{    
+    url = [NSURL URLWithString:@"http://test.pixelgraphy.net/PHP/globalImagesInJSON.php"];
+        
+    http = [HttpRequest initWithURL:url];
+    [http setDelegate:_delegate];
+    [http setPageURL:url];
+    [http sendHttpRequest];
+}
 -(void)getProfileData
 {
     //Gotta make profile data return as JSON first before I can do this

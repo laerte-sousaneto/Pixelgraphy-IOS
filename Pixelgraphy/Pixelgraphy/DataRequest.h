@@ -15,6 +15,7 @@
 
 +(DataRequest*)initWithUserID:(NSString*) userID;
 -(void)getUserPhotos;
+-(void)getGlobalPhotos;
 -(void)getProfileData;
 
 @end

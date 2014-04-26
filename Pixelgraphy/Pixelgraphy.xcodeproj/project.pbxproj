@@ -32,6 +32,7 @@
 		AA8B8D3E18BC4218005C1C53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B8D2018BC4218005C1C53 /* UIKit.framework */; };
 		AA8B8D4618BC4218005C1C53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA8B8D4418BC4218005C1C53 /* InfoPlist.strings */; };
 		AA8B8D4818BC4218005C1C53 /* PixelgraphyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8B8D4718BC4218005C1C53 /* PixelgraphyTests.m */; };
+		AAB479A2190C4625002CBCDB /* GlobalFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		AA8B8D4318BC4218005C1C53 /* PixelgraphyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PixelgraphyTests-Info.plist"; sourceTree = "<group>"; };
 		AA8B8D4518BC4218005C1C53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA8B8D4718BC4218005C1C53 /* PixelgraphyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PixelgraphyTests.m; sourceTree = "<group>"; };
+		AAB479A0190C4625002CBCDB /* GlobalFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFeedViewController.h; sourceTree = "<group>"; };
+		AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalFeedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +148,6 @@
 		AA8B8D2218BC4218005C1C53 /* Pixelgraphy */ = {
 			isa = PBXGroup;
 			children = (
-				AA10C6FE1906297500BC36E3 /* HttpRequest.h */,
-				AA10C6FF1906297500BC36E3 /* HttpRequest.m */,
 				AA8B8D2B18BC4218005C1C53 /* AppDelegate.h */,
 				AA8B8D2C18BC4218005C1C53 /* AppDelegate.m */,
 				AA8B8D2E18BC4218005C1C53 /* Main.storyboard */,
@@ -162,14 +163,18 @@
 				AA8B8D3218BC4218005C1C53 /* ViewController.m */,
 				8BBD6A4D19061E730013BACB /* LoadingScreenViewController.h */,
 				8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */,
-				AA10C6FB1906173A00BC36E3 /* AccountManager.h */,
-				AA10C6FC1906173A00BC36E3 /* AccountManager.m */,
+				AAB479A0190C4625002CBCDB /* GlobalFeedViewController.h */,
+				AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */,
+				AA2C0ACA19087F7700F184EA /* MyPhotosViewController.h */,
+				AA2C0ACB19087F7700F184EA /* MyPhotosViewController.m */,
 				AA8B8D3418BC4218005C1C53 /* Images.xcassets */,
 				AA8B8D2318BC4218005C1C53 /* Supporting Files */,
 				AA2C0AC719087E6E00F184EA /* MyPhotoCell.h */,
 				AA2C0AC819087E6E00F184EA /* MyPhotoCell.m */,
-				AA2C0ACA19087F7700F184EA /* MyPhotosViewController.h */,
-				AA2C0ACB19087F7700F184EA /* MyPhotosViewController.m */,
+				AA10C6FE1906297500BC36E3 /* HttpRequest.h */,
+				AA10C6FF1906297500BC36E3 /* HttpRequest.m */,
+				AA10C6FB1906173A00BC36E3 /* AccountManager.h */,
+				AA10C6FC1906173A00BC36E3 /* AccountManager.m */,
 				AA2C0ACD19088AE900F184EA /* DataRequest.h */,
 				AA2C0ACE19088AE900F184EA /* DataRequest.m */,
 				AA2C0AD019089C8100F184EA /* PhotoInfo.h */,
@@ -316,6 +321,7 @@
 				AA10C6FD1906173A00BC36E3 /* AccountManager.m in Sources */,
 				8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */,
 				8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */,
+				AAB479A2190C4625002CBCDB /* GlobalFeedViewController.m in Sources */,
 				AA8B8D2918BC4218005C1C53 /* main.m in Sources */,
 				AA2C0ACF19088AE900F184EA /* DataRequest.m in Sources */,
 			);
