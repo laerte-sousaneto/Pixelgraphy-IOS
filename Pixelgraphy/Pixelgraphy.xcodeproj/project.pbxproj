@@ -33,6 +33,7 @@
 		AA8B8D4618BC4218005C1C53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA8B8D4418BC4218005C1C53 /* InfoPlist.strings */; };
 		AA8B8D4818BC4218005C1C53 /* PixelgraphyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8B8D4718BC4218005C1C53 /* PixelgraphyTests.m */; };
 		AAB479A2190C4625002CBCDB /* GlobalFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */; };
+		AAB479A5190C4F09002CBCDB /* MyTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		AA8B8D4718BC4218005C1C53 /* PixelgraphyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PixelgraphyTests.m; sourceTree = "<group>"; };
 		AAB479A0190C4625002CBCDB /* GlobalFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFeedViewController.h; sourceTree = "<group>"; };
 		AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalFeedViewController.m; sourceTree = "<group>"; };
+		AAB479A3190C4F09002CBCDB /* MyTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewDataSource.h; sourceTree = "<group>"; };
+		AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 				AA8B8D2318BC4218005C1C53 /* Supporting Files */,
 				AA2C0AC719087E6E00F184EA /* MyPhotoCell.h */,
 				AA2C0AC819087E6E00F184EA /* MyPhotoCell.m */,
+				AAB479A3190C4F09002CBCDB /* MyTableViewDataSource.h */,
+				AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */,
 				AA10C6FE1906297500BC36E3 /* HttpRequest.h */,
 				AA10C6FF1906297500BC36E3 /* HttpRequest.m */,
 				AA10C6FB1906173A00BC36E3 /* AccountManager.h */,
@@ -315,6 +320,7 @@
 				AA2C0AC919087E6E00F184EA /* MyPhotoCell.m in Sources */,
 				AA10C7001906297500BC36E3 /* HttpRequest.m in Sources */,
 				AA2C0ACC19087F7700F184EA /* MyPhotosViewController.m in Sources */,
+				AAB479A5190C4F09002CBCDB /* MyTableViewDataSource.m in Sources */,
 				8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */,
 				AA2C0AD219089C8100F184EA /* PhotoInfo.m in Sources */,
 				AA8B8D2D18BC4218005C1C53 /* AppDelegate.m in Sources */,

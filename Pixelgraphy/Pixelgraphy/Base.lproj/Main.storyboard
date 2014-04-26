@@ -251,7 +251,7 @@ an @purchase.edu e-mail</string>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="MOk-fz-msS" id="WvL-xW-ZJP"/>
+                                    <outlet property="dataSource" destination="KYf-gJ-6sO" id="Adv-bb-UwO"/>
                                     <outlet property="delegate" destination="MOk-fz-msS" id="oo5-Pe-mnZ"/>
                                 </connections>
                             </tableView>
@@ -260,10 +260,12 @@ an @purchase.edu e-mail</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Global Feed" id="Y7u-vV-My2"/>
                     <connections>
+                        <outlet property="dataSource" destination="KYf-gJ-6sO" id="8Fz-JP-wbY"/>
                         <outlet property="tableView" destination="zCf-ZG-xWo" id="zX6-vD-KPo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hq9-1q-Oz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="KYf-gJ-6sO" userLabel="Table View Data Source" customClass="MyTableViewDataSource"/>
             </objects>
             <point key="canvasLocation" x="627" y="-268"/>
         </scene>
@@ -518,7 +520,7 @@ an @purchase.edu e-mail</string>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="eEi-ni-lvh" id="nMb-H4-1KG"/>
+                                    <outlet property="dataSource" destination="trz-Vo-MGg" id="Nuc-AH-m5f"/>
                                     <outlet property="delegate" destination="eEi-ni-lvh" id="HRx-x2-OqC"/>
                                 </connections>
                             </tableView>
@@ -527,10 +529,12 @@ an @purchase.edu e-mail</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Photos" id="wJi-7Q-l6Q"/>
                     <connections>
+                        <outlet property="dataSource" destination="trz-Vo-MGg" id="lmL-Lr-SwI"/>
                         <outlet property="tableView" destination="vZI-eP-h1f" id="gD6-HO-Vuz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v57-zd-bLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="trz-Vo-MGg" userLabel="Table View Data Source" customClass="MyTableViewDataSource"/>
             </objects>
             <point key="canvasLocation" x="1061" y="393"/>
         </scene>

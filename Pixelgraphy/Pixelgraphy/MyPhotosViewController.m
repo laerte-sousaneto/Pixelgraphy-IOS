@@ -10,10 +10,11 @@
 #import "MyPhotoCell.h"
 #import "DataRequest.h"
 #import "PhotoInfo.h"
+#import "MyTableViewDataSource.h"
+@interface MyPhotosViewController () <UITableViewDelegate>
 
-@interface MyPhotosViewController () <UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet MyTableViewDataSource *dataSource;
 
-@property (nonatomic,strong) NSMutableArray* data;
 
 @end
 
@@ -32,20 +33,18 @@
 {
     [super viewDidLoad];
     
-    self.data = [[NSMutableArray alloc] init];
-    
     NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
     NSString* userID = [userInfo stringForKey:@"uuid"];
     
-    //DataRequest* data = [DataRequest initWithUserID:@"52a89642c025c"];
-    DataRequest* data = [DataRequest initWithUserID:userID];
+    DataRequest* dataRequest = [DataRequest initWithUserID:userID];
     
-    [data setDelegate:self];
-    [data getUserPhotos];
+    [dataRequest setDelegate:self];
+    [dataRequest getUserPhotos];
     // Do any additional setup after loading the view.
 }
 -(void)onSuccess:(NSData*)data
 {
+    NSMutableArray* tableData = [[NSMutableArray alloc] init];
     NSError* jsonError;
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
     
@@ -62,18 +61,16 @@
         
         PhotoInfo* photoInfo = [PhotoInfo initWithID:ID Name:name Description:description URL:url Date:date];
         
-        [self.data addObject:photoInfo];
+        [tableData addObject:photoInfo];
         
         //return to the main thread and update table view
         dispatch_async(dispatch_get_main_queue(),^
         {
+            self.dataSource.data = tableData;
             [self.tableView reloadData];
         });
         
     }
-    
-    
-    
 }
 -(void)onError:(NSError*)connectionError
 {
@@ -84,29 +81,6 @@
 
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString* CellIdentifier = @"Cell";
-    NSInteger row = indexPath.row;
-    PhotoInfo* photoInfo = self.data[row];
-    
-    MyPhotoCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    if(cell == nil)
-    {
-        cell = [[MyPhotoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
-    }
-    
-    cell.imageView.image = photoInfo.image;
-    cell.title.text = photoInfo.name;
-    
-    return cell;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.data.count;
-}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
