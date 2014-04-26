@@ -16,7 +16,6 @@
 @interface GlobalFeedViewController () <UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MyTableViewDataSource *dataSource;
-@property (nonatomic) int index;
 
 @end
 
@@ -94,20 +93,24 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"photoDetails"])
-    {
-        PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
-        controller.info = self.dataSource.data[self.index];
-    }
-}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.contentView.backgroundColor =[UIColor darkGrayColor];
-    self.index = indexPath.row;
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"photoDetails"])
+    {
+        NSIndexPath* indexPath = [_tableView indexPathForSelectedRow];
+        PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
+        controller.info = self.dataSource.data[indexPath.row];
+        controller.photoIndexPath = indexPath;
+        
+    }
+}
+
 /*
 #pragma mark - Navigation
 

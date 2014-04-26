@@ -16,7 +16,6 @@
 @interface MyPhotosViewController () <UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MyTableViewDataSource *dataSource;
-@property (nonatomic) int index;
 
 @end
 
@@ -87,15 +86,17 @@
 {
     if ([segue.identifier isEqualToString:@"photoDetails"])
     {
+        NSIndexPath* indexPath = [_tableView indexPathForSelectedRow];
         PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
-        controller.info = self.dataSource.data[self.index];
+        controller.info = self.dataSource.data[indexPath.row];
+        controller.photoIndexPath = indexPath;
+        
     }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.contentView.backgroundColor =[UIColor darkGrayColor];
-    self.index = indexPath.row;
 }
 - (void)didReceiveMemoryWarning
 {

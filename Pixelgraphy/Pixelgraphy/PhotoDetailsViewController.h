@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionArea;
 
+@property (nonatomic) NSIndexPath* photoIndexPath;
+
 @end
