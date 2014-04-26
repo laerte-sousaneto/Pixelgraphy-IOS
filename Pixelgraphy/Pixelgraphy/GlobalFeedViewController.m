@@ -11,11 +11,12 @@
 #import "DataRequest.h"
 #import "MyPhotoCell.h"
 #import "MyTableViewDataSource.h"
+#import "PhotoDetailsViewController.h"
 
 @interface GlobalFeedViewController () <UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MyTableViewDataSource *dataSource;
-
+@property (nonatomic) int index;
 
 @end
 
@@ -52,7 +53,7 @@
     NSError* jsonError;
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
     
-    NSLog(@"%@",[json description]);
+    //NSLog(@"%@",[json description]);
     
     for(NSDictionary* entry in json)
     {
@@ -93,6 +94,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"photoDetails"])
+    {
+        PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
+        controller.info = self.dataSource.data[self.index];
+    }
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.contentView.backgroundColor =[UIColor darkGrayColor];
+    self.index = indexPath.row;
+}
 /*
 #pragma mark - Navigation
 

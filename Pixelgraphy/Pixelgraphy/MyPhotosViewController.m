@@ -11,10 +11,12 @@
 #import "DataRequest.h"
 #import "PhotoInfo.h"
 #import "MyTableViewDataSource.h"
+#import "PhotoDetailsViewController.h"
+
 @interface MyPhotosViewController () <UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MyTableViewDataSource *dataSource;
-
+@property (nonatomic) int index;
 
 @end
 
@@ -81,10 +83,19 @@
 
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"photoDetails"])
+    {
+        PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
+        controller.info = self.dataSource.data[self.index];
+    }
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.contentView.backgroundColor =[UIColor darkGrayColor];
+    self.index = indexPath.row;
 }
 - (void)didReceiveMemoryWarning
 {

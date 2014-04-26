@@ -7,7 +7,7 @@
 //
 
 #import "MyPhotoCell.h"
-
+#import "PhotoDetailsViewController.h"
 @implementation MyPhotoCell
 
 @synthesize imageView;

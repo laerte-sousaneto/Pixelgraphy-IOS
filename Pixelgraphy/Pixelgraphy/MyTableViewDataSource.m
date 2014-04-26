@@ -9,6 +9,7 @@
 #import "MyTableViewDataSource.h"
 #import "PhotoInfo.h"
 #import "MyPhotoCell.h"
+#import "PhotoDetailsViewController.h"
 
 @implementation MyTableViewDataSource
 

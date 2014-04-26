@@ -34,6 +34,7 @@
 		AA8B8D4818BC4218005C1C53 /* PixelgraphyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8B8D4718BC4218005C1C53 /* PixelgraphyTests.m */; };
 		AAB479A2190C4625002CBCDB /* GlobalFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */; };
 		AAB479A5190C4F09002CBCDB /* MyTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */; };
+		AAB479A8190C5E7F002CBCDB /* PhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A7190C5E7F002CBCDB /* PhotoDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalFeedViewController.m; sourceTree = "<group>"; };
 		AAB479A3190C4F09002CBCDB /* MyTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewDataSource.h; sourceTree = "<group>"; };
 		AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewDataSource.m; sourceTree = "<group>"; };
+		AAB479A6190C5E7F002CBCDB /* PhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailsViewController.h; sourceTree = "<group>"; };
+		AAB479A7190C5E7F002CBCDB /* PhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 				AA8B8D2B18BC4218005C1C53 /* AppDelegate.h */,
 				AA8B8D2C18BC4218005C1C53 /* AppDelegate.m */,
 				AA8B8D2E18BC4218005C1C53 /* Main.storyboard */,
+				AAB479A6190C5E7F002CBCDB /* PhotoDetailsViewController.h */,
+				AAB479A7190C5E7F002CBCDB /* PhotoDetailsViewController.m */,
 				37B296DE190963450087D4AD /* UploadPhotoViewController.h */,
 				37B296DF190963450087D4AD /* UploadPhotoViewController.m */,
 				8B2746FC19083519005CE38F /* ProfileViewController.h */,
@@ -315,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B296E0190963450087D4AD /* UploadPhotoViewController.m in Sources */,
+				AAB479A8190C5E7F002CBCDB /* PhotoDetailsViewController.m in Sources */,
 				AA8B8D3318BC4218005C1C53 /* ViewController.m in Sources */,
 				8B2746FE19083519005CE38F /* ProfileViewController.m in Sources */,
 				AA2C0AC919087E6E00F184EA /* MyPhotoCell.m in Sources */,

@@ -235,18 +235,12 @@ an @purchase.edu e-mail</string>
                                                     <color key="shadowColor" red="0.0032034139310000002" green="0.93251103940000002" blue="0.28219376029999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bnY-fI-PGB">
-                                                    <rect key="frame" x="54" y="223" width="213" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="More Details">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageView" destination="fn4-Uo-iap" id="Pv2-pw-tyn"/>
                                             <outlet property="title" destination="gVS-Rm-Ega" id="TPU-qz-D4g"/>
+                                            <segue destination="wIY-n9-iD8" kind="modal" identifier="photoDetails" id="hkM-Kj-0LX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -267,7 +261,60 @@ an @purchase.edu e-mail</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hq9-1q-Oz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="KYf-gJ-6sO" userLabel="Table View Data Source" customClass="MyTableViewDataSource"/>
             </objects>
-            <point key="canvasLocation" x="627" y="-268"/>
+            <point key="canvasLocation" x="-129" y="1612"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="wGN-zN-IPX">
+            <objects>
+                <viewController id="wIY-n9-iD8" customClass="PhotoDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DNp-1G-b7f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="uts-Mv-HIG">
+                                <rect key="frame" x="0.0" y="13" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="Efw-5z-RAV">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="PPz-XJ-zX2">
+                                            <connections>
+                                                <segue destination="9FC-aT-tUT" kind="modal" id="qu2-f9-eOd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="A5W-bd-IYZ">
+                                <rect key="frame" x="20" y="96" width="280" height="247"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LVt-kp-Dvz">
+                                <rect key="frame" x="20" y="369" width="280" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="MTu-bf-tKP">
+                                <rect key="frame" x="20" y="420" width="280" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.10398219451856028" green="0.60843612868701225" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionArea" destination="MTu-bf-tKP" id="uS9-PQ-P8D"/>
+                        <outlet property="imageView" destination="A5W-bd-IYZ" id="9vv-pv-1he"/>
+                        <outlet property="titleLabel" destination="LVt-kp-Dvz" id="u4n-IO-nVC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P3N-is-7lL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="1895"/>
         </scene>
         <!--Upload Photo View Controller - Upload Photo-->
         <scene sceneID="kZE-N2-XGz">
@@ -516,6 +563,7 @@ an @purchase.edu e-mail</string>
                                         <connections>
                                             <outlet property="imageView" destination="5Qc-sM-all" id="kH2-oB-EbM"/>
                                             <outlet property="title" destination="xw6-l7-7fK" id="Nw8-ng-Lu0"/>
+                                            <segue destination="wIY-n9-iD8" kind="modal" identifier="photoDetails" modalTransitionStyle="flipHorizontal" id="fxf-FE-jCp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -536,7 +584,7 @@ an @purchase.edu e-mail</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v57-zd-bLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="trz-Vo-MGg" userLabel="Table View Data Source" customClass="MyTableViewDataSource"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="393"/>
+            <point key="canvasLocation" x="-123" y="2369"/>
         </scene>
         <!--View Controller - Edit Profile-->
         <scene sceneID="R57-H4-hnG">
@@ -823,4 +871,8 @@ an @purchase.edu e-mail</string>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="qu2-f9-eOd"/>
+        <segue reference="fxf-FE-jCp"/>
+    </inferredMetricsTieBreakers>
 </document>
