@@ -37,7 +37,7 @@
     DataRequest* dataRequest = [DataRequest initWithUserID:userID];
     
     [dataRequest setDelegate:self];
-    //[dataRequest getUserPhotos];
+    [dataRequest getProfileData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,7 +47,10 @@
 }
 -(void)onSuccess:(NSData*)data
 {
-    NSLog(@"Ping!");
+    NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSLog(@"%@", result);
+    NSLog(@"Ping!!!");
+    
 }
 -(void)onError:(NSError*)connectionError
 {
