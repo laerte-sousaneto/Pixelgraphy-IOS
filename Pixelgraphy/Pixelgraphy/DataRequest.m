@@ -61,7 +61,14 @@
 }
 -(void)getProfileData
 {
-    //Gotta make profile data return as JSON first before I can do this
+    url = [NSURL URLWithString:@"http://test.pixelgraphy.net/PHP/profileReturn.php"];
+    
+    NSString* postString = [NSString stringWithFormat:@"&userID=%@",_userID];
+    
+    http = [HttpRequest initWithURL:url];
+    [http setDelegate:_delegate];
+    [http setPageURL:url];
+    [http sendHttpRequest:postString];
 }
 
 @end

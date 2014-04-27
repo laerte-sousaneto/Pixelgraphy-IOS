@@ -31,14 +31,31 @@
     [super viewDidLoad];
     _ScrollViewRO.contentSize =CGSizeMake(320, 1000);
     //The below two lines are how to access the UUID after it is saved after a successful login
-    NSUserDefaults *data = [NSUserDefaults standardUserDefaults];
-    NSLog(@"%@", [data stringForKey:@"uuid"]);
+    NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
+    NSString* userID = [userInfo stringForKey:@"uuid"];
+    
+    DataRequest* dataRequest = [DataRequest initWithUserID:userID];
+    
+    [dataRequest setDelegate:self];
+    //[dataRequest getUserPhotos];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)onSuccess:(NSData*)data
+{
+    NSLog(@"Ping!");
+}
+-(void)onError:(NSError*)connectionError
+{
+    NSLog(@"error");
+}
+-(void)beforeSend
+{
+    
 }
 
 @end
