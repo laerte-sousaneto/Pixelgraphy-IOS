@@ -1,25 +1,21 @@
 //
-//  MyPhotosViewController.m
+//  CommentsViewController.m
 //  Pixelgraphy
 //
-//  Created by Laerte Sousa Neto on 4/23/14.
+//  Created by Laerte Sousa Neto on 4/27/14.
 //  Copyright (c) 2014 Laerte Sousa Neto. All rights reserved.
 //
 
-#import "MyPhotosViewController.h"
-#import "MyPhotoCell.h"
+#import "CommentsViewController.h"
 #import "DataRequest.h"
-#import "PhotoInfo.h"
-#import "MyTableViewDataSource.h"
-#import "PhotoDetailsViewController.h"
+#import "CommentData.h"
 
-@interface MyPhotosViewController () <UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet MyTableViewDataSource *dataSource;
+@interface CommentsViewController ()
 
 @end
 
-@implementation MyPhotosViewController
+@implementation CommentsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,9 +36,11 @@
     DataRequest* dataRequest = [DataRequest initWithUserID:userID];
     
     [dataRequest setDelegate:self];
-    [dataRequest getUserPhotos];
+    [dataRequest getCommentsWithID:@""];
+    
     // Do any additional setup after loading the view.
 }
+
 -(void)onSuccess:(NSData*)data
 {
     NSMutableArray* tableData = [[NSMutableArray alloc] init];
@@ -53,16 +51,14 @@
     for(NSDictionary* entry in json)
     {
         NSString* ID = [entry objectForKey:@"ID"];
-        NSString* name = [entry objectForKey:@"name"];
-        NSString* description = [entry objectForKey:@"description"];
-        NSString* directory = [NSString stringWithFormat:@"http://pixelgraphy.net/%@",[entry objectForKey:@"directory"]];
+        NSString* posterName = [entry objectForKey:@"poster"];
+        NSString* posterID = [entry objectForKey:@"posterID"];
+        NSString* comment = [entry objectForKey:@"comment"];
         NSString* date = [entry objectForKey:@"date"];
         
-        NSURL* url = [NSURL URLWithString:directory];
+        CommentData* commentData = [CommentData initWithID:ID PosterID:posterID PosterName:posterName Comment:comment Date:date];
         
-        PhotoInfo* photoInfo = [PhotoInfo initWithID:ID Name:name Description:description URL:url Date:date];
-        
-        [tableData addObject:photoInfo];
+        [tableData addObject:commentData];
         
         //return to the main thread and update table view
         dispatch_async(dispatch_get_main_queue(),^
@@ -82,22 +78,6 @@
 
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"photoDetails"])
-    {
-        NSIndexPath* indexPath = [_tableView indexPathForSelectedRow];
-        PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
-        controller.info = self.dataSource.data[indexPath.row];
-        controller.photoIndexPath = indexPath;
-        
-    }
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.contentView.backgroundColor =[UIColor darkGrayColor];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -114,8 +94,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-
-
 
 @end
