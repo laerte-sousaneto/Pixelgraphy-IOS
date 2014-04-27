@@ -35,6 +35,10 @@
 		AAB479A2190C4625002CBCDB /* GlobalFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */; };
 		AAB479A5190C4F09002CBCDB /* MyTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */; };
 		AAB479A8190C5E7F002CBCDB /* PhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A7190C5E7F002CBCDB /* PhotoDetailsViewController.m */; };
+		AAB479AB190D517C002CBCDB /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479AA190D517C002CBCDB /* CommentsViewController.m */; };
+		AAB479AE190D51D0002CBCDB /* CommentCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479AD190D51D0002CBCDB /* CommentCellTableViewCell.m */; };
+		AAB479B1190D524A002CBCDB /* CommentsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479B0190D524A002CBCDB /* CommentsDataSource.m */; };
+		AAB479B4190D5301002CBCDB /* CommentData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479B3190D5301002CBCDB /* CommentData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +99,14 @@
 		AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewDataSource.m; sourceTree = "<group>"; };
 		AAB479A6190C5E7F002CBCDB /* PhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailsViewController.h; sourceTree = "<group>"; };
 		AAB479A7190C5E7F002CBCDB /* PhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailsViewController.m; sourceTree = "<group>"; };
+		AAB479A9190D517C002CBCDB /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		AAB479AA190D517C002CBCDB /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		AAB479AC190D51D0002CBCDB /* CommentCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCellTableViewCell.h; sourceTree = "<group>"; };
+		AAB479AD190D51D0002CBCDB /* CommentCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCellTableViewCell.m; sourceTree = "<group>"; };
+		AAB479AF190D524A002CBCDB /* CommentsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsDataSource.h; sourceTree = "<group>"; };
+		AAB479B0190D524A002CBCDB /* CommentsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsDataSource.m; sourceTree = "<group>"; };
+		AAB479B2190D5301002CBCDB /* CommentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentData.h; sourceTree = "<group>"; };
+		AAB479B3190D5301002CBCDB /* CommentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,12 +187,18 @@
 				AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */,
 				AA2C0ACA19087F7700F184EA /* MyPhotosViewController.h */,
 				AA2C0ACB19087F7700F184EA /* MyPhotosViewController.m */,
+				AAB479A9190D517C002CBCDB /* CommentsViewController.h */,
+				AAB479AA190D517C002CBCDB /* CommentsViewController.m */,
 				AA8B8D3418BC4218005C1C53 /* Images.xcassets */,
 				AA8B8D2318BC4218005C1C53 /* Supporting Files */,
 				AA2C0AC719087E6E00F184EA /* MyPhotoCell.h */,
 				AA2C0AC819087E6E00F184EA /* MyPhotoCell.m */,
+				AAB479AC190D51D0002CBCDB /* CommentCellTableViewCell.h */,
+				AAB479AD190D51D0002CBCDB /* CommentCellTableViewCell.m */,
 				AAB479A3190C4F09002CBCDB /* MyTableViewDataSource.h */,
 				AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */,
+				AAB479AF190D524A002CBCDB /* CommentsDataSource.h */,
+				AAB479B0190D524A002CBCDB /* CommentsDataSource.m */,
 				AA10C6FE1906297500BC36E3 /* HttpRequest.h */,
 				AA10C6FF1906297500BC36E3 /* HttpRequest.m */,
 				AA10C6FB1906173A00BC36E3 /* AccountManager.h */,
@@ -189,6 +207,8 @@
 				AA2C0ACE19088AE900F184EA /* DataRequest.m */,
 				AA2C0AD019089C8100F184EA /* PhotoInfo.h */,
 				AA2C0AD119089C8100F184EA /* PhotoInfo.m */,
+				AAB479B2190D5301002CBCDB /* CommentData.h */,
+				AAB479B3190D5301002CBCDB /* CommentData.m */,
 			);
 			path = Pixelgraphy;
 			sourceTree = "<group>";
@@ -326,13 +346,17 @@
 				AA2C0AC919087E6E00F184EA /* MyPhotoCell.m in Sources */,
 				AA10C7001906297500BC36E3 /* HttpRequest.m in Sources */,
 				AA2C0ACC19087F7700F184EA /* MyPhotosViewController.m in Sources */,
+				AAB479AE190D51D0002CBCDB /* CommentCellTableViewCell.m in Sources */,
 				AAB479A5190C4F09002CBCDB /* MyTableViewDataSource.m in Sources */,
 				8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */,
 				AA2C0AD219089C8100F184EA /* PhotoInfo.m in Sources */,
 				AA8B8D2D18BC4218005C1C53 /* AppDelegate.m in Sources */,
+				AAB479B1190D524A002CBCDB /* CommentsDataSource.m in Sources */,
 				AA10C6FD1906173A00BC36E3 /* AccountManager.m in Sources */,
 				8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */,
 				8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */,
+				AAB479B4190D5301002CBCDB /* CommentData.m in Sources */,
+				AAB479AB190D517C002CBCDB /* CommentsViewController.m in Sources */,
 				AAB479A2190C4625002CBCDB /* GlobalFeedViewController.m in Sources */,
 				AA8B8D2918BC4218005C1C53 /* main.m in Sources */,
 				AA2C0ACF19088AE900F184EA /* DataRequest.m in Sources */,
