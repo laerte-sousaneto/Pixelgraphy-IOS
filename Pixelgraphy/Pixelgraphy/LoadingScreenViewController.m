@@ -2,7 +2,7 @@
 //  LoadingScreenViewController.m
 //  Pixelgraphy
 //
-//  Created by ODESSA on 4/21/14.
+//  Created by PAVEGLIO, ANTHONY on 4/21/14.
 //  Copyright (c) 2014 Laerte Sousa Neto. All rights reserved.
 //
 
