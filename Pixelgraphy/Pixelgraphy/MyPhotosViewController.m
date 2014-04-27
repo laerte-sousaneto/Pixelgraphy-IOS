@@ -88,7 +88,9 @@
     {
         NSIndexPath* indexPath = [_tableView indexPathForSelectedRow];
         PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
+        
         controller.info = self.dataSource.data[indexPath.row];
+        
         controller.photoIndexPath = indexPath;
         
     }
