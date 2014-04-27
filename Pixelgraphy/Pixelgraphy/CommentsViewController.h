@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CommentsDataSource.h"
+#import "PhotoInfo.h"
 
 @interface CommentsViewController : UIViewController<UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet CommentsDataSource *dataSource;
-- (IBAction)BackTouchUp:(UIButton *)sender;
+@property (nonatomic) PhotoInfo* info;
 
 @end

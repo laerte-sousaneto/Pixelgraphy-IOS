@@ -7,6 +7,7 @@
 //
 
 #import "PhotoDetailsViewController.h"
+#import "CommentsViewController.h"
 
 @interface PhotoDetailsViewController ()
 
@@ -26,9 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     _imageView.image = [_info image];
     _titleLabel.text = [_info name];
     _descriptionArea.text = [_info description];
+    
+    
+    NSLog(@"Start");
     // Do any additional setup after loading the view.
 }
 
@@ -37,7 +42,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ViewComments"])
+    {
+        CommentsViewController* controller = (CommentsViewController*)segue.destinationViewController;
+        
+        controller.info = _info;
+    }
+}
 /*
 #pragma mark - Navigation
 
