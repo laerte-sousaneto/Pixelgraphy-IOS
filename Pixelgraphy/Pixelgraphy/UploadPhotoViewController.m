@@ -26,9 +26,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
+    [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
 	// Do any additional setup after loading the view.
 }
+
+- (void)didShow
+{
+    NSLog(@"keyboard shown");
+    _ScrollViewRO.scrollEnabled = true;
+}
+
+- (void)didHide
+{
+    NSLog(@"Keyboard hidden");
+    [_ScrollViewRO setContentOffset:CGPointZero animated:YES];
+    _ScrollViewRO.scrollEnabled = false;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
