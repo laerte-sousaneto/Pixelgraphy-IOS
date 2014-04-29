@@ -52,7 +52,20 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0)
     {
-        NSLog(@"Photo from camera");
+        
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        if (TARGET_IPHONE_SIMULATOR) {
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        else
+        {
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        imagePickerController.editing = YES;
+        imagePickerController.delegate = (id)self;
+            
+        [self presentModalViewController:imagePickerController animated:YES];
+        
     }
     else if(buttonIndex == 1)
     {
