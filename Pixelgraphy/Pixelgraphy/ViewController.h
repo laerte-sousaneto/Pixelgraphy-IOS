@@ -10,7 +10,7 @@
 #import "LoadingScreenViewController.h"
 
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITextFieldDelegate>
 
 - (IBAction)LoginTouchUp:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *UsernameRO;
