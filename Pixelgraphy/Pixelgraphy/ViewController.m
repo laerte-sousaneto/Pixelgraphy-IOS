@@ -63,6 +63,7 @@
 {
     [self performLogin];
 }
+
 -(void)performLogin
 {
     if ([[_UsernameRO text] isEqualToString:@""] || [[_PasswordRO text] isEqualToString:@""])
