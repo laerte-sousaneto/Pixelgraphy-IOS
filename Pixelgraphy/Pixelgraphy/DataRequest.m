@@ -53,6 +53,19 @@
     url = [NSURL URLWithString:@"http://test.pixelgraphy.net/PHP/CommentFeed.getJSON.php"];
     
     NSString* postString = [NSString stringWithFormat:@"&image_id=%@",image_id];
+    _identifier = @"getComments";
+    
+    http = [HttpRequest initWithURL:url];
+    [http setDelegate:_delegate];
+    [http setPageURL:url];
+    [http sendHttpRequest:postString];
+}
+-(void)postComment:(NSString*)comment userID:(NSString*)userID imageID:(NSString*)imageID
+{
+    url = [NSURL URLWithString:@"http://test.pixelgraphy.net/PHP/CommentFeed.addIPhone.php"];
+    
+    NSString* postString = [NSString stringWithFormat:@"&comment=%@&userID=%@&imageID=%@",comment,userID,imageID];
+    _identifier = @"postComment";
     
     http = [HttpRequest initWithURL:url];
     [http setDelegate:_delegate];

@@ -32,8 +32,6 @@
     _titleLabel.text = [_info name];
     _descriptionArea.text = [_info description];
     
-    
-    NSLog(@"Start");
     // Do any additional setup after loading the view.
 }
 
