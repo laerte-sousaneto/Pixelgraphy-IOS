@@ -31,6 +31,10 @@
     [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
     [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
 	// Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+
 }
 
 - (void)didShow
@@ -165,4 +169,13 @@
                             ];
     [anAlert show];
 }
+
+-(void)dismissKeyboard
+{
+    [_EmailTextField resignFirstResponder];
+    [_PassTwoTextField resignFirstResponder];
+    [_PassOneTextField resignFirstResponder];
+    [_UsernameTextField resignFirstResponder];
+}
+
 @end

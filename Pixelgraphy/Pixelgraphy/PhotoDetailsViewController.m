@@ -33,6 +33,11 @@
     _descriptionArea.text = [_info description];
     
     // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +53,11 @@
         
         controller.info = _info;
     }
+}
+
+-(void)dismissKeyboard
+{
+    [_descriptionArea resignFirstResponder];
 }
 /*
 #pragma mark - Navigation
