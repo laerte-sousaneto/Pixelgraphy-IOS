@@ -12,7 +12,10 @@
 #import "PhotoDetailsViewController.h"
 
 @interface CommentsViewController ()
-
+{
+    DataRequest* dataRequest;
+    NSString* userID;
+}
 @end
 
 @implementation CommentsViewController
@@ -29,12 +32,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.commentArea.delegate = self;
     
     NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
-    NSString* userID = [userInfo stringForKey:@"uuid"];
+    userID = [userInfo stringForKey:@"uuid"];
     
-    DataRequest* dataRequest = [DataRequest initWithUserID:userID];
-    
+    dataRequest = [DataRequest initWithUserID:userID];
     [dataRequest setDelegate:self];
     [dataRequest getCommentsWithID:_info.ID];
     
@@ -43,47 +46,57 @@
 
 -(void)onSuccess:(NSData*)data
 {
-    NSMutableArray* tableData = [[NSMutableArray alloc] init];
-    NSError* jsonError;
-    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+    NSString* identifier = [dataRequest identifier];
     
-    int jsonLength = [json count];
-    
-    
-    if (jsonLength > 0)
+    if ([identifier isEqualToString:@"getComments"])
     {
-        for(NSDictionary* entry in json)
+    
+        NSMutableArray* tableData = [[NSMutableArray alloc] init];
+        NSError* jsonError;
+        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+
+        NSUInteger jsonLength = [json count];
+
+
+        if (jsonLength > 0)
         {
-            NSString* ID = [entry objectForKey:@"ID"];
-            NSString* posterName = [entry objectForKey:@"poster"];
-            NSString* posterID = [entry objectForKey:@"posterID"];
-            NSString* comment = [entry objectForKey:@"comment"];
-            NSString* date = [entry objectForKey:@"date"];
-        
-            CommentData* commentData = [CommentData initWithID:ID PosterID:posterID PosterName:posterName Comment:comment Date:date];
-        
-            [tableData addObject:commentData];
-        
-            //return to the main thread and update table view
-            dispatch_async(dispatch_get_main_queue(),^
+            for(NSDictionary* entry in json)
             {
-                self.dataSource.data = tableData;
-                [self.tableView reloadData];
-            });
+                NSString* ID = [entry objectForKey:@"ID"];
+                NSString* posterName = [entry objectForKey:@"poster"];
+                NSString* posterID = [entry objectForKey:@"posterID"];
+                NSString* comment = [entry objectForKey:@"comment"];
+                NSString* date = [entry objectForKey:@"date"];
+            
+                CommentData* commentData = [CommentData initWithID:ID PosterID:posterID PosterName:posterName Comment:comment Date:date];
+            
+                [tableData addObject:commentData];
+            
+                //return to the main thread and update table view
+                dispatch_async(dispatch_get_main_queue(),^
+                {
+                    self.dataSource.data = tableData;
+                    [self.tableView reloadData];
+                });
+            }
+        }
+        else
+        {
+                CommentData* commentData = [CommentData initWithID:@"" PosterID:@"" PosterName:@"" Comment:@"There's no comments." Date:@""];
+            
+                [tableData addObject:commentData];
+            
+                //return to the main thread and update table view
+                dispatch_async(dispatch_get_main_queue(),^
+                {
+                    self.dataSource.data = tableData;
+                    [self.tableView reloadData];
+                });
         }
     }
-    else
+    else if ([identifier isEqualToString:@"postComment"])
     {
-            CommentData* commentData = [CommentData initWithID:@"" PosterID:@"" PosterName:@"" Comment:@"There's no comments." Date:@""];
-        
-            [tableData addObject:commentData];
-        
-            //return to the main thread and update table view
-            dispatch_async(dispatch_get_main_queue(),^
-            {
-                self.dataSource.data = tableData;
-                [self.tableView reloadData];
-            });
+        [dataRequest getCommentsWithID:_info.ID];
     }
 }
 -(void)onError:(NSError*)connectionError
@@ -109,7 +122,57 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)addComment:(id)sender
+{
+    NSString* comment = _commentArea.text;
+    [dataRequest postComment:comment userID:userID imageID:[_info ID]];
+    
+    _commentArea.text = @"";
+}
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    
+    NSInteger width = textView.frame.size.width;
+    NSInteger height = textView.frame.size.height;
+    NSInteger x = textView.frame.origin.x;
+    NSInteger y = self.view.frame.origin.y+height;
+    
+    textView.frame = CGRectMake(x, y, width, height);
+}
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView
+{
+    NSInteger width = textView.frame.size.width;
+    NSInteger height = textView.frame.size.height;
+    NSInteger x = textView.frame.origin.x;
+    NSInteger y = _tableView.frame.origin.y+_tableView.frame.size.height;
+    
+    textView.frame = CGRectMake(x, y, width, height);
+    
+    [textView endEditing:YES];
+    return YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    [textView endEditing:YES];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+
+    if([text isEqualToString:@"\n"])
+    {
+        [textView resignFirstResponder];
+        return NO;
+    }
+
+    return YES;
+}
 /*
 #pragma mark - Navigation
 

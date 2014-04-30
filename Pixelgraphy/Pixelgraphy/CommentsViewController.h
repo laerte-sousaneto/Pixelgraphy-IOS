@@ -10,10 +10,11 @@
 #import "CommentsDataSource.h"
 #import "PhotoInfo.h"
 
-@interface CommentsViewController : UIViewController<UITableViewDelegate>
+@interface CommentsViewController : UIViewController<UITableViewDelegate,UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet CommentsDataSource *dataSource;
 @property (nonatomic) PhotoInfo* info;
+@property (nonatomic) IBOutlet UITextView *commentArea;
 
 @end

@@ -10,5 +10,10 @@
 
 @interface UploadPhotoViewController : UIViewController
 - (IBAction)AddPhotoTouchUp:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageViewRO;
+@property (weak, nonatomic) IBOutlet UITextField *ImageNameRO;
+@property (weak, nonatomic) IBOutlet UITextView *DescriptionRO;
+- (IBAction)UploadTO:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIScrollView *ScrollViewRO;
 
 @end

@@ -26,9 +26,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
+    [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
 	// Do any additional setup after loading the view.
 }
+
+- (void)didShow
+{
+    NSLog(@"keyboard shown");
+    _ScrollViewRO.scrollEnabled = true;
+}
+
+- (void)didHide
+{
+    NSLog(@"Keyboard hidden");
+    [_ScrollViewRO setContentOffset:CGPointZero animated:YES];
+    _ScrollViewRO.scrollEnabled = false;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -52,15 +68,86 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0)
     {
-        NSLog(@"Photo from camera");
+        
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        if (TARGET_IPHONE_SIMULATOR) {
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        else
+        {
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        imagePickerController.editing = YES;
+        imagePickerController.delegate = (id)self;
+            
+        [self presentViewController:imagePickerController animated:YES completion:nil];
+        
     }
     else if(buttonIndex == 1)
     {
-        NSLog(@"Photo from camera roll");
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePickerController.editing = YES;
+        imagePickerController.delegate = (id)self;
+        
+        [self presentViewController:imagePickerController animated:YES completion:nil];
     }
     else
     {
         NSLog(@"User Canceled");
+    }
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [_ImageViewRO setImage:image];
+    [picker dismissViewControllerAnimated:NO completion:nil];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (IBAction)UploadTO:(UIButton *)sender
+{
+    if([_ImageViewRO image] == nil)
+    {
+        UIAlertView* anAlert = [ [UIAlertView alloc]
+                                initWithTitle:@"Error"
+                                message:@"Please choose an image to upload."
+                                delegate:self
+                                cancelButtonTitle:@"OK"
+                                otherButtonTitles: nil
+                                ];
+        [anAlert show];
+    }
+    else if ([[_ImageNameRO text] isEqualToString:@""])
+    {
+        UIAlertView* anAlert = [ [UIAlertView alloc]
+                                initWithTitle:@"Error"
+                                message:@"Please specify a name."
+                                delegate:self
+                                cancelButtonTitle:@"OK"
+                                otherButtonTitles: nil
+                                ];
+        [anAlert show];
+    }
+    else if([[_DescriptionRO text] isEqualToString:@""])
+    {
+        UIAlertView* anAlert = [ [UIAlertView alloc]
+                                initWithTitle:@"Error"
+                                message:@"Please specify a description."
+                                delegate:self
+                                cancelButtonTitle:@"OK"
+                                otherButtonTitles: nil
+                                ];
+        [anAlert show];
+    }
+    else
+    {
+        NSLog(@"Upload to server");
     }
 }
 @end

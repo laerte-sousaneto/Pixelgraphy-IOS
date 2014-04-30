@@ -33,6 +33,9 @@
                                 ];
         [anAlert show];
     }
+    
+    _UsernameRO.delegate = self;
+    _PasswordRO.delegate = self;
     _failedLoginCallback = false;
 }
 -(void)beforeSend
@@ -58,6 +61,11 @@
 
 - (IBAction)LoginTouchUp:(UIButton *)sender
 {
+    [self performLogin];
+}
+
+-(void)performLogin
+{
     if ([[_UsernameRO text] isEqualToString:@""] || [[_PasswordRO text] isEqualToString:@""])
     {
         UIAlertView* anAlert = [ [UIAlertView alloc]
@@ -74,6 +82,25 @@
         [self performSegueWithIdentifier:@"TabbedVC" sender:self];
         
     }
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == _UsernameRO)
+    {
+        [textField resignFirstResponder];
+        [_PasswordRO becomeFirstResponder];
+    }
+    else if (textField == _PasswordRO)
+    {
+        [textField resignFirstResponder];
+        [self performLogin];
+    }
+    
+    return YES;
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 //Sends data to loading screen
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		37B296E0190963450087D4AD /* UploadPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B296DF190963450087D4AD /* UploadPhotoViewController.m */; };
 		8B2746FE19083519005CE38F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2746FD19083519005CE38F /* ProfileViewController.m */; };
+		8BAEF418191048F100453124 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF417191048F100453124 /* Accelerate.framework */; };
+		8BAEF41A191048FA00453124 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF419191048FA00453124 /* CoreData.framework */; };
+		8BAEF41C1910490C00453124 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF41B1910490C00453124 /* libsqlite3.0.dylib */; };
+		8BAEF41E1910491B00453124 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF41D1910491B00453124 /* libz.1.2.5.dylib */; };
+		8BAEF4201910492C00453124 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF41F1910492C00453124 /* MessageUI.framework */; };
+		8BAEF4221910493400453124 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF4211910493400453124 /* OpenGLES.framework */; };
+		8BAEF4241910493D00453124 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF4231910493D00453124 /* QuartzCore.framework */; };
+		8BAEF4261910494500453124 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF4251910494500453124 /* StoreKit.framework */; };
 		8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */; };
 		8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025A18FEE403005D22A9 /* VerifyFieldsViewController.m */; };
 		8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025D18FF00B7005D22A9 /* LoginSupportViewController.m */; };
@@ -56,6 +64,14 @@
 		37B296DF190963450087D4AD /* UploadPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadPhotoViewController.m; sourceTree = "<group>"; };
 		8B2746FC19083519005CE38F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		8B2746FD19083519005CE38F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		8BAEF417191048F100453124 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		8BAEF419191048FA00453124 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8BAEF41B1910490C00453124 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		8BAEF41D1910491B00453124 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		8BAEF41F1910492C00453124 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		8BAEF4211910493400453124 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8BAEF4231910493D00453124 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8BAEF4251910494500453124 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8BBD6A4D19061E730013BACB /* LoadingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScreenViewController.h; sourceTree = "<group>"; };
 		8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScreenViewController.m; sourceTree = "<group>"; };
 		8BD9025918FEE403005D22A9 /* VerifyFieldsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyFieldsViewController.h; sourceTree = "<group>"; };
@@ -114,9 +130,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA8B8D1F18BC4218005C1C53 /* CoreGraphics.framework in Frameworks */,
 				AA8B8D2118BC4218005C1C53 /* UIKit.framework in Frameworks */,
+				8BAEF4261910494500453124 /* StoreKit.framework in Frameworks */,
+				8BAEF4241910493D00453124 /* QuartzCore.framework in Frameworks */,
+				8BAEF4221910493400453124 /* OpenGLES.framework in Frameworks */,
+				8BAEF4201910492C00453124 /* MessageUI.framework in Frameworks */,
 				AA8B8D1D18BC4218005C1C53 /* Foundation.framework in Frameworks */,
+				8BAEF41E1910491B00453124 /* libz.1.2.5.dylib in Frameworks */,
+				8BAEF41C1910490C00453124 /* libsqlite3.0.dylib in Frameworks */,
+				8BAEF41A191048FA00453124 /* CoreData.framework in Frameworks */,
+				8BAEF418191048F100453124 /* Accelerate.framework in Frameworks */,
+				AA8B8D1F18BC4218005C1C53 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +179,14 @@
 		AA8B8D1B18BC4218005C1C53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BAEF4251910494500453124 /* StoreKit.framework */,
+				8BAEF4231910493D00453124 /* QuartzCore.framework */,
+				8BAEF4211910493400453124 /* OpenGLES.framework */,
+				8BAEF41F1910492C00453124 /* MessageUI.framework */,
+				8BAEF41D1910491B00453124 /* libz.1.2.5.dylib */,
+				8BAEF41B1910490C00453124 /* libsqlite3.0.dylib */,
+				8BAEF419191048FA00453124 /* CoreData.framework */,
+				8BAEF417191048F100453124 /* Accelerate.framework */,
 				AA8B8D1C18BC4218005C1C53 /* Foundation.framework */,
 				AA8B8D1E18BC4218005C1C53 /* CoreGraphics.framework */,
 				AA8B8D2018BC4218005C1C53 /* UIKit.framework */,

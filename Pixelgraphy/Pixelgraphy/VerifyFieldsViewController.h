@@ -18,5 +18,6 @@
 - (bool)checkPassReqs:(NSString*) pass1 secondPassword:(NSString*) pass2;
 - (bool)checkPassMatch:(NSString*) pass1 secondPassword:(NSString*) pass2;;
 - (bool)verifyPurchaseEmail:(NSString*)email;
+-(void)userResponseMessage:(NSString*)message andTitle: (NSString*)title;
 
 @end
