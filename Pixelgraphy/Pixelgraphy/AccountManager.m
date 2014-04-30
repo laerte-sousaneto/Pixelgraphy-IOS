@@ -67,5 +67,15 @@
     [http setPageURL:url];
     [http sendHttpRequest:postString];
 }
-
+-(void)recoverUserPass:(NSString*)email
+{
+    url = [NSURL URLWithString:@"http://test.pixelgraphy.net/PHP/recovery.php"];
+    
+    NSString* postString = [NSString stringWithFormat:@"&email=%@",email];
+    
+    http = [HttpRequest initWithURL:url];
+    [http setDelegate:_delegate];
+    [http setPageURL:url];
+    [http sendHttpRequest:postString];
+}
 @end

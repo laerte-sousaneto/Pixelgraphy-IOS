@@ -12,6 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *RecoverPasswordText;
 @property (weak, nonatomic) IBOutlet UITextField *RecoverUsernameText;
 - (IBAction)RecoverPasswordTouchUp:(UIButton *)sender;
-- (IBAction)RecoverUsernameTouchUp:(UIButton *)sender;
+-(void)userResponseMessage:(NSString*)message andTitle: (NSString*)title;
 
 @end
