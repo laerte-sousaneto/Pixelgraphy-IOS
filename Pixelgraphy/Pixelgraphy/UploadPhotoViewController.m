@@ -30,6 +30,9 @@
     [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
     [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
 	// Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didShow
@@ -63,6 +66,7 @@
                    destructiveButtonTitle:nil
                         otherButtonTitles:@"Take photo", @"Camera Roll", nil]
      showInView:self.view];
+   
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -149,5 +153,11 @@
     {
         NSLog(@"Upload to server");
     }
+}
+
+-(void)dismissKeyboard
+{
+    [_DescriptionRO resignFirstResponder];
+    [_ImageNameRO resignFirstResponder];
 }
 @end
