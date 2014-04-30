@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *PassTwoTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PassOneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *UsernameTextField;
+@property (weak, nonatomic) IBOutlet UIScrollView *ScrollViewRO;
 
 - (bool)checkPassReqs:(NSString*) pass1 secondPassword:(NSString*) pass2;
 - (bool)checkPassMatch:(NSString*) pass1 secondPassword:(NSString*) pass2;;

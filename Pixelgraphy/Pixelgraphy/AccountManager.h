@@ -20,5 +20,6 @@
 -(void)checkUsername;
 -(void)checkUsername:(NSString*)username andPassword:(NSString *)password;
 -(void)registerUsername:(NSString*)username Passowrd1:(NSString *)password Password2:(NSString *)password2 Email:(NSString *) email;
+-(void)recoverUserPass:(NSString*)email;
 
 @end
