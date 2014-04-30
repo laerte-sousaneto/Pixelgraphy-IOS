@@ -581,7 +581,7 @@ an @purchase.edu e-mail</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ma-ZG-icX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="jCa-Nx-PVE"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="-268"/>
+            <point key="canvasLocation" x="1061" y="388"/>
         </scene>
         <!--Loading Screen View Controller-->
         <scene sceneID="Nwk-Pa-0pz">
@@ -656,11 +656,11 @@ an @purchase.edu e-mail</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-OX-M4a">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-OX-M4a">
                                 <rect key="frame" x="0.0" y="-3" width="320" height="573"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jE-ju-HUW">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jE-ju-HUW">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="759"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -719,11 +719,27 @@ an @purchase.edu e-mail</string>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="RkZ-xf-xrL"/>
+                                            <constraint firstAttribute="height" constant="759" id="UFX-fW-UkQ"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="1jE-ju-HUW" firstAttribute="leading" secondItem="v5b-OX-M4a" secondAttribute="leading" id="Ihm-Fv-FTh"/>
+                                    <constraint firstAttribute="trailing" secondItem="1jE-ju-HUW" secondAttribute="trailing" id="NIU-Ft-acF"/>
+                                    <constraint firstAttribute="bottom" secondItem="1jE-ju-HUW" secondAttribute="bottom" id="PQE-fP-0BH"/>
+                                    <constraint firstItem="1jE-ju-HUW" firstAttribute="top" secondItem="v5b-OX-M4a" secondAttribute="top" id="wbB-xY-KNz"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="v5b-OX-M4a" secondAttribute="bottom" constant="-2" id="9ij-fL-sr8"/>
+                            <constraint firstAttribute="trailing" secondItem="v5b-OX-M4a" secondAttribute="trailing" id="Xov-WI-4Zm"/>
+                            <constraint firstItem="v5b-OX-M4a" firstAttribute="top" secondItem="H1L-UH-oKm" secondAttribute="top" constant="-3" id="iPi-Cl-Moe"/>
+                            <constraint firstItem="v5b-OX-M4a" firstAttribute="leading" secondItem="H1L-UH-oKm" secondAttribute="leading" id="j5x-NX-aAI"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" id="4oZ-Qx-Iao"/>
                     <connections>
