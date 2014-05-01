@@ -15,6 +15,7 @@
 - (IBAction)LoginTouchUp:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *UsernameRO;
 @property (weak, nonatomic) IBOutlet UITextField *PasswordRO;
+@property (strong, nonatomic) IBOutlet UIScrollView *ScrollViewRO;
 
 @property bool failedLoginCallback;
 
