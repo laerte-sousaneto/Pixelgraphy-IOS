@@ -57,6 +57,11 @@
 
 - (IBAction)RegisterTouchUp:(UIButton *)sender
 {
+    [self registerGo];
+}
+
+- (void)registerGo
+{
     if([[_UsernameTextField text] isEqualToString:@""])
     {
         [self userResponseMessage:@"Please specify a username." andTitle:@"Error!"];
@@ -198,7 +203,7 @@
     else if (textField == _EmailTextField)
     {
         [textField resignFirstResponder];
-        //Register
+        [self registerGo];
     }
     
     return YES;
