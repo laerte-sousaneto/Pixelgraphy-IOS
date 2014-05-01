@@ -185,7 +185,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     
-    if (textField == _EmailTextField)
+    if (textField == _UsernameTextField)
     {
         [textField resignFirstResponder];
         [_PassOneTextField becomeFirstResponder];
