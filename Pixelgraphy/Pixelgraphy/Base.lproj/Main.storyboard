@@ -8,7 +8,7 @@
         <scene sceneID="xBO-Wd-p0k">
             <objects>
                 <navigationController definesPresentationContext="YES" id="4uL-fs-HPR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="HmQ-rY-YeU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HmQ-rY-YeU">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

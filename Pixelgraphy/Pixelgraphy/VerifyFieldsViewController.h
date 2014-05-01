@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VerifyFieldsViewController : UIViewController
+@interface VerifyFieldsViewController : UIViewController <UITextFieldDelegate>
 - (IBAction)RegisterTouchUp:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *EmailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *PassTwoTextField;
