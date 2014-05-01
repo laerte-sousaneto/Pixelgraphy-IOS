@@ -37,6 +37,10 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     
+    
+    //UIImageView Border
+    [_imageView.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [_imageView.layer setBorderWidth: 2.0];
 
 }
 
