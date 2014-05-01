@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
     [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];

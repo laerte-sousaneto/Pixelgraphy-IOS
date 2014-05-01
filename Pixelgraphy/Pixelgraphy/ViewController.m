@@ -18,10 +18,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
     [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
 	// Do any additional setup after loading the view, typically from a nib
+    
+    
     
     
     //keyboard tap
@@ -143,5 +146,15 @@
 {
     [_UsernameRO resignFirstResponder];
     [_PasswordRO resignFirstResponder];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillDisappear:animated];
 }
 @end
