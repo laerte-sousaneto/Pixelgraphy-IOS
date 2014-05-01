@@ -177,5 +177,31 @@
     [_PassOneTextField resignFirstResponder];
     [_UsernameTextField resignFirstResponder];
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    if (textField == _EmailTextField)
+    {
+        [textField resignFirstResponder];
+        [_PassOneTextField becomeFirstResponder];
+    }
+    else if (textField == _PassOneTextField)
+    {
+        [textField resignFirstResponder];
+        [_PassTwoTextField becomeFirstResponder];
+    }
+    else if (textField == _PassTwoTextField)
+    {
+        [textField resignFirstResponder];
+        [_EmailTextField becomeFirstResponder];
+    }
+    else if (textField == _EmailTextField)
+    {
+        [textField resignFirstResponder];
+        //Register
+    }
+    
+    return YES;
+}
 
 @end
