@@ -33,7 +33,8 @@
 {
     NSLog(@"keyboard shown");
     _ScrollViewRO.scrollEnabled = true;
-    CGPoint point = CGPointMake(0, _UsernameRO.frame.origin.y - 1.5 * _UsernameRO.frame.size.height);
+    
+    CGPoint point = CGPointMake(0, _UsernameRO.frame.size.height * 3.5); //2.5
     [_ScrollViewRO setContentOffset:point animated:YES];
 }
 
@@ -108,13 +109,13 @@
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    /*
+    
     if (textField == _UsernameRO)
     {
         [textField resignFirstResponder];
         [_PasswordRO becomeFirstResponder];
     }
-     */
+    
     if (textField == _PasswordRO)
     {
         [textField resignFirstResponder];
