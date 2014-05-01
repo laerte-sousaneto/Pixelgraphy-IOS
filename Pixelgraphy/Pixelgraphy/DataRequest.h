@@ -12,9 +12,12 @@
 
 @property NSString* userID;
 @property id delegate;
+@property NSString* identifier;
 
 +(DataRequest*)initWithUserID:(NSString*) userID;
 -(void)getUserPhotos;
+-(void)getGlobalPhotos;
 -(void)getProfileData;
-
+-(void)getCommentsWithID:(NSString*)image_id;
+-(void)postComment:(NSString*)comment userID:(NSString*)userID imageID:(NSString*)imageID;
 @end

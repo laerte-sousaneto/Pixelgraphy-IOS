@@ -1,16 +1,15 @@
 //
-//  MyPhotoCell.m
+//  CommentCellTableViewCell.m
 //  Pixelgraphy
 //
-//  Created by Laerte Sousa Neto on 4/23/14.
+//  Created by Laerte Sousa Neto on 4/27/14.
 //  Copyright (c) 2014 Laerte Sousa Neto. All rights reserved.
 //
 
-#import "MyPhotoCell.h"
-#import "PhotoDetailsViewController.h"
-@implementation MyPhotoCell
+#import "CommentCellTableViewCell.h"
 
-@synthesize imageView;
+@implementation CommentCellTableViewCell
+
 - (void)awakeFromNib
 {
     // Initialization code

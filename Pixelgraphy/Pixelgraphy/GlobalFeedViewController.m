@@ -1,25 +1,25 @@
 //
-//  MyPhotosViewController.m
+//  GlobalFeedViewController.m
 //  Pixelgraphy
 //
-//  Created by Laerte Sousa Neto on 4/23/14.
+//  Created by Laerte Sousa Neto on 4/26/14.
 //  Copyright (c) 2014 Laerte Sousa Neto. All rights reserved.
 //
 
-#import "MyPhotosViewController.h"
-#import "MyPhotoCell.h"
-#import "DataRequest.h"
+#import "GlobalFeedViewController.h"
 #import "PhotoInfo.h"
+#import "DataRequest.h"
+#import "MyPhotoCell.h"
 #import "MyTableViewDataSource.h"
 #import "PhotoDetailsViewController.h"
 
-@interface MyPhotosViewController () <UITableViewDelegate>
+@interface GlobalFeedViewController () <UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MyTableViewDataSource *dataSource;
 
 @end
 
-@implementation MyPhotosViewController
+@implementation GlobalFeedViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,18 +37,22 @@
     NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
     NSString* userID = [userInfo stringForKey:@"uuid"];
     
+    //DataRequest* data = [DataRequest initWithUserID:@"52a89642c025c"];
     DataRequest* dataRequest = [DataRequest initWithUserID:userID];
     
     [dataRequest setDelegate:self];
-    [dataRequest getUserPhotos];
+    [dataRequest getGlobalPhotos];
     // Do any additional setup after loading the view.
 }
+
 -(void)onSuccess:(NSData*)data
 {
     NSMutableArray* tableData = [[NSMutableArray alloc] init];
+
     NSError* jsonError;
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
     
+    //NSLog(@"%@",[json description]);
     
     for(NSDictionary* entry in json)
     {
@@ -72,6 +76,7 @@
         });
         
     }
+    
 }
 -(void)onError:(NSError*)connectionError
 {
@@ -82,28 +87,28 @@
 
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.contentView.backgroundColor =[UIColor darkGrayColor];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"photoDetails"])
     {
         NSIndexPath* indexPath = [_tableView indexPathForSelectedRow];
         PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
-        
         controller.info = self.dataSource.data[indexPath.row];
-        
         controller.photoIndexPath = indexPath;
         
     }
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.contentView.backgroundColor =[UIColor darkGrayColor];
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
@@ -116,8 +121,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-
-
 
 @end

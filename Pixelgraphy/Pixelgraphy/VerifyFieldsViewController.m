@@ -2,7 +2,7 @@
 //  VerifyFieldsViewController.m
 //  Pixelgraphy
 //
-//  Created by ODESSA on 4/16/14.
+//  Created by PAVEGLIO, ANTHONY on 4/16/14.
 //  Copyright (c) 2014 Laerte Sousa Neto. All rights reserved.
 //
 
@@ -27,12 +27,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    AccountManager* accountManager = [[AccountManager alloc]init];
-    [accountManager setDelegate:self];
-    //[accountManager registerUsername:@"doido" Passowrd1:@"1234" Password2:@"1234" Email:@"sousa.lae@gmail.com"];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
+    [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
 	// Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+
 }
 
+- (void)didShow
+{
+    NSLog(@"keyboard shown");
+    _ScrollViewRO.scrollEnabled = true;
+}
+
+- (void)didHide
+{
+    NSLog(@"Keyboard hidden");
+    [_ScrollViewRO setContentOffset:CGPointZero animated:YES];
+    _ScrollViewRO.scrollEnabled = false;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -43,28 +59,30 @@
 {
     if([[_UsernameTextField text] isEqualToString:@""])
     {
-        //Tiggered if username field is empty
+        [self userResponseMessage:@"Please specify a username." andTitle:@"Error!"];
         NSLog(@"Please specify a username");
     }
     else if(![self checkPassReqs:[_PassOneTextField text] secondPassword:[_PassTwoTextField text]])
     {
-        //This is triggered if the entered password does not have at least 8 characters, at least 1 capital letter and at least 1 number
+        [self userResponseMessage:@"Password does not meet requirements." andTitle:@"Error!"];
         NSLog(@"Password does not meet requirements");
     }
     else if(![self checkPassMatch:[_PassOneTextField text] secondPassword:[_PassTwoTextField text]])
     {
-        //This is triggered if the two passwords do not match
+        [self userResponseMessage:@"Passwords do not match" andTitle:@"Error!"];
         NSLog(@"Passwords do not match");
     }
     else if(![self verifyPurchaseEmail:[_EmailTextField text]])
     {
-        //This is triggered if the email is not an @purchase.edu email
+        [self userResponseMessage:@"Email must be an @purchase.edu email" andTitle:@"Error!"];
         NSLog(@"Email must be an @purchase.edu email");
     }
     else
     {
         //AT THIS POINT WE CAN SUBMIT THE DATA TO THE PHP FILES TO BEGIN REGISTERING
-        NSLog(@"DATA CHECKS OUT, SENDING TO SERVER");
+        AccountManager* accountManager = [[AccountManager alloc]init];
+        [accountManager setDelegate:self];
+        [accountManager registerUsername:[_UsernameTextField text] Passowrd1:[_PassOneTextField text] Password2:[_PassTwoTextField text] Email:[_EmailTextField text]];
     }
 }
 
@@ -121,10 +139,43 @@
 {
      NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
     NSLog(@"%@",result);
+    //This block of code is changing me and my life -- Anthony
+    dispatch_async(dispatch_get_main_queue(),^
+                   {
+                       [_PassOneTextField setText:@""];
+                       [_PassTwoTextField setText:@""];
+                       [_UsernameTextField setText:@""];
+                       [_EmailTextField setText:@""];
+                           [self userResponseMessage:@"Successfully registered! Check your email for further instructions." andTitle:@"Success!"];
+                   });
+    
 }
 -(void)onError:(NSError*)connectionError
 {
-    //some code
+    dispatch_async(dispatch_get_main_queue(),^
+                   {
+                       [self userResponseMessage:@"Contact application adminstrator, there was an unusual error." andTitle:@"Error!"];
+                   });
     NSLog(@"There was an error");
 }
+-(void)userResponseMessage:(NSString*)message andTitle: (NSString*)title
+{
+    UIAlertView* anAlert = [ [UIAlertView alloc]
+                            initWithTitle:title
+                            message:message
+                            delegate:self
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles: nil
+                            ];
+    [anAlert show];
+}
+
+-(void)dismissKeyboard
+{
+    [_EmailTextField resignFirstResponder];
+    [_PassTwoTextField resignFirstResponder];
+    [_PassOneTextField resignFirstResponder];
+    [_UsernameTextField resignFirstResponder];
+}
+
 @end

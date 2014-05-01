@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		37B296E0190963450087D4AD /* UploadPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B296DF190963450087D4AD /* UploadPhotoViewController.m */; };
 		8B2746FE19083519005CE38F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2746FD19083519005CE38F /* ProfileViewController.m */; };
+		8BAEF418191048F100453124 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF417191048F100453124 /* Accelerate.framework */; };
+		8BAEF41A191048FA00453124 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF419191048FA00453124 /* CoreData.framework */; };
+		8BAEF41C1910490C00453124 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF41B1910490C00453124 /* libsqlite3.0.dylib */; };
+		8BAEF41E1910491B00453124 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF41D1910491B00453124 /* libz.1.2.5.dylib */; };
+		8BAEF4201910492C00453124 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF41F1910492C00453124 /* MessageUI.framework */; };
+		8BAEF4221910493400453124 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF4211910493400453124 /* OpenGLES.framework */; };
+		8BAEF4241910493D00453124 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF4231910493D00453124 /* QuartzCore.framework */; };
+		8BAEF4261910494500453124 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF4251910494500453124 /* StoreKit.framework */; };
 		8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */; };
 		8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025A18FEE403005D22A9 /* VerifyFieldsViewController.m */; };
 		8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025D18FF00B7005D22A9 /* LoginSupportViewController.m */; };
@@ -32,6 +40,13 @@
 		AA8B8D3E18BC4218005C1C53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B8D2018BC4218005C1C53 /* UIKit.framework */; };
 		AA8B8D4618BC4218005C1C53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA8B8D4418BC4218005C1C53 /* InfoPlist.strings */; };
 		AA8B8D4818BC4218005C1C53 /* PixelgraphyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8B8D4718BC4218005C1C53 /* PixelgraphyTests.m */; };
+		AAB479A2190C4625002CBCDB /* GlobalFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */; };
+		AAB479A5190C4F09002CBCDB /* MyTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */; };
+		AAB479A8190C5E7F002CBCDB /* PhotoDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479A7190C5E7F002CBCDB /* PhotoDetailsViewController.m */; };
+		AAB479AB190D517C002CBCDB /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479AA190D517C002CBCDB /* CommentsViewController.m */; };
+		AAB479AE190D51D0002CBCDB /* CommentCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479AD190D51D0002CBCDB /* CommentCellTableViewCell.m */; };
+		AAB479B1190D524A002CBCDB /* CommentsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479B0190D524A002CBCDB /* CommentsDataSource.m */; };
+		AAB479B4190D5301002CBCDB /* CommentData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479B3190D5301002CBCDB /* CommentData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +64,14 @@
 		37B296DF190963450087D4AD /* UploadPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadPhotoViewController.m; sourceTree = "<group>"; };
 		8B2746FC19083519005CE38F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		8B2746FD19083519005CE38F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		8BAEF417191048F100453124 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		8BAEF419191048FA00453124 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8BAEF41B1910490C00453124 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		8BAEF41D1910491B00453124 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		8BAEF41F1910492C00453124 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		8BAEF4211910493400453124 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8BAEF4231910493D00453124 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8BAEF4251910494500453124 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8BBD6A4D19061E730013BACB /* LoadingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScreenViewController.h; sourceTree = "<group>"; };
 		8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScreenViewController.m; sourceTree = "<group>"; };
 		8BD9025918FEE403005D22A9 /* VerifyFieldsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyFieldsViewController.h; sourceTree = "<group>"; };
@@ -86,6 +109,20 @@
 		AA8B8D4318BC4218005C1C53 /* PixelgraphyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PixelgraphyTests-Info.plist"; sourceTree = "<group>"; };
 		AA8B8D4518BC4218005C1C53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA8B8D4718BC4218005C1C53 /* PixelgraphyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PixelgraphyTests.m; sourceTree = "<group>"; };
+		AAB479A0190C4625002CBCDB /* GlobalFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFeedViewController.h; sourceTree = "<group>"; };
+		AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalFeedViewController.m; sourceTree = "<group>"; };
+		AAB479A3190C4F09002CBCDB /* MyTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewDataSource.h; sourceTree = "<group>"; };
+		AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewDataSource.m; sourceTree = "<group>"; };
+		AAB479A6190C5E7F002CBCDB /* PhotoDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDetailsViewController.h; sourceTree = "<group>"; };
+		AAB479A7190C5E7F002CBCDB /* PhotoDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailsViewController.m; sourceTree = "<group>"; };
+		AAB479A9190D517C002CBCDB /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		AAB479AA190D517C002CBCDB /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		AAB479AC190D51D0002CBCDB /* CommentCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCellTableViewCell.h; sourceTree = "<group>"; };
+		AAB479AD190D51D0002CBCDB /* CommentCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCellTableViewCell.m; sourceTree = "<group>"; };
+		AAB479AF190D524A002CBCDB /* CommentsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsDataSource.h; sourceTree = "<group>"; };
+		AAB479B0190D524A002CBCDB /* CommentsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsDataSource.m; sourceTree = "<group>"; };
+		AAB479B2190D5301002CBCDB /* CommentData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentData.h; sourceTree = "<group>"; };
+		AAB479B3190D5301002CBCDB /* CommentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +130,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA8B8D1F18BC4218005C1C53 /* CoreGraphics.framework in Frameworks */,
 				AA8B8D2118BC4218005C1C53 /* UIKit.framework in Frameworks */,
+				8BAEF4261910494500453124 /* StoreKit.framework in Frameworks */,
+				8BAEF4241910493D00453124 /* QuartzCore.framework in Frameworks */,
+				8BAEF4221910493400453124 /* OpenGLES.framework in Frameworks */,
+				8BAEF4201910492C00453124 /* MessageUI.framework in Frameworks */,
 				AA8B8D1D18BC4218005C1C53 /* Foundation.framework in Frameworks */,
+				8BAEF41E1910491B00453124 /* libz.1.2.5.dylib in Frameworks */,
+				8BAEF41C1910490C00453124 /* libsqlite3.0.dylib in Frameworks */,
+				8BAEF41A191048FA00453124 /* CoreData.framework in Frameworks */,
+				8BAEF418191048F100453124 /* Accelerate.framework in Frameworks */,
+				AA8B8D1F18BC4218005C1C53 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +179,14 @@
 		AA8B8D1B18BC4218005C1C53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BAEF4251910494500453124 /* StoreKit.framework */,
+				8BAEF4231910493D00453124 /* QuartzCore.framework */,
+				8BAEF4211910493400453124 /* OpenGLES.framework */,
+				8BAEF41F1910492C00453124 /* MessageUI.framework */,
+				8BAEF41D1910491B00453124 /* libz.1.2.5.dylib */,
+				8BAEF41B1910490C00453124 /* libsqlite3.0.dylib */,
+				8BAEF419191048FA00453124 /* CoreData.framework */,
+				8BAEF417191048F100453124 /* Accelerate.framework */,
 				AA8B8D1C18BC4218005C1C53 /* Foundation.framework */,
 				AA8B8D1E18BC4218005C1C53 /* CoreGraphics.framework */,
 				AA8B8D2018BC4218005C1C53 /* UIKit.framework */,
@@ -145,8 +198,6 @@
 		AA8B8D2218BC4218005C1C53 /* Pixelgraphy */ = {
 			isa = PBXGroup;
 			children = (
-				AA10C6FE1906297500BC36E3 /* HttpRequest.h */,
-				AA10C6FF1906297500BC36E3 /* HttpRequest.m */,
 				AA8B8D2B18BC4218005C1C53 /* AppDelegate.h */,
 				AA8B8D2C18BC4218005C1C53 /* AppDelegate.m */,
 				AA8B8D2E18BC4218005C1C53 /* Main.storyboard */,
@@ -162,18 +213,34 @@
 				AA8B8D3218BC4218005C1C53 /* ViewController.m */,
 				8BBD6A4D19061E730013BACB /* LoadingScreenViewController.h */,
 				8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */,
-				AA10C6FB1906173A00BC36E3 /* AccountManager.h */,
-				AA10C6FC1906173A00BC36E3 /* AccountManager.m */,
+				AAB479A0190C4625002CBCDB /* GlobalFeedViewController.h */,
+				AAB479A1190C4625002CBCDB /* GlobalFeedViewController.m */,
+				AA2C0ACA19087F7700F184EA /* MyPhotosViewController.h */,
+				AA2C0ACB19087F7700F184EA /* MyPhotosViewController.m */,
+				AAB479A6190C5E7F002CBCDB /* PhotoDetailsViewController.h */,
+				AAB479A7190C5E7F002CBCDB /* PhotoDetailsViewController.m */,
+				AAB479A9190D517C002CBCDB /* CommentsViewController.h */,
+				AAB479AA190D517C002CBCDB /* CommentsViewController.m */,
 				AA8B8D3418BC4218005C1C53 /* Images.xcassets */,
 				AA8B8D2318BC4218005C1C53 /* Supporting Files */,
 				AA2C0AC719087E6E00F184EA /* MyPhotoCell.h */,
 				AA2C0AC819087E6E00F184EA /* MyPhotoCell.m */,
-				AA2C0ACA19087F7700F184EA /* MyPhotosViewController.h */,
-				AA2C0ACB19087F7700F184EA /* MyPhotosViewController.m */,
+				AAB479AC190D51D0002CBCDB /* CommentCellTableViewCell.h */,
+				AAB479AD190D51D0002CBCDB /* CommentCellTableViewCell.m */,
+				AAB479A3190C4F09002CBCDB /* MyTableViewDataSource.h */,
+				AAB479A4190C4F09002CBCDB /* MyTableViewDataSource.m */,
+				AAB479AF190D524A002CBCDB /* CommentsDataSource.h */,
+				AAB479B0190D524A002CBCDB /* CommentsDataSource.m */,
+				AA10C6FE1906297500BC36E3 /* HttpRequest.h */,
+				AA10C6FF1906297500BC36E3 /* HttpRequest.m */,
+				AA10C6FB1906173A00BC36E3 /* AccountManager.h */,
+				AA10C6FC1906173A00BC36E3 /* AccountManager.m */,
 				AA2C0ACD19088AE900F184EA /* DataRequest.h */,
 				AA2C0ACE19088AE900F184EA /* DataRequest.m */,
 				AA2C0AD019089C8100F184EA /* PhotoInfo.h */,
 				AA2C0AD119089C8100F184EA /* PhotoInfo.m */,
+				AAB479B2190D5301002CBCDB /* CommentData.h */,
+				AAB479B3190D5301002CBCDB /* CommentData.m */,
 			);
 			path = Pixelgraphy;
 			sourceTree = "<group>";
@@ -305,17 +372,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B296E0190963450087D4AD /* UploadPhotoViewController.m in Sources */,
+				AAB479A8190C5E7F002CBCDB /* PhotoDetailsViewController.m in Sources */,
 				AA8B8D3318BC4218005C1C53 /* ViewController.m in Sources */,
 				8B2746FE19083519005CE38F /* ProfileViewController.m in Sources */,
 				AA2C0AC919087E6E00F184EA /* MyPhotoCell.m in Sources */,
 				AA10C7001906297500BC36E3 /* HttpRequest.m in Sources */,
 				AA2C0ACC19087F7700F184EA /* MyPhotosViewController.m in Sources */,
+				AAB479AE190D51D0002CBCDB /* CommentCellTableViewCell.m in Sources */,
+				AAB479A5190C4F09002CBCDB /* MyTableViewDataSource.m in Sources */,
 				8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */,
 				AA2C0AD219089C8100F184EA /* PhotoInfo.m in Sources */,
 				AA8B8D2D18BC4218005C1C53 /* AppDelegate.m in Sources */,
+				AAB479B1190D524A002CBCDB /* CommentsDataSource.m in Sources */,
 				AA10C6FD1906173A00BC36E3 /* AccountManager.m in Sources */,
 				8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */,
 				8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */,
+				AAB479B4190D5301002CBCDB /* CommentData.m in Sources */,
+				AAB479AB190D517C002CBCDB /* CommentsViewController.m in Sources */,
+				AAB479A2190C4625002CBCDB /* GlobalFeedViewController.m in Sources */,
 				AA8B8D2918BC4218005C1C53 /* main.m in Sources */,
 				AA2C0ACF19088AE900F184EA /* DataRequest.m in Sources */,
 			);

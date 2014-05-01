@@ -2,7 +2,7 @@
 //  LoginSupportViewController.h
 //  Pixelgraphy
 //
-//  Created by ODESSA on 4/16/14.
+//  Created by PAVEGLIO, ANTHONY on 4/16/14.
 //  Copyright (c) 2014 Laerte Sousa Neto. All rights reserved.
 //
 
@@ -12,6 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *RecoverPasswordText;
 @property (weak, nonatomic) IBOutlet UITextField *RecoverUsernameText;
 - (IBAction)RecoverPasswordTouchUp:(UIButton *)sender;
-- (IBAction)RecoverUsernameTouchUp:(UIButton *)sender;
+-(void)userResponseMessage:(NSString*)message andTitle: (NSString*)title;
 
 @end

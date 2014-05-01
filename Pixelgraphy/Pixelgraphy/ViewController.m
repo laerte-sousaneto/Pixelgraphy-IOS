@@ -18,9 +18,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
+    [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
 	// Do any additional setup after loading the view, typically from a nib
     
+    
+    //keyboard tap
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
 }
+- (void)didShow
+{
+    NSLog(@"keyboard shown");
+    [_ScrollViewRO setContentOffset:CGPointMake(0.0, -20.0) animated:YES];
+    _ScrollViewRO.scrollEnabled = true;
+}
+
+- (void)didHide
+{
+    NSLog(@"Keyboard hidden");
+    [_ScrollViewRO setContentOffset:CGPointZero animated:YES];
+    _ScrollViewRO.scrollEnabled = false;
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     if (_failedLoginCallback) {
@@ -33,6 +55,9 @@
                                 ];
         [anAlert show];
     }
+    
+    _UsernameRO.delegate = self;
+    _PasswordRO.delegate = self;
     _failedLoginCallback = false;
 }
 -(void)beforeSend
@@ -58,6 +83,11 @@
 
 - (IBAction)LoginTouchUp:(UIButton *)sender
 {
+    [self performLogin];
+}
+
+-(void)performLogin
+{
     if ([[_UsernameRO text] isEqualToString:@""] || [[_PasswordRO text] isEqualToString:@""])
     {
         UIAlertView* anAlert = [ [UIAlertView alloc]
@@ -75,6 +105,27 @@
         
     }
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    /*
+    if (textField == _UsernameRO)
+    {
+        [textField resignFirstResponder];
+        [_PasswordRO becomeFirstResponder];
+    }
+     */
+    if (textField == _PasswordRO)
+    {
+        [textField resignFirstResponder];
+        [self performLogin];
+    }
+    
+    return YES;
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_ViewRO endEditing:YES];
+}
 //Sends data to loading screen
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"TabbedVC"])
@@ -83,5 +134,12 @@
         controller.username = [_UsernameRO text];
         controller.password = [_PasswordRO text];
     }
+}
+
+
+-(void)dismissKeyboard
+{
+    [_UsernameRO resignFirstResponder];
+    [_PasswordRO resignFirstResponder];
 }
 @end
