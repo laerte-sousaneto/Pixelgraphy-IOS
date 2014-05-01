@@ -109,13 +109,13 @@
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    /*
+    
     if (textField == _UsernameRO)
     {
         [textField resignFirstResponder];
         [_PasswordRO becomeFirstResponder];
     }
-     */
+    
     if (textField == _PasswordRO)
     {
         [textField resignFirstResponder];
