@@ -23,10 +23,16 @@
     [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
 	// Do any additional setup after loading the view, typically from a nib
     
+    
+    //keyboard tap
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
 }
 - (void)didShow
 {
     NSLog(@"keyboard shown");
+    [_ScrollViewRO setContentOffset:CGPointMake(0.0, -20.0) animated:YES];
     _ScrollViewRO.scrollEnabled = true;
 }
 
@@ -118,7 +124,7 @@
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.view endEditing:YES];
+    [_ViewRO endEditing:YES];
 }
 //Sends data to loading screen
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -128,5 +134,12 @@
         controller.username = [_UsernameRO text];
         controller.password = [_PasswordRO text];
     }
+}
+
+
+-(void)dismissKeyboard
+{
+    [_UsernameRO resignFirstResponder];
+    [_PasswordRO resignFirstResponder];
 }
 @end
