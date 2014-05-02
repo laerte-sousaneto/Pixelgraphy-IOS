@@ -78,7 +78,7 @@
         }
     else
         {
-            _currentIndex = [_photos count]-1;
+            _currentIndex = (int)[_photos count]-1;
         }
     
     [self displayData];

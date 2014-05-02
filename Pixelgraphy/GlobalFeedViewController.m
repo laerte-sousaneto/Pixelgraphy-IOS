@@ -107,7 +107,7 @@
         PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
         
         controller.photos = self.dataSource.data;
-        controller.currentIndex = indexPath.row;
+        controller.currentIndex = (int)indexPath.row;
     }
 }
 
