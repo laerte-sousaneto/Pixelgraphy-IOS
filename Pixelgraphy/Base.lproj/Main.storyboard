@@ -319,33 +319,46 @@ an @purchase.edu e-mail</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="260" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zCf-ZG-xWo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="239" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zCf-ZG-xWo">
                                 <rect key="frame" x="0.0" y="25" width="320" height="492"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="260" id="AzR-Sa-ApL" customClass="MyPhotoCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="260"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="240" id="AzR-Sa-ApL" customClass="MyPhotoCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="240"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AzR-Sa-ApL" id="OGx-o5-mWh">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="259"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fn4-Uo-iap">
-                                                    <rect key="frame" x="20" y="20" width="280" height="168"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-Rm-Ega">
-                                                    <rect key="frame" x="62" y="196" width="196" height="27"/>
+                                                    <rect key="frame" x="20" y="187" width="280" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
-                                                    <color key="textColor" red="0.0032034139310000002" green="0.93251103940000002" blue="0.28219376029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" red="0.38199486459999998" green="0.50424423159999998" blue="0.57124660329999999" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
-                                                    <color key="shadowColor" red="0.0032034139310000002" green="0.93251103940000002" blue="0.28219376029999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="shadowColor" red="0.38199486459999998" green="0.50424423159999998" blue="0.57124660329999999" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
+                                                <view alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-gs-vmR">
+                                                    <rect key="frame" x="0.0" y="230" width="320" height="10"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTV-J3-dlZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fn4-Uo-iap">
+                                                            <rect key="frame" x="10" y="12" width="300" height="165"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                </view>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="imageView" destination="fn4-Uo-iap" id="Pv2-pw-tyn"/>
                                             <outlet property="title" destination="gVS-Rm-Ega" id="TPU-qz-D4g"/>
@@ -371,7 +384,7 @@ an @purchase.edu e-mail</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hq9-1q-Oz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="KYf-gJ-6sO" userLabel="Table View Data Source" customClass="MyTableViewDataSource"/>
             </objects>
-            <point key="canvasLocation" x="-113" y="1608"/>
+            <point key="canvasLocation" x="-545" y="2369"/>
         </scene>
         <!--Photo Details View Controller-->
         <scene sceneID="wGN-zN-IPX">
@@ -1045,20 +1058,25 @@ an @purchase.edu e-mail</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="243" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vZI-eP-h1f">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="236" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vZI-eP-h1f">
                                 <rect key="frame" x="0.0" y="20" width="320" height="497"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="243" id="luF-Qn-xqf" customClass="MyPhotoCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="243"/>
+                                    <tableViewCell contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="240" id="luF-Qn-xqf" customClass="MyPhotoCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="240"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="luF-Qn-xqf" id="vlL-yg-jyZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMr-Bl-guB">
+                                                    <rect key="frame" x="0.0" y="230" width="320" height="10"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xw6-l7-7fK">
-                                                    <rect key="frame" x="20" y="187" width="280" height="54"/>
+                                                    <rect key="frame" x="20" y="187" width="280" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1067,11 +1085,11 @@ an @purchase.edu e-mail</string>
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rej-gd-JLC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Qc-sM-all">
-                                                            <rect key="frame" x="9" y="12" width="302" height="168"/>
+                                                            <rect key="frame" x="9" y="12" width="300" height="165"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
