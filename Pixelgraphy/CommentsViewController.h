@@ -14,7 +14,10 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet CommentsDataSource *dataSource;
-@property (nonatomic) PhotoInfo* info;
+
+@property (nonatomic) NSMutableArray* photos;
+@property (nonatomic) int photoIndex;
+
 @property (nonatomic) IBOutlet UITextView *commentArea;
 
 @end

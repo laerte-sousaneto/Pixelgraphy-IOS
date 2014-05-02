@@ -28,22 +28,75 @@
 {
     [super viewDidLoad];
     
-    _imageView.image = [_info image];
-    _titleLabel.text = [_info name];
-    _descriptionArea.text = [_info description];
+    [self displayData];
     
     // Do any additional setup after loading the view.
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
     
-    
+    [self addStyle];
+    [self addTapGesture];
+    [self addSwipeGesture];
+
+}
+- (void) displayData
+{
+    _imageView.image = [ [_photos objectAtIndex:_currentIndex] image ];
+    _titleLabel.text = [ [_photos objectAtIndex:_currentIndex] name ];
+    _descriptionArea.text = [ [_photos objectAtIndex:_currentIndex] description ];
+}
+-(void) addStyle
+{
     //UIImageView Border
     [_imageView.layer setBorderColor:[[UIColor blackColor] CGColor]];
     [_imageView.layer setBorderWidth: 2.0];
+}
+-(void) addTapGesture
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+- (void) addSwipeGesture
+{
+    UISwipeGestureRecognizer* swipeLeftRecognizer = [ [UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft) ];
+
+    [ swipeLeftRecognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+
+    [ [self view] addGestureRecognizer:swipeLeftRecognizer];
+    
+    UISwipeGestureRecognizer* swipeRightRecognizer = [ [UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight) ];
+
+    [ swipeRightRecognizer setDirection:(UISwipeGestureRecognizerDirectionRight) ];
+
+    [[self view] addGestureRecognizer:swipeRightRecognizer ];
 
 }
+- (void) swipeLeft
+{
+    if ( _currentIndex > 0 )
+        {
+            _currentIndex--;
+        }
+    else
+        {
+            _currentIndex = [_photos count]-1;
+        }
+    
+    [self displayData];
+}
+- (void) swipeRight
+{
 
+    if( _currentIndex < [_photos count]-1 )
+        {
+            _currentIndex++;
+        }
+    else
+        {
+            _currentIndex = 0;
+        }
+    
+    [self displayData];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -55,7 +108,8 @@
     {
         CommentsViewController* controller = (CommentsViewController*)segue.destinationViewController;
         
-        controller.info = _info;
+        controller.photos = _photos;
+        controller.photoIndex = _currentIndex;
     }
 }
 
@@ -63,15 +117,5 @@
 {
     [_descriptionArea resignFirstResponder];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -15,6 +15,7 @@
 {
     DataRequest* dataRequest;
     NSString* userID;
+    PhotoInfo* photoInfo;
 }
 @end
 
@@ -34,12 +35,13 @@
     [super viewDidLoad];
     self.commentArea.delegate = self;
     
+    photoInfo = [_photos objectAtIndex:_photoIndex];
     NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
     userID = [userInfo stringForKey:@"uuid"];
     
     dataRequest = [DataRequest initWithUserID:userID];
     [dataRequest setDelegate:self];
-    [dataRequest getCommentsWithID:_info.ID];
+    [dataRequest getCommentsWithID:  photoInfo.ID];
     
     // Do any additional setup after loading the view.
 }
@@ -57,7 +59,7 @@
 
         NSUInteger jsonLength = [json count];
 
-
+        [json description];
         if (jsonLength > 0)
         {
             for(NSDictionary* entry in json)
@@ -96,7 +98,7 @@
     }
     else if ([identifier isEqualToString:@"postComment"])
     {
-        [dataRequest getCommentsWithID:_info.ID];
+        [dataRequest getCommentsWithID: photoInfo.ID];
     }
 }
 -(void)onError:(NSError*)connectionError
@@ -113,7 +115,8 @@
     if ([segue.identifier isEqualToString:@"BackPhotoDetails"])
     {
         PhotoDetailsViewController* controller = (PhotoDetailsViewController*)segue.destinationViewController;
-        controller.info = _info;
+        controller.photos = _photos;
+        controller.currentIndex = _photoIndex;
     }
 }
 
@@ -125,7 +128,7 @@
 - (IBAction)addComment:(id)sender
 {
     NSString* comment = _commentArea.text;
-    [dataRequest postComment:comment userID:userID imageID:[_info ID]];
+    [dataRequest postComment:comment userID:userID imageID: photoInfo.ID];
     
     _commentArea.text = @"";
 }

@@ -11,11 +11,11 @@
 
 @interface PhotoDetailsViewController : UIViewController
 
-@property (nonatomic) PhotoInfo* info;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionArea;
 
-@property (nonatomic) NSIndexPath* photoIndexPath;
+@property (nonatomic) NSMutableArray* photos;
+@property (nonatomic) int currentIndex;
 
 @end
