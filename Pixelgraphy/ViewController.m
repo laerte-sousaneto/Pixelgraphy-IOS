@@ -18,9 +18,36 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
+    [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
 	// Do any additional setup after loading the view, typically from a nib
     
+    
+    
+    
+    //keyboard tap
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
 }
+- (void)didShow
+{
+    NSLog(@"keyboard shown");
+    _ScrollViewRO.scrollEnabled = true;
+    
+    CGPoint point = CGPointMake(0, _UsernameRO.frame.size.height * 3.5); //2.5
+    [_ScrollViewRO setContentOffset:point animated:YES];
+}
+
+- (void)didHide
+{
+    NSLog(@"Keyboard hidden");
+    [_ScrollViewRO setContentOffset:CGPointZero animated:YES];
+    _ScrollViewRO.scrollEnabled = false;
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     if (_failedLoginCallback) {
@@ -85,12 +112,14 @@
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    
     if (textField == _UsernameRO)
     {
         [textField resignFirstResponder];
         [_PasswordRO becomeFirstResponder];
     }
-    else if (textField == _PasswordRO)
+    
+    if (textField == _PasswordRO)
     {
         [textField resignFirstResponder];
         [self performLogin];
@@ -100,7 +129,7 @@
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.view endEditing:YES];
+    [_ViewRO endEditing:YES];
 }
 //Sends data to loading screen
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -110,5 +139,22 @@
         controller.username = [_UsernameRO text];
         controller.password = [_PasswordRO text];
     }
+}
+
+
+-(void)dismissKeyboard
+{
+    [_UsernameRO resignFirstResponder];
+    [_PasswordRO resignFirstResponder];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillDisappear:animated];
 }
 @end

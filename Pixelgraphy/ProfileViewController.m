@@ -10,6 +10,7 @@
 #import "AccountManager.h"
 #import "DataRequest.h"
 #import "PhotoInfo.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ProfileViewController ()
 
@@ -38,7 +39,14 @@
     
     [dataRequest setDelegate:self];
     [dataRequest getProfileData];
+    
+    
+    //UIImageView Border
+    [_ProfileImage.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [_ProfileImage.layer setBorderWidth: 2.0];
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {

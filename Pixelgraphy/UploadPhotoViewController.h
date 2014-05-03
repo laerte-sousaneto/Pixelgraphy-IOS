@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UploadPhotoViewController : UIViewController
+@interface UploadPhotoViewController : UIViewController<UIActionSheetDelegate>
+
+
 - (IBAction)AddPhotoTouchUp:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageViewRO;
 @property (weak, nonatomic) IBOutlet UITextField *ImageNameRO;

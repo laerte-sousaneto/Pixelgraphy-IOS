@@ -21,12 +21,12 @@
     
     CommentCellTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    if(cell == nil)
-    {
-        cell = [[CommentCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
-    }
-    
+    if (cell == nil)
+        {
+            cell = [[CommentCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            
+        }
+
     cell.posterName.text = commentData.posterName;
     cell.comment.text = commentData.comment;
     

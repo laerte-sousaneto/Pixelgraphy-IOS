@@ -14,6 +14,7 @@
 
 @implementation UploadPhotoViewController
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,6 +34,12 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    //UIImageView Border
+    [_ImageViewRO.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [_ImageViewRO.layer setBorderWidth: 2.0];
+  
+    
 }
 
 - (void)didShow
@@ -160,4 +167,5 @@
     [_DescriptionRO resignFirstResponder];
     [_ImageNameRO resignFirstResponder];
 }
+
 @end

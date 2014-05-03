@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
     [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
@@ -56,6 +57,11 @@
 }
 
 - (IBAction)RegisterTouchUp:(UIButton *)sender
+{
+    [self registerGo];
+}
+
+- (void)registerGo
 {
     if([[_UsernameTextField text] isEqualToString:@""])
     {
@@ -176,6 +182,32 @@
     [_PassTwoTextField resignFirstResponder];
     [_PassOneTextField resignFirstResponder];
     [_UsernameTextField resignFirstResponder];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    if (textField == _UsernameTextField)
+    {
+        [textField resignFirstResponder];
+        [_PassOneTextField becomeFirstResponder];
+    }
+    else if (textField == _PassOneTextField)
+    {
+        [textField resignFirstResponder];
+        [_PassTwoTextField becomeFirstResponder];
+    }
+    else if (textField == _PassTwoTextField)
+    {
+        [textField resignFirstResponder];
+        [_EmailTextField becomeFirstResponder];
+    }
+    else if (textField == _EmailTextField)
+    {
+        [textField resignFirstResponder];
+        [self registerGo];
+    }
+    
+    return YES;
 }
 
 @end
