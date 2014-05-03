@@ -127,10 +127,20 @@
 }
 - (IBAction)addComment:(id)sender
 {
-    NSString* comment = _commentArea.text;
-    [dataRequest postComment:comment userID:userID imageID: photoInfo.ID];
+    NSString* comment = [_commentArea.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
-    _commentArea.text = @"";
+    _commentArea.text = comment;
+    
+    if ([comment length] > 0)
+    {
+        NSString* comment = _commentArea.text;
+        [dataRequest postComment:comment userID:userID imageID: photoInfo.ID];
+        
+        _commentArea.text = @"";
+    }
+    
+    
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
