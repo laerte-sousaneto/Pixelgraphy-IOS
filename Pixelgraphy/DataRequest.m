@@ -83,5 +83,16 @@
     [http setPageURL:url];
     [http sendHttpRequest:postString];
 }
+-(void)uploadImageToServer:(NSString*)username isProfile:(NSString*)isProfile myPicture:(UIImage*)myPicture pictureName:(NSString*)pictureName pictureDescription:(NSString*)pictureDescription
+{
+    url = [NSURL URLWithString:@"http://test.pixelgraphy.net/PHP/ImageServerUploader.php"];
+    
+    NSString* postString = [NSString stringWithFormat:@"&usr=%@&isProfile=%@&myFile=%@&nameInput%@&descriptionInput=%@",username, isProfile, myPicture, pictureName, pictureDescription];
+    
+    http = [HttpRequest initWithURL:url];
+    [http setDelegate:_delegate];
+    [http setPageURL:url];
+    [http sendHttpRequest:postString];
+}
 
 @end

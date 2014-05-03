@@ -7,6 +7,7 @@
 //
 
 #import "UploadPhotoViewController.h"
+#import "DataRequest.h"
 
 @interface UploadPhotoViewController ()
 
