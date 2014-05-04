@@ -375,7 +375,7 @@ an @purchase.edu e-mail</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Global Feed" id="fRA-Na-e5W"/>
+                    <tabBarItem key="tabBarItem" title="Global Feed" image="Global Feed" id="fRA-Na-e5W"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dataSource" destination="KYf-gJ-6sO" id="8Fz-JP-wbY"/>
@@ -671,7 +671,7 @@ an @purchase.edu e-mail</string>
                             <constraint firstItem="X31-DD-wFS" firstAttribute="top" secondItem="Wca-16-CWo" secondAttribute="top" id="vrV-tP-9np"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Upload Photo" id="hFu-Ae-0Ph"/>
+                    <tabBarItem key="tabBarItem" title="Upload Photo" image="Upload Photo" id="hFu-Ae-0Ph"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="DescriptionRO" destination="Fb1-5P-9hI" id="XYT-uL-4Af"/>
@@ -843,7 +843,7 @@ an @purchase.edu e-mail</string>
                             <constraint firstItem="v5b-OX-M4a" firstAttribute="leading" secondItem="H1L-UH-oKm" secondAttribute="leading" id="j5x-NX-aAI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Profile" id="oBA-7n-oKS"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" image="My Profile" id="oBA-7n-oKS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="BioTextView" destination="nfx-lg-uTS" id="bbB-M6-0z4"/>
@@ -1033,11 +1033,11 @@ an @purchase.edu e-mail</string>
             </objects>
             <point key="canvasLocation" x="1061" y="1074"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller-->
         <scene sceneID="LBC-cw-3wK">
             <objects>
                 <navigationController definesPresentationContext="YES" id="0mV-9J-IOV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="SO4-xu-Pft"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="SO4-xu-Pft"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YHx-Fz-EDK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1127,7 +1127,7 @@ an @purchase.edu e-mail</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Photos" id="x75-Bi-iwS"/>
+                    <tabBarItem key="tabBarItem" title="My Photos" image="My Pictures" id="x75-Bi-iwS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dataSource" destination="trz-Vo-MGg" id="lmL-Lr-SwI"/>
@@ -1254,6 +1254,12 @@ an @purchase.edu e-mail</string>
             <point key="canvasLocation" x="2162" y="1889"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Global Feed" width="25" height="25"/>
+        <image name="My Pictures" width="27" height="22"/>
+        <image name="My Profile" width="25" height="25"/>
+        <image name="Upload Photo" width="19" height="27"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
