@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *DescriptionRO;
 - (IBAction)UploadTO:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIScrollView *ScrollViewRO;
+-(void)showMessage:(NSString*)title body:(NSString*)body;
 
 
 @end

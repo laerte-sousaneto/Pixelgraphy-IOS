@@ -127,41 +127,19 @@
 {
     if([_ImageViewRO image] == nil)
     {
-        UIAlertView* anAlert = [ [UIAlertView alloc]
-                                initWithTitle:@"Error"
-                                message:@"Please choose an image to upload."
-                                delegate:self
-                                cancelButtonTitle:@"OK"
-                                otherButtonTitles: nil
-                                ];
-        [anAlert show];
+        [self showMessage:@"Error" body:@"Please choose an image to upload."];
     }
     else if ([[_ImageNameRO text] isEqualToString:@""])
     {
-        UIAlertView* anAlert = [ [UIAlertView alloc]
-                                initWithTitle:@"Error"
-                                message:@"Please specify a name."
-                                delegate:self
-                                cancelButtonTitle:@"OK"
-                                otherButtonTitles: nil
-                                ];
-        [anAlert show];
+        [self showMessage:@"Error" body:@"Please specify a name."];
     }
     else if([[_DescriptionRO text] isEqualToString:@""])
     {
-        UIAlertView* anAlert = [ [UIAlertView alloc]
-                                initWithTitle:@"Error"
-                                message:@"Please specify a description."
-                                delegate:self
-                                cancelButtonTitle:@"OK"
-                                otherButtonTitles: nil
-                                ];
-        [anAlert show];
+        [self showMessage:@"Error" body:@"Please specify a description."];
     }
     else
     {
         NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
-        //NSString* userID = [userInfo stringForKey:@"uuid"];
         NSString* username = [userInfo stringForKey:@"username"];
         
         NSString *urlString = @"http://pixelgraphy.net/PHP/ImageServerUploaderiOS.php";
@@ -225,7 +203,11 @@
         
         NSLog(@"%@", returnString);
         
+            [_ImageNameRO setText:@""];
+            [_DescriptionRO setText:@""];
+            _ImageViewRO.image = nil;
         
+        [self showMessage:@"Done!" body:@"Image has been uploaded"];
     }
 }
 
@@ -256,6 +238,17 @@
                        NSLog(@"ERROR!!!!");
                    });
     NSLog(@"There was an error");
+}
+-(void)showMessage:(NSString*)title body:(NSString*)body
+{
+    UIAlertView* anAlert = [ [UIAlertView alloc]
+                            initWithTitle:title
+                            message:body
+                            delegate:self
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles: nil
+                            ];
+    [anAlert show];
 }
 
 @end
