@@ -15,7 +15,7 @@
 {
     
     
-    [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor blackColor]];
     // Override point for customization after application launch.
     return YES;
     
