@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *Hometown;
 @property (weak, nonatomic) IBOutlet UITextView *HobbiesTextView;
 @property (weak, nonatomic) IBOutlet UITextView *BioTextView;
+@property (weak, nonatomic) IBOutlet UIView *LoadRO;
 
 @end

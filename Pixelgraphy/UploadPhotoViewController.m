@@ -126,6 +126,7 @@
 
 - (IBAction)UploadTO:(UIButton *)sender
 {
+    [_viewRO setHidden:NO];
     if([_ImageViewRO image] == nil)
     {
         [self showMessage:@"Error" body:@"Please choose an image to upload."];
@@ -168,6 +169,7 @@
         
         [self showMessage:@"Done!" body:@"Image has been uploaded"];
     }
+    [_viewRO setHidden:YES];
 }
 
 -(void)dismissKeyboard
