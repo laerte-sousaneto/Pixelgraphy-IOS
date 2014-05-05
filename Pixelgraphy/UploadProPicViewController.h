@@ -17,6 +17,7 @@
 
 - (IBAction)AddPhoto:(UIButton *)sender;
 - (IBAction)UploadPhoto:(UIButton *)sender;
+-(void)clearUploader;
 
 
 @end
