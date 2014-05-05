@@ -43,6 +43,7 @@
     [dataRequest setDelegate:self];
     [dataRequest getCommentsWithID:  photoInfo.ID];
     
+    _tableView.backgroundColor = [UIColor lightGrayColor];
     // Do any additional setup after loading the view.
 }
 
@@ -151,22 +152,10 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     
-    NSInteger width = textView.frame.size.width;
-    NSInteger height = textView.frame.size.height;
-    NSInteger x = textView.frame.origin.x;
-    NSInteger y = self.view.frame.origin.y+height;
-    
-    textView.frame = CGRectMake(x, y, width, height);
+
 }
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
-    NSInteger width = textView.frame.size.width;
-    NSInteger height = textView.frame.size.height;
-    NSInteger x = textView.frame.origin.x;
-    NSInteger y = _tableView.frame.origin.y+_tableView.frame.size.height;
-    
-    textView.frame = CGRectMake(x, y, width, height);
-    
     [textView endEditing:YES];
     return YES;
 }
