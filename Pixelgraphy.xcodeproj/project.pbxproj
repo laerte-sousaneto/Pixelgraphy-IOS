@@ -17,6 +17,7 @@
 		8BAEF4221910493400453124 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF4211910493400453124 /* OpenGLES.framework */; };
 		8BAEF4241910493D00453124 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF4231910493D00453124 /* QuartzCore.framework */; };
 		8BAEF4261910494500453124 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF4251910494500453124 /* StoreKit.framework */; };
+		8BB361D61917D6A900AD5F48 /* MultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB361D51917D6A900AD5F48 /* MultipartForm.m */; };
 		8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */; };
 		8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025A18FEE403005D22A9 /* VerifyFieldsViewController.m */; };
 		8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9025D18FF00B7005D22A9 /* LoginSupportViewController.m */; };
@@ -73,6 +74,8 @@
 		8BAEF4211910493400453124 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8BAEF4231910493D00453124 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8BAEF4251910494500453124 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8BB361D41917D6A900AD5F48 /* MultipartForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartForm.h; sourceTree = "<group>"; };
+		8BB361D51917D6A900AD5F48 /* MultipartForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartForm.m; sourceTree = "<group>"; };
 		8BBD6A4D19061E730013BACB /* LoadingScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingScreenViewController.h; sourceTree = "<group>"; };
 		8BBD6A4E19061E730013BACB /* LoadingScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingScreenViewController.m; sourceTree = "<group>"; };
 		8BD9025918FEE403005D22A9 /* VerifyFieldsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyFieldsViewController.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				B35496B91916059600901254 /* UploadProPicViewController.m */,
 				37B296DE190963450087D4AD /* UploadPhotoViewController.h */,
 				37B296DF190963450087D4AD /* UploadPhotoViewController.m */,
+				8BB361D41917D6A900AD5F48 /* MultipartForm.h */,
+				8BB361D51917D6A900AD5F48 /* MultipartForm.m */,
 				8B2746FC19083519005CE38F /* ProfileViewController.h */,
 				8B2746FD19083519005CE38F /* ProfileViewController.m */,
 				8BD9025C18FF00B7005D22A9 /* LoginSupportViewController.h */,
@@ -382,6 +387,7 @@
 				AA8B8D3318BC4218005C1C53 /* ViewController.m in Sources */,
 				8B2746FE19083519005CE38F /* ProfileViewController.m in Sources */,
 				AA2C0AC919087E6E00F184EA /* MyPhotoCell.m in Sources */,
+				8BB361D61917D6A900AD5F48 /* MultipartForm.m in Sources */,
 				AA10C7001906297500BC36E3 /* HttpRequest.m in Sources */,
 				AA2C0ACC19087F7700F184EA /* MyPhotosViewController.m in Sources */,
 				AAB479AE190D51D0002CBCDB /* CommentCellTableViewCell.m in Sources */,
