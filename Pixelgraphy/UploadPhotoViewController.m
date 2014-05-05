@@ -162,14 +162,7 @@
     {
         NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
         //NSString* userID = [userInfo stringForKey:@"uuid"];
-        //NSData *imageData = UIImagePNGRepresentation([_ImageViewRO image]);
-        //NSString *encodedImage = [imageData base64Encoding];
-        /*
-        DataRequest* dataRequest = [DataRequest initWithUserID:userID];
-        
-        [dataRequest setDelegate:self];
-        [dataRequest sendImageData:imageData];
-         */
+        NSString* username = [userInfo stringForKey:@"username"];
         
         NSString *urlString = @"http://pixelgraphy.net/PHP/ImageServerUploaderiOS.php";
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -193,7 +186,7 @@
         [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
         
         // user name here
-        NSString *param1 = @"apaveglio";
+        NSString *param1 = username;
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"usr\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[param1 dataUsingEncoding:NSUTF8StringEncoding]];
@@ -207,14 +200,14 @@
         [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
         
         //Image name
-        NSString *param3 = @"Test Name";
+        NSString *param3 = [_ImageNameRO text];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"nameInput\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[param3 dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
         
         //Image Description
-        NSString *param4 = @"Test Desc";
+        NSString *param4 = [_DescriptionRO text];
         [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"descriptionInput\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
         [body appendData:[param4 dataUsingEncoding:NSUTF8StringEncoding]];

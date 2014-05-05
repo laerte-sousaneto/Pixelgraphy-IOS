@@ -81,6 +81,7 @@
     {
         NSUserDefaults *saveData = [NSUserDefaults standardUserDefaults];
         [saveData setObject:result forKey:@"uuid"];
+        [saveData setObject:[self username] forKey:@"username"];
         _userValidated = true;
     }
     else
