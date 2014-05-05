@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pixelgraphy/CommentsViewController.m"
-            timestampString = "421005730.440272"
+            timestampString = "421009487.532149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-scrollToBottom"
             landmarkType = "5">
          </BreakpointContent>

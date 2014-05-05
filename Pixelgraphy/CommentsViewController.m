@@ -48,6 +48,9 @@
     
     _tableView.backgroundColor = [UIColor lightGrayColor];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -221,5 +224,11 @@
     NSLog(@"Keyboard hidden");
     [_ScrollView setContentOffset:CGPointZero animated:YES];
     _ScrollView.scrollEnabled = false;
+}
+
+
+-(void)dismissKeyboard
+{
+    [_commentArea resignFirstResponder];
 }
 @end
