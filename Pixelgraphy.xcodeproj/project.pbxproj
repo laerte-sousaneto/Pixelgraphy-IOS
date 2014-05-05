@@ -49,6 +49,7 @@
 		AAB479B1190D524A002CBCDB /* CommentsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479B0190D524A002CBCDB /* CommentsDataSource.m */; };
 		AAB479B4190D5301002CBCDB /* CommentData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479B3190D5301002CBCDB /* CommentData.m */; };
 		B35496BA1916059600901254 /* UploadProPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35496B91916059600901254 /* UploadProPicViewController.m */; };
+		B3A1D0AE1917DD15007DC4AE /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A1D0AD1917DD15007DC4AE /* EditProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,8 @@
 		AAB479B3190D5301002CBCDB /* CommentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentData.m; sourceTree = "<group>"; };
 		B35496B81916059600901254 /* UploadProPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadProPicViewController.h; sourceTree = "<group>"; };
 		B35496B91916059600901254 /* UploadProPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadProPicViewController.m; sourceTree = "<group>"; };
+		B3A1D0AC1917DD15007DC4AE /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		B3A1D0AD1917DD15007DC4AE /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 				AA8B8D2B18BC4218005C1C53 /* AppDelegate.h */,
 				AA8B8D2C18BC4218005C1C53 /* AppDelegate.m */,
 				AA8B8D2E18BC4218005C1C53 /* Main.storyboard */,
+				B3A1D0AC1917DD15007DC4AE /* EditProfileViewController.h */,
+				B3A1D0AD1917DD15007DC4AE /* EditProfileViewController.m */,
 				B35496B81916059600901254 /* UploadProPicViewController.h */,
 				B35496B91916059600901254 /* UploadProPicViewController.m */,
 				37B296DE190963450087D4AD /* UploadPhotoViewController.h */,
@@ -401,6 +406,7 @@
 				8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */,
 				AAB479B4190D5301002CBCDB /* CommentData.m in Sources */,
 				AAB479AB190D517C002CBCDB /* CommentsViewController.m in Sources */,
+				B3A1D0AE1917DD15007DC4AE /* EditProfileViewController.m in Sources */,
 				AAB479A2190C4625002CBCDB /* GlobalFeedViewController.m in Sources */,
 				AA8B8D2918BC4218005C1C53 /* main.m in Sources */,
 				AA2C0ACF19088AE900F184EA /* DataRequest.m in Sources */,

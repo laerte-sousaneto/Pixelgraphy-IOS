@@ -10,8 +10,13 @@
 
 @interface UploadProPicViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *ProfImage;
+@property (strong, nonatomic) IBOutlet UITextField *PicName;
+@property (strong, nonatomic) IBOutlet UITextView *ImageDescript;
 
 
+- (IBAction)AddPhoto:(UIButton *)sender;
+- (IBAction)UploadPhoto:(UIButton *)sender;
 
 
 @end
