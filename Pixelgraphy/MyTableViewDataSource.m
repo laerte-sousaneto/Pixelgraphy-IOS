@@ -29,7 +29,7 @@
     
     UIImageView* cellImageView = cell.imageView;
     
-    [cellImageView.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [cellImageView.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
     [cellImageView.layer setBorderWidth: 1.0];
     
     cellImageView.image = photoInfo.image;
