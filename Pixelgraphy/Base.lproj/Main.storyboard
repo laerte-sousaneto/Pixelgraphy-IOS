@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4uL-fs-HPR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4uL-fs-HPR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -676,7 +676,7 @@ an @purchase.edu e-mail</string>
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-5P-9hI">
-                                                <rect key="frame" x="40" y="285" width="240" height="133"/>
+                                                <rect key="frame" x="40" y="282" width="240" height="133"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.64992016423357668" alpha="1" colorSpace="calibratedWhite"/>
                                                 <gestureRecognizers/>
@@ -718,6 +718,17 @@ an @purchase.edu e-mail</string>
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="0.0" height="-2"/>
                                             </label>
+                                            <view hidden="YES" alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KTW-Su-SRN">
+                                                <rect key="frame" x="80" y="193" width="160" height="114"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="q6r-RA-WN3">
+                                                        <rect key="frame" x="62" y="38" width="37" height="37"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -733,6 +744,7 @@ an @purchase.edu e-mail</string>
                         <outlet property="ImageNameRO" destination="fa8-Tx-azk" id="9Js-WV-Xv8"/>
                         <outlet property="ImageViewRO" destination="VPd-HZ-A3q" id="FVO-jj-V1X"/>
                         <outlet property="ScrollViewRO" destination="X31-DD-wFS" id="ywu-ov-aIa"/>
+                        <outlet property="viewRO" destination="KTW-Su-SRN" id="oO4-nY-8Yo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ma-ZG-icX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -876,6 +888,17 @@ an @purchase.edu e-mail</string>
                                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <view hidden="YES" alpha="0.75000000000000022" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GwM-fV-mgw">
+                                                <rect key="frame" x="79" y="246" width="160" height="114"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="XgF-w5-muB">
+                                                        <rect key="frame" x="62" y="38" width="37" height="37"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -890,6 +913,7 @@ an @purchase.edu e-mail</string>
                         <outlet property="BioTextView" destination="nfx-lg-uTS" id="bbB-M6-0z4"/>
                         <outlet property="HobbiesTextView" destination="OG8-yt-6fL" id="Nsc-vi-IPo"/>
                         <outlet property="Hometown" destination="5RH-iZ-kBs" id="koZ-a8-KLE"/>
+                        <outlet property="LoadRO" destination="GwM-fV-mgw" id="4ZB-zw-Jbu"/>
                         <outlet property="Majors" destination="mHU-Nn-dY0" id="XkE-ie-f1v"/>
                         <outlet property="ProfileImage" destination="3If-zO-J5n" id="oJO-4L-LyA"/>
                         <outlet property="ScrollViewRO" destination="v5b-OX-M4a" id="MET-pV-nYl"/>
@@ -1456,6 +1480,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qu2-f9-eOd"/>
-        <segue reference="lZ1-rh-e7O"/>
+        <segue reference="hkM-Kj-0LX"/>
     </inferredMetricsTieBreakers>
 </document>

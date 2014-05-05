@@ -9,6 +9,7 @@
 #import "UploadPhotoViewController.h"
 #import "DataRequest.h"
 #import "HttpRequest.h"
+#import "MultipartForm.h"
 
 @interface UploadPhotoViewController ()
 
@@ -125,6 +126,7 @@
 
 - (IBAction)UploadTO:(UIButton *)sender
 {
+    [_viewRO setHidden:NO];
     if([_ImageViewRO image] == nil)
     {
         [self showMessage:@"Error" body:@"Please choose an image to upload."];
@@ -141,74 +143,33 @@
     {
         NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
         NSString* username = [userInfo stringForKey:@"username"];
+        NSData *imageData = UIImageJPEGRepresentation([_ImageViewRO image], 1.0f); //serialize image
         
-        NSString *urlString = @"http://pixelgraphy.net/PHP/ImageServerUploaderiOS.php";
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        [request setURL:[NSURL URLWithString:urlString]];
-        [request setHTTPMethod:@"POST"];
+        MultipartForm* sendImage = [MultipartForm initWithURL:[NSURL URLWithString:@"http://pixelgraphy.net/PHP/ImageServerUploaderiOS.php"] formMethod:@"POST"];
         
-        NSMutableData *body = [NSMutableData data];
+        [sendImage openForm];
         
+        [sendImage addHeaderFile:imageData header:@"image/jpeg"];
         
-        NSString *boundary = @"---------------------------14737809831466499882746641449";
-        NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-        [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
-        // file
-        NSData *imageData = UIImageJPEGRepresentation([_ImageViewRO image], 1.0f);
+        [sendImage addHeaderValue:username withKey:@"usr"];
         
-        // file
-        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: attachment; name=\"myFile\"; filename=\"test.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"Content-Type: image/jpeg\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[NSData dataWithData:imageData]];
-        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [sendImage addHeaderValue:@"0" withKey:@"isProfile"]; //Not for profile
         
-        // user name here
-        NSString *param1 = username;
-        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"usr\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[param1 dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [sendImage addHeaderValue:[_ImageNameRO text] withKey:@"nameInput"];
         
-        // is profile
-        NSString *param2 = @"0";
-        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"isProfile\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[param2 dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [sendImage addHeaderValue:[_DescriptionRO text] withKey:@"descriptionInput"];
         
-        //Image name
-        NSString *param3 = [_ImageNameRO text];
-        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"nameInput\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[param3 dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [sendImage closeForm];
         
-        //Image Description
-        NSString *param4 = [_DescriptionRO text];
-        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"descriptionInput\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[param4 dataUsingEncoding:NSUTF8StringEncoding]];
-        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        NSString* returnMessage = [sendImage sendForm];
+
+        NSLog(@"%@", returnMessage);
         
-        // close form
-        [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-        
-        // set request body
-        [request setHTTPBody:body];
-        
-        //return and test
-        NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-        NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-        
-        NSLog(@"%@", returnString);
-        
-            [_ImageNameRO setText:@""];
-            [_DescriptionRO setText:@""];
-            _ImageViewRO.image = nil;
+        [self clearUploader];
         
         [self showMessage:@"Done!" body:@"Image has been uploaded"];
     }
+    [_viewRO setHidden:YES];
 }
 
 -(void)dismissKeyboard
@@ -249,6 +210,12 @@
                             otherButtonTitles: nil
                             ];
     [anAlert show];
+}
+-(void)clearUploader
+{
+    [_ImageNameRO setText:@""];
+    [_DescriptionRO setText:@""];
+    _ImageViewRO.image = nil;
 }
 
 @end

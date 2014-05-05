@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [_LoadRO setHidden:NO];
     _ScrollViewRO.contentSize =CGSizeMake(320, 1000);
     //The below two lines are how to access the UUID after it is saved after a successful login
     NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
@@ -76,6 +77,7 @@
                        NSData* urlData = [NSData dataWithContentsOfURL:url];
                        
                        [_ProfileImage setImage:[[UIImage alloc] initWithData:urlData]];
+                       [_LoadRO setHidden:YES];
                        [self.view setNeedsDisplay];
                    });
     

@@ -18,6 +18,8 @@
 - (IBAction)UploadTO:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIScrollView *ScrollViewRO;
 -(void)showMessage:(NSString*)title body:(NSString*)body;
+-(void)clearUploader;
+@property (weak, nonatomic) IBOutlet UIView *viewRO;
 
 
 @end
