@@ -24,7 +24,6 @@
     if (cell == nil)
         {
             cell = [[CommentCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            
         }
 
     cell.posterName.text = commentData.posterName;
@@ -36,8 +35,15 @@
     [cellTextView.layer setBorderColor:[[UIColor grayColor] CGColor]];
     [cellTextView.layer setBorderWidth: 0.3];
     
+    /*if([self.data count]> 0)
+    {
+        
+        [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:([self.data count] - 1) inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    }*/
+    
     return cell;
 }
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

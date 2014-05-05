@@ -84,8 +84,12 @@
                 {
                     self.dataSource.data = tableData;
                     [self.tableView reloadData];
+                    
                 });
+                
+                
             }
+            
         }
         else
         {
@@ -97,7 +101,9 @@
                 dispatch_async(dispatch_get_main_queue(),^
                 {
                     self.dataSource.data = tableData;
+                   
                     [self.tableView reloadData];
+                    
                 });
         }
     }
@@ -106,6 +112,14 @@
         [dataRequest getCommentsWithID: photoInfo.ID];
     }
 }
+- (void) scrollToBottom
+{
+    NSArray * tableIndexPath = [self.tableView indexPathsForVisibleRows];
+    
+    NSIndexPath* lastIndexPath = [tableIndexPath objectAtIndex:[tableIndexPath count]-1];
+    [self.tableView scrollToRowAtIndexPath:lastIndexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+}
+
 -(void)onError:(NSError*)connectionError
 {
     NSLog(@"error");
