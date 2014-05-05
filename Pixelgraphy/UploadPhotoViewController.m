@@ -9,7 +9,6 @@
 #import "UploadPhotoViewController.h"
 #import "DataRequest.h"
 #import "HttpRequest.h"
-#import "Base64.h" //Testing base64 encoding
 
 @interface UploadPhotoViewController ()
 
@@ -172,7 +171,7 @@
         [dataRequest sendImageData:imageData];
          */
         
-        NSString *urlString = @"http://test.pixelgraphy.net/PHP/ImageServerUploaderiOS.php";
+        NSString *urlString = @"http://pixelgraphy.net/PHP/ImageServerUploaderiOS.php";
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         [request setURL:[NSURL URLWithString:urlString]];
         [request setHTTPMethod:@"POST"];
