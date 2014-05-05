@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		37B296E0190963450087D4AD /* UploadPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B296DF190963450087D4AD /* UploadPhotoViewController.m */; };
 		8B2746FE19083519005CE38F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2746FD19083519005CE38F /* ProfileViewController.m */; };
-		8BABED941916AFDC0016AAA8 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BABED931916AFDC0016AAA8 /* Base64.m */; };
 		8BAEF418191048F100453124 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF417191048F100453124 /* Accelerate.framework */; };
 		8BAEF41A191048FA00453124 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF419191048FA00453124 /* CoreData.framework */; };
 		8BAEF41C1910490C00453124 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAEF41B1910490C00453124 /* libsqlite3.0.dylib */; };
@@ -66,8 +65,6 @@
 		37B296DF190963450087D4AD /* UploadPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UploadPhotoViewController.m; sourceTree = "<group>"; };
 		8B2746FC19083519005CE38F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		8B2746FD19083519005CE38F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		8BABED921916AFDC0016AAA8 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = ../../../Downloads/base64/Base64.h; sourceTree = "<group>"; };
-		8BABED931916AFDC0016AAA8 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Base64.m; path = ../../../Downloads/base64/Base64.m; sourceTree = "<group>"; };
 		8BAEF417191048F100453124 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		8BAEF419191048FA00453124 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8BAEF41B1910490C00453124 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -211,8 +208,6 @@
 				B35496B91916059600901254 /* UploadProPicViewController.m */,
 				37B296DE190963450087D4AD /* UploadPhotoViewController.h */,
 				37B296DF190963450087D4AD /* UploadPhotoViewController.m */,
-				8BABED921916AFDC0016AAA8 /* Base64.h */,
-				8BABED931916AFDC0016AAA8 /* Base64.m */,
 				8B2746FC19083519005CE38F /* ProfileViewController.h */,
 				8B2746FD19083519005CE38F /* ProfileViewController.m */,
 				8BD9025C18FF00B7005D22A9 /* LoginSupportViewController.h */,
@@ -392,7 +387,6 @@
 				AAB479AE190D51D0002CBCDB /* CommentCellTableViewCell.m in Sources */,
 				AAB479A5190C4F09002CBCDB /* MyTableViewDataSource.m in Sources */,
 				8BBD6A4F19061E730013BACB /* LoadingScreenViewController.m in Sources */,
-				8BABED941916AFDC0016AAA8 /* Base64.m in Sources */,
 				AA2C0AD219089C8100F184EA /* PhotoInfo.m in Sources */,
 				AA8B8D2D18BC4218005C1C53 /* AppDelegate.m in Sources */,
 				AAB479B1190D524A002CBCDB /* CommentsDataSource.m in Sources */,

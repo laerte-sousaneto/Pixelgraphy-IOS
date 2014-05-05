@@ -9,7 +9,6 @@
 #import "UploadPhotoViewController.h"
 #import "DataRequest.h"
 #import "HttpRequest.h"
-#import "Base64.h" //Testing base64 encoding
 
 @interface UploadPhotoViewController ()
 
