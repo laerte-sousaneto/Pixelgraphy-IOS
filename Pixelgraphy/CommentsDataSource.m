@@ -30,6 +30,12 @@
     cell.posterName.text = commentData.posterName;
     cell.comment.text = commentData.comment;
     
+    
+    UITextView* cellTextView = cell.comment;
+    
+    [cellTextView.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [cellTextView.layer setBorderWidth: 0.3];
+    
     return cell;
 }
 
