@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4uL-fs-HPR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4uL-fs-HPR">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -531,7 +531,7 @@ an @purchase.edu e-mail</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cz0-Vo-3Cb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz0-Vo-3Cb">
                                 <rect key="frame" x="0.0" y="65" width="320" height="584"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -564,7 +564,7 @@ an @purchase.edu e-mail</string>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-wb-fD4">
                                                                     <rect key="frame" x="20" y="49" width="240" height="61"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" white="0.66269388686131392" alpha="0.17000000000000001" colorSpace="calibratedWhite"/>
+                                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="0.11" colorSpace="calibratedWhite"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -632,6 +632,8 @@ an @purchase.edu e-mail</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="AddComments" destination="2v2-8h-7FI" id="dmx-Op-rKa"/>
+                        <outlet property="ScrollView" destination="Cz0-Vo-3Cb" id="E7m-V5-uSa"/>
                         <outlet property="commentArea" destination="Vrs-kB-qyi" id="fES-CD-FCu"/>
                         <outlet property="dataSource" destination="h5y-01-s3s" id="kMQ-92-WYx"/>
                         <outlet property="tableView" destination="O8x-gf-GLV" id="nJY-Yb-i3e"/>
@@ -1480,6 +1482,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qu2-f9-eOd"/>
-        <segue reference="hkM-Kj-0LX"/>
+        <segue reference="lZ1-rh-e7O"/>
     </inferredMetricsTieBreakers>
 </document>

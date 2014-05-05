@@ -19,5 +19,7 @@
 @property (nonatomic) int photoIndex;
 
 @property (nonatomic) IBOutlet UITextView *commentArea;
+@property (strong, nonatomic) IBOutlet UIScrollView *ScrollView;
+@property (strong, nonatomic) IBOutlet UIButton *AddComments;
 
 @end

@@ -33,6 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(didShow) name:UIKeyboardDidShowNotification object:nil];
+    [center addObserver:self selector:@selector(didHide) name:UIKeyboardWillHideNotification object:nil];
     self.commentArea.delegate = self;
     
     photoInfo = [_photos objectAtIndex:_photoIndex];
@@ -44,6 +47,7 @@
     [dataRequest getCommentsWithID:  photoInfo.ID];
     
     _tableView.backgroundColor = [UIColor lightGrayColor];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -189,5 +193,19 @@
 - (IBAction)BackTouchUp:(UIButton *)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)didShow
+{
+    _ScrollView.scrollEnabled = true;
+    CGPoint point = CGPointMake(0, _AddComments.frame.size.height * 6.0); //2.5
+    [_ScrollView setContentOffset:point animated:YES];
+}
+
+- (void)didHide
+{
+    NSLog(@"Keyboard hidden");
+    [_ScrollView setContentOffset:CGPointZero animated:YES];
+    _ScrollView.scrollEnabled = false;
 }
 @end
