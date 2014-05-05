@@ -148,7 +148,7 @@
         
         [sendImage openForm];
         
-        [sendImage addHeaderFile:imageData header:@"No Data"];
+        [sendImage addHeaderFile:imageData header:@"image/jpeg"];
         
         [sendImage addHeaderValue:username withKey:@"usr"];
         

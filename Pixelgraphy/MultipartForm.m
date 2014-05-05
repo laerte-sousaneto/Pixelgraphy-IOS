@@ -29,7 +29,7 @@
 {
     [self.body appendData:[[NSString stringWithFormat:@"--%@\r\n", self.boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [self.body appendData:[[NSString stringWithFormat:@"Content-Disposition: attachment; name=\"myFile\"; filename=\"test.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
-    [self.body appendData:[[NSString stringWithFormat:@"Content-Type: image/jpeg\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [self.body appendData:[[NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", headerType] dataUsingEncoding:NSUTF8StringEncoding]];
     [self.body appendData:[NSData dataWithData:file]];
     [self.body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
 }
