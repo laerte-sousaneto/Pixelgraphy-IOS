@@ -545,7 +545,6 @@ an @purchase.edu e-mail</string>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="separatorColor" red="0.0032034139310000002" green="0.93251103940000002" blue="0.28219376029999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="sectionIndexColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="116" id="aeX-nO-Yds" customClass="CommentCellTableViewCell">
                                                         <rect key="frame" x="0.0" y="22" width="298" height="116"/>
@@ -654,11 +653,11 @@ an @purchase.edu e-mail</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X31-DD-wFS">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X31-DD-wFS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="521"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xyu-xh-WrM">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyu-xh-WrM">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="779"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -731,11 +730,27 @@ an @purchase.edu e-mail</string>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="7tB-XM-x6k"/>
+                                            <constraint firstAttribute="height" constant="779" id="Vqb-Fn-pcf"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xyu-xh-WrM" secondAttribute="trailing" id="932-bU-YB7"/>
+                                    <constraint firstAttribute="bottom" secondItem="xyu-xh-WrM" secondAttribute="bottom" id="QMH-SJ-Ebf"/>
+                                    <constraint firstItem="xyu-xh-WrM" firstAttribute="leading" secondItem="X31-DD-wFS" secondAttribute="leading" id="SGi-U8-spB"/>
+                                    <constraint firstItem="xyu-xh-WrM" firstAttribute="top" secondItem="X31-DD-wFS" secondAttribute="top" id="gQM-1C-lQb"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X31-DD-wFS" firstAttribute="top" secondItem="Wca-16-CWo" secondAttribute="top" id="8tV-Kt-4QH"/>
+                            <constraint firstAttribute="trailing" secondItem="X31-DD-wFS" secondAttribute="trailing" id="Uwu-a3-mHE"/>
+                            <constraint firstAttribute="bottom" secondItem="X31-DD-wFS" secondAttribute="bottom" constant="47" id="qYZ-UD-3xj"/>
+                            <constraint firstItem="X31-DD-wFS" firstAttribute="leading" secondItem="Wca-16-CWo" secondAttribute="leading" id="u6V-BN-fer"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload Photo" image="Upload Photo" id="jxm-B4-FBK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -825,11 +840,11 @@ an @purchase.edu e-mail</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-OX-M4a">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-OX-M4a">
                                 <rect key="frame" x="0.0" y="-3" width="320" height="573"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jE-ju-HUW">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jE-ju-HUW">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="759"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -901,11 +916,27 @@ an @purchase.edu e-mail</string>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="759" id="5iF-Ee-jhX"/>
+                                            <constraint firstAttribute="width" constant="320" id="jOK-BF-btI"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="1jE-ju-HUW" secondAttribute="bottom" id="8Dd-9l-pka"/>
+                                    <constraint firstAttribute="trailing" secondItem="1jE-ju-HUW" secondAttribute="trailing" id="lRm-8w-DeG"/>
+                                    <constraint firstItem="1jE-ju-HUW" firstAttribute="top" secondItem="v5b-OX-M4a" secondAttribute="top" id="rMU-mb-ULI"/>
+                                    <constraint firstItem="1jE-ju-HUW" firstAttribute="leading" secondItem="v5b-OX-M4a" secondAttribute="leading" id="zOf-Z7-hcw"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="v5b-OX-M4a" secondAttribute="bottom" constant="-2" id="0rl-Za-Lgv"/>
+                            <constraint firstItem="v5b-OX-M4a" firstAttribute="leading" secondItem="H1L-UH-oKm" secondAttribute="leading" id="KCj-VE-lGg"/>
+                            <constraint firstItem="v5b-OX-M4a" firstAttribute="top" secondItem="H1L-UH-oKm" secondAttribute="top" constant="-3" id="e5Q-4F-Okr"/>
+                            <constraint firstAttribute="trailing" secondItem="v5b-OX-M4a" secondAttribute="trailing" id="px6-LK-WVM"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" image="My Profile" id="oBA-7n-oKS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
