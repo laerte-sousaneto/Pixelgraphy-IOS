@@ -8,6 +8,8 @@
 
 #import "UploadPhotoViewController.h"
 #import "DataRequest.h"
+#import "HttpRequest.h"
+#import "Base64.h" //Testing base64 encoding
 
 @interface UploadPhotoViewController ()
 
@@ -159,7 +161,80 @@
     }
     else
     {
-        NSLog(@"Upload to server");
+        NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
+        //NSString* userID = [userInfo stringForKey:@"uuid"];
+        //NSData *imageData = UIImagePNGRepresentation([_ImageViewRO image]);
+        //NSString *encodedImage = [imageData base64Encoding];
+        /*
+        DataRequest* dataRequest = [DataRequest initWithUserID:userID];
+        
+        [dataRequest setDelegate:self];
+        [dataRequest sendImageData:imageData];
+         */
+        
+        NSString *urlString = @"http://anthony.pixelgraphy.net/imageGrab.php";
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:[NSURL URLWithString:urlString]];
+        [request setHTTPMethod:@"POST"];
+        
+        NSMutableData *body = [NSMutableData data];
+        
+        
+        NSString *boundary = @"---------------------------14737809831466499882746641449";
+        NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+        [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+        
+        // file
+        NSData *imageData = UIImageJPEGRepresentation([_ImageViewRO image], 90);
+        
+        // file
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: attachment; name=\"myFile\"; filename=\"test.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Type: image/jpeg\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[NSData dataWithData:imageData]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        // user name here
+        NSString *param1 = @"apaveglio";
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"usr\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[param1 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        // is profile
+        NSString *param2 = @"0";
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"isProfile\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[param2 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        //Image name
+        NSString *param3 = @"Test Name";
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"nameInput\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[param3 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        //Image Description
+        NSString *param4 = @"Test Desc";
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"descriptionInput\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[param4 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        // close form
+        [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        // set request body
+        [request setHTTPBody:body];
+        
+        //return and test
+        NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"%@", returnString);
+        
+        
     }
 }
 
@@ -167,6 +242,29 @@
 {
     [_DescriptionRO resignFirstResponder];
     [_ImageNameRO resignFirstResponder];
+}
+-(void)beforeSend
+{
+    //Implement what should happend before request is made.
+}
+-(void)onSuccess:(NSData*)data;
+{
+    NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSLog(@"%@", result);
+    //This block of code is changing me and my life -- Anthony
+    dispatch_async(dispatch_get_main_queue(),^
+                   {
+                       //
+                   });
+    
+}
+-(void)onError:(NSError*)connectionError
+{
+    dispatch_async(dispatch_get_main_queue(),^
+                   {
+                       NSLog(@"ERROR!!!!");
+                   });
+    NSLog(@"There was an error");
 }
 
 @end
