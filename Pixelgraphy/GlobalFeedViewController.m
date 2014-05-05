@@ -43,6 +43,7 @@
     [dataRequest setDelegate:self];
     [dataRequest getGlobalPhotos];
     // Do any additional setup after loading the view.
+
 }
 
 -(void)onSuccess:(NSData*)data

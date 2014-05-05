@@ -47,8 +47,8 @@
 -(void) addStyle
 {
     //UIImageView Border
-    [_imageView.layer setBorderColor:[[UIColor blackColor] CGColor]];
-    [_imageView.layer setBorderWidth: 2.0];
+    [_imageView.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [_imageView.layer setBorderWidth: 1.0];
 }
 -(void) addTapGesture
 {

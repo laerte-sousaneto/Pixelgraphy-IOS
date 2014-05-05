@@ -27,8 +27,16 @@
         
     }
     
-    cell.imageView.image = photoInfo.image;
+    UIImageView* cellImageView = cell.imageView;
+    
+    [cellImageView.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
+    [cellImageView.layer setBorderWidth: 1.0];
+    
+    cellImageView.image = photoInfo.image;
+    
+    
     cell.title.text = photoInfo.name;
+
     
     return cell;
 }
