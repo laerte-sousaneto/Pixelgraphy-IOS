@@ -11,6 +11,7 @@
 @implementation MyPhotoCell
 
 @synthesize imageView;
+
 - (void)awakeFromNib
 {
     // Initialization code
@@ -22,5 +23,7 @@
 
     // Configure the view for the selected state
 }
+
+
 
 @end
