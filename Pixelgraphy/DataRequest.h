@@ -20,4 +20,7 @@
 -(void)getProfileData;
 -(void)getCommentsWithID:(NSString*)image_id;
 -(void)postComment:(NSString*)comment userID:(NSString*)userID imageID:(NSString*)imageID;
+-(void)imageMedium:(NSData*)imageMedium;
+-(void)sendImageData:(NSData*)imageData;
+
 @end

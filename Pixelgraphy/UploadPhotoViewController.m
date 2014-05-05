@@ -8,6 +8,7 @@
 
 #import "UploadPhotoViewController.h"
 #import "DataRequest.h"
+#import "HttpRequest.h"
 
 @interface UploadPhotoViewController ()
 
@@ -126,40 +127,87 @@
 {
     if([_ImageViewRO image] == nil)
     {
-        UIAlertView* anAlert = [ [UIAlertView alloc]
-                                initWithTitle:@"Error"
-                                message:@"Please choose an image to upload."
-                                delegate:self
-                                cancelButtonTitle:@"OK"
-                                otherButtonTitles: nil
-                                ];
-        [anAlert show];
+        [self showMessage:@"Error" body:@"Please choose an image to upload."];
     }
     else if ([[_ImageNameRO text] isEqualToString:@""])
     {
-        UIAlertView* anAlert = [ [UIAlertView alloc]
-                                initWithTitle:@"Error"
-                                message:@"Please specify a name."
-                                delegate:self
-                                cancelButtonTitle:@"OK"
-                                otherButtonTitles: nil
-                                ];
-        [anAlert show];
+        [self showMessage:@"Error" body:@"Please specify a name."];
     }
     else if([[_DescriptionRO text] isEqualToString:@""])
     {
-        UIAlertView* anAlert = [ [UIAlertView alloc]
-                                initWithTitle:@"Error"
-                                message:@"Please specify a description."
-                                delegate:self
-                                cancelButtonTitle:@"OK"
-                                otherButtonTitles: nil
-                                ];
-        [anAlert show];
+        [self showMessage:@"Error" body:@"Please specify a description."];
     }
     else
     {
-        NSLog(@"Upload to server");
+        NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
+        NSString* username = [userInfo stringForKey:@"username"];
+        
+        NSString *urlString = @"http://pixelgraphy.net/PHP/ImageServerUploaderiOS.php";
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:[NSURL URLWithString:urlString]];
+        [request setHTTPMethod:@"POST"];
+        
+        NSMutableData *body = [NSMutableData data];
+        
+        
+        NSString *boundary = @"---------------------------14737809831466499882746641449";
+        NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+        [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+        // file
+        NSData *imageData = UIImageJPEGRepresentation([_ImageViewRO image], 1.0f);
+        
+        // file
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: attachment; name=\"myFile\"; filename=\"test.jpg\"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Type: image/jpeg\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[NSData dataWithData:imageData]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        // user name here
+        NSString *param1 = username;
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"usr\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[param1 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        // is profile
+        NSString *param2 = @"0";
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"isProfile\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[param2 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        //Image name
+        NSString *param3 = [_ImageNameRO text];
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"nameInput\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[param3 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        //Image Description
+        NSString *param4 = [_DescriptionRO text];
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"descriptionInput\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[param4 dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        // close form
+        [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        // set request body
+        [request setHTTPBody:body];
+        
+        //return and test
+        NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"%@", returnString);
+        
+            [_ImageNameRO setText:@""];
+            [_DescriptionRO setText:@""];
+            _ImageViewRO.image = nil;
+        
+        [self showMessage:@"Done!" body:@"Image has been uploaded"];
     }
 }
 
@@ -167,6 +215,40 @@
 {
     [_DescriptionRO resignFirstResponder];
     [_ImageNameRO resignFirstResponder];
+}
+-(void)beforeSend
+{
+    //Implement what should happend before request is made.
+}
+-(void)onSuccess:(NSData*)data;
+{
+    NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSLog(@"%@", result);
+    //This block of code is changing me and my life -- Anthony
+    dispatch_async(dispatch_get_main_queue(),^
+                   {
+                       //
+                   });
+    
+}
+-(void)onError:(NSError*)connectionError
+{
+    dispatch_async(dispatch_get_main_queue(),^
+                   {
+                       NSLog(@"ERROR!!!!");
+                   });
+    NSLog(@"There was an error");
+}
+-(void)showMessage:(NSString*)title body:(NSString*)body
+{
+    UIAlertView* anAlert = [ [UIAlertView alloc]
+                            initWithTitle:title
+                            message:body
+                            delegate:self
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles: nil
+                            ];
+    [anAlert show];
 }
 
 @end
