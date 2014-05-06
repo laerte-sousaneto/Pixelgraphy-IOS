@@ -128,6 +128,11 @@
 {
     if (motion == UIEventSubtypeMotionShake)
     {
+        NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
+        NSString* userID = [userInfo stringForKey:@"uuid"];
+        DataRequest* dataRequest = [DataRequest initWithUserID:userID];
+        [dataRequest setDelegate:self];
+        [dataRequest getGlobalPhotos];
         NSLog(@"Shake!!!");
     } 
 }
