@@ -1445,7 +1445,7 @@ an @purchase.edu e-mail</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyl-Au-hXh">
-                                <rect key="frame" x="40" y="312" width="240" height="133"/>
+                                <rect key="frame" x="40" y="342" width="240" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.65000000000000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -1462,7 +1462,7 @@ an @purchase.edu e-mail</string>
                                 <size key="shadowOffset" width="0.0" height="-2"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZs-3n-5Rk">
-                                <rect key="frame" x="40" y="478" width="106" height="30"/>
+                                <rect key="frame" x="40" y="508" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
@@ -1475,7 +1475,7 @@ an @purchase.edu e-mail</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvJ-pC-yf6">
-                                <rect key="frame" x="171" y="478" width="109" height="30"/>
+                                <rect key="frame" x="171" y="508" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
