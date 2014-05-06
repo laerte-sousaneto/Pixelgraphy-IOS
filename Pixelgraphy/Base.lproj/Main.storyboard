@@ -939,7 +939,7 @@ an @purchase.edu e-mail</string>
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="v5b-OX-M4a" secondAttribute="bottom" constant="-2" id="0rl-Za-Lgv"/>
                             <constraint firstItem="v5b-OX-M4a" firstAttribute="leading" secondItem="H1L-UH-oKm" secondAttribute="leading" id="KCj-VE-lGg"/>
@@ -1677,6 +1677,6 @@ an @purchase.edu e-mail</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qu2-f9-eOd"/>
-        <segue reference="lZ1-rh-e7O"/>
+        <segue reference="hkM-Kj-0LX"/>
     </inferredMetricsTieBreakers>
 </document>

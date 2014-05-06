@@ -11,5 +11,7 @@
 @interface GlobalFeedViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (BOOL)canBecomeFirstResponder;
+
 
 @end
