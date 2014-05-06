@@ -45,6 +45,15 @@
     // Do any additional setup after loading the view.
 
 }
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [self becomeFirstResponder];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [self becomeFirstResponder];
+}
 
 -(void)onSuccess:(NSData*)data
 {
@@ -111,7 +120,17 @@
         controller.currentIndex = (int)indexPath.row;
     }
 }
-
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        NSLog(@"Shake!!!");
+    } 
+}
 /*
 #pragma mark - Navigation
 

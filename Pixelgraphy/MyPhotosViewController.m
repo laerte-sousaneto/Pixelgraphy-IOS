@@ -43,6 +43,25 @@
     [dataRequest getUserPhotos];
     // Do any additional setup after loading the view.
 }
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [self becomeFirstResponder];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [self becomeFirstResponder];
+}
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        NSLog(@"Shake!");
+    }
+}
 -(void)onSuccess:(NSData*)data
 {
     NSMutableArray* tableData = [[NSMutableArray alloc] init];
