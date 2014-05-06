@@ -39,8 +39,8 @@
     [self.view addGestureRecognizer:tap];
     
     //UIImageView Border
-    [_ImageViewRO.layer setBorderColor:[[UIColor blackColor] CGColor]];
-    [_ImageViewRO.layer setBorderWidth: 2.0];
+    [_ImageViewRO.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
+    [_ImageViewRO.layer setBorderWidth: 1.0];
   
     
 }
