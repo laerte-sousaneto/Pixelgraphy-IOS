@@ -63,7 +63,7 @@
         NSString* userID = [userInfo stringForKey:@"uuid"];
         DataRequest* dataRequest = [DataRequest initWithUserID:userID];
         [dataRequest setDelegate:self];
-        [dataRequest getGlobalPhotos];
+        [dataRequest getUserPhotos];
         NSLog(@"Shake!");
     }
 }
