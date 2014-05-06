@@ -14,6 +14,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *Hometown;
 @property (strong, nonatomic) IBOutlet UITextField *Major;
 @property (strong, nonatomic) IBOutlet UITextField *PersonalEmail;
+@property (weak, nonatomic) IBOutlet UITextView *Hobbies;
+@property (weak, nonatomic) IBOutlet UITextView *Biography;
 
 
 @end

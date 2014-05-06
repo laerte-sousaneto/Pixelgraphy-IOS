@@ -7,6 +7,8 @@
 //
 
 #import "EditProfileViewController.h"
+#import "DataRequest.h"
+#import "MultipartForm.h"
 
 @interface EditProfileViewController ()
 
@@ -26,13 +28,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //Get current profile data
+    NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
+    NSString* userID = [userInfo stringForKey:@"uuid"];
+    DataRequest* dataRequest = [DataRequest initWithUserID:userID];
+    [dataRequest setDelegate:self];
     
+    [dataRequest getProfileData];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
 
     // Do any additional setup after loading the view.
-    
-    _pickerViewContainer.frame = CGRectMake(0, 460, 320, 254);
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,4 +55,35 @@
     [_Major resignFirstResponder];
     [_PersonalEmail resignFirstResponder];
 }
+-(void)onSuccess:(NSData*)data
+{
+    NSString* result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSDictionary *jsonProfile =
+    [NSJSONSerialization JSONObjectWithData: [result dataUsingEncoding:NSUTF8StringEncoding]
+                                    options: NSJSONReadingMutableContainers
+                                      error: nil];
+    dispatch_async(dispatch_get_main_queue(),^
+                   {
+                       //Load data heir
+                       [_FullName setText:jsonProfile[@"fullname"]];
+                       //[_Nickname setText:jsonProfile[@"fullname"]];
+                       [_Hometown setText:jsonProfile[@"hometown"]];
+                       [_PersonalEmail setText:jsonProfile[@"personal_email"]];
+                       [_Major setText:jsonProfile[@"major"]];
+                       [_Hobbies setText:[NSString stringWithFormat:@"%@", jsonProfile[@"hobbies"]]];
+                       [_Biography setText:[NSString stringWithFormat:@"%@", jsonProfile[@"biography"]]];
+                       [self.view setNeedsDisplay];
+                   });
+    
+}
+-(void)onError:(NSError*)connectionError
+{
+    NSLog(@"error");
+}
+-(void)beforeSend
+{
+    
+}
+
+
 @end
