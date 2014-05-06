@@ -31,6 +31,8 @@
     [self.view addGestureRecognizer:tap];
 
     // Do any additional setup after loading the view.
+    
+    _pickerViewContainer.frame = CGRectMake(0, 460, 320, 254);
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,5 +49,4 @@
     [_Major resignFirstResponder];
     [_PersonalEmail resignFirstResponder];
 }
-
 @end
