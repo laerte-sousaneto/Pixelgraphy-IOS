@@ -90,5 +90,30 @@
 {
     
 }
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [self becomeFirstResponder];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [self becomeFirstResponder];
+}
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        [_LoadRO setHidden:NO];
+        NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
+        NSString* userID = [userInfo stringForKey:@"uuid"];
+        DataRequest* dataRequest = [DataRequest initWithUserID:userID];
+        [dataRequest setDelegate:self];
+        [dataRequest getProfileData];
+        NSLog(@"Shake!");
+    }
+}
 
 @end

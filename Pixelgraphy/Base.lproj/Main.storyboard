@@ -1359,6 +1359,9 @@ an @purchase.edu e-mail</string>
                                                 <state key="normal" title="Submit Changes">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="submitChangesTouchUp:" destination="gIr-GJ-IC9" eventType="touchUpInside" id="XjH-bn-HJF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

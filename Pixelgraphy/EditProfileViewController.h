@@ -16,5 +16,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *PersonalEmail;
 @property (weak, nonatomic) IBOutlet UITextView *Hobbies;
 @property (weak, nonatomic) IBOutlet UITextView *Biography;
+- (IBAction)submitChangesTouchUp:(UIButton *)sender;
+-(void)showMessage:(NSString*)title body:(NSString*)body;
 
 @end

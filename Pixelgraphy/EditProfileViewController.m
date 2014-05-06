@@ -66,7 +66,7 @@
                    {
                        //Load data heir
                        [_FullName setText:jsonProfile[@"fullname"]];
-                       //[_Nickname setText:jsonProfile[@"fullname"]];
+                       [_Nickname setText:jsonProfile[@"nickname"]];
                        [_Hometown setText:jsonProfile[@"hometown"]];
                        [_PersonalEmail setText:jsonProfile[@"personal_email"]];
                        [_Major setText:jsonProfile[@"major"]];
@@ -86,4 +86,50 @@
 }
 
 
+- (IBAction)submitChangesTouchUp:(UIButton *)sender
+{
+    NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
+    NSString* userID = [userInfo stringForKey:@"uuid"];
+    MultipartForm* data = [MultipartForm initWithURL:[NSURL URLWithString:@"http://pixelgraphy.net/PHP/update_settingsiOS.php"] formMethod:@"POST"];
+    
+    [data openForm];
+    
+    //[sendImage addHeaderFile:imageData header:@"image/jpeg"];
+    
+    [data addHeaderValue:userID withKey:@"uuid"];
+    
+    [data addHeaderValue:[_FullName text] withKey:@"fullname"];
+    
+    [data addHeaderValue:[_Hometown text] withKey:@"hometown"];
+    
+    [data addHeaderValue:[_Nickname text] withKey:@"nickname"];
+    
+    [data addHeaderValue:[_PersonalEmail text] withKey:@"personal_email"];
+    
+    [data addHeaderValue:[_Major text] withKey:@"major"];
+    
+    [data addHeaderValue:[_Hobbies text] withKey:@"hobbies"];
+    
+    [data addHeaderValue:[_Biography text] withKey:@"biography"];
+    
+    [data closeForm];
+    
+    NSString* returnMessage = [data sendForm];
+    
+    NSLog(@"%@", returnMessage);
+    [self showMessage:@"Changes successful!" body:@"Your profile was successfully modified"];
+
+}
+
+-(void)showMessage:(NSString*)title body:(NSString*)body
+{
+    UIAlertView* anAlert = [ [UIAlertView alloc]
+                            initWithTitle:title
+                            message:body
+                            delegate:self
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles: nil
+                            ];
+    [anAlert show];
+}
 @end
