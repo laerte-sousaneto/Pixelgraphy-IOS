@@ -7,6 +7,7 @@
 //
 
 #import "EditProfileViewController.h"
+#import "DataRequest.h"
 
 @interface EditProfileViewController ()
 
