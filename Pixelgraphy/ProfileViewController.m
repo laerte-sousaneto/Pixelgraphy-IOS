@@ -64,14 +64,16 @@
     dispatch_async(dispatch_get_main_queue(),^
                    {
                        //Gonna break this up into functions later, just wanted to get it working
-                       [_Username setText:jsonProfile[@"fullname"]];
+                       NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
+                       NSString* loginName = [userInfo stringForKey:@"username"];
+                       [_fullName setText:jsonProfile[@"fullname"]];
                        [_email setText:jsonProfile[@"personal_email"]];
                        [_Majors setText:jsonProfile[@"major"]];
                        [_Hometown setText:[NSString stringWithFormat:@"%@, %@", jsonProfile[@"hometown"], jsonProfile[@"homestate"]]];
                        [_dob setText:jsonProfile[@"DOB"]];
                        [_HobbiesTextView setText:[NSString stringWithFormat:@"%@", jsonProfile[@"hobbies"]]];
                        [_BioTextView setText:jsonProfile[@"biography"]];
-                       
+                       [_Loginname setText:loginName];
                        NSString *urlString = [NSString stringWithFormat:@"%@%@", @"http://pixelgraphy.net/",jsonProfile[@"profile_picture"]];
                        NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
                        NSData* urlData = [NSData dataWithContentsOfURL:url];

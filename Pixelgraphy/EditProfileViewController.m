@@ -28,9 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     //Get current profile data
     NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
     NSString* userID = [userInfo stringForKey:@"uuid"];
+    
     DataRequest* dataRequest = [DataRequest initWithUserID:userID];
     [dataRequest setDelegate:self];
     
@@ -65,11 +67,13 @@
     dispatch_async(dispatch_get_main_queue(),^
                    {
                        //Load data heir
+                       
                        [_FullName setText:jsonProfile[@"fullname"]];
                        [_Nickname setText:jsonProfile[@"nickname"]];
                        [_Hometown setText:jsonProfile[@"hometown"]];
                        [_PersonalEmail setText:jsonProfile[@"personal_email"]];
                        [_Major setText:jsonProfile[@"major"]];
+                       [_StateRO setText:jsonProfile[@"homestate"]];
                        [_Hobbies setText:[NSString stringWithFormat:@"%@", jsonProfile[@"hobbies"]]];
                        [_Biography setText:[NSString stringWithFormat:@"%@", jsonProfile[@"biography"]]];
                        [self.view setNeedsDisplay];
@@ -101,6 +105,8 @@
     [data addHeaderValue:[_FullName text] withKey:@"fullname"];
     
     [data addHeaderValue:[_Hometown text] withKey:@"hometown"];
+    
+    [data addHeaderValue:[_StateRO text] withKey:@"homestate"];
     
     [data addHeaderValue:[_Nickname text] withKey:@"nickname"];
     

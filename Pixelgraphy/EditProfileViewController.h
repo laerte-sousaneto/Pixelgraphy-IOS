@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *Biography;
 - (IBAction)submitChangesTouchUp:(UIButton *)sender;
 -(void)showMessage:(NSString*)title body:(NSString*)body;
+@property (weak, nonatomic) IBOutlet UITextField *BirthdayRO;
+@property (weak, nonatomic) IBOutlet UIPickerView *StatePickerRO;
+@property (weak, nonatomic) IBOutlet UITextField *StateRO;
 
 
 @end
