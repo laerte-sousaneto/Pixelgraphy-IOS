@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (BOOL)canBecomeFirstResponder;
+@property (weak, nonatomic) IBOutlet UIView *LoadingScreen;
 
 
 @end

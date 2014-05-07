@@ -82,6 +82,7 @@
         dispatch_async(dispatch_get_main_queue(),^
         {
             self.dataSource.data = tableData;
+            [_LoadingScreen setHidden:YES];
             [self.tableView reloadData];
         });
         
@@ -94,7 +95,7 @@
 }
 -(void)beforeSend
 {
-
+    [_LoadingScreen setHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,6 +129,7 @@
 {
     if (motion == UIEventSubtypeMotionShake)
     {
+        [_LoadingScreen setHidden:NO];
         NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
         NSString* userID = [userInfo stringForKey:@"uuid"];
         DataRequest* dataRequest = [DataRequest initWithUserID:userID];
