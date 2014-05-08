@@ -1113,15 +1113,15 @@ an @purchase.edu e-mail</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="Exit" id="Y5a-wi-to5">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wNF-aq-WCm" style="IBUITableViewCellStyleDefault" id="4rB-yl-hsb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wNF-aq-WCm" style="IBUITableViewCellStyleDefault" id="4rB-yl-hsb">
                                         <rect key="frame" x="0.0" y="286" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4rB-yl-hsb" id="VY8-J2-mcz">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Sign Out" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wNF-aq-WCm">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1129,6 +1129,9 @@ an @purchase.edu e-mail</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="modal" id="DrH-Va-zmJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1680,25 +1683,6 @@ an @purchase.edu e-mail</string>
             </objects>
             <point key="canvasLocation" x="2162" y="1176"/>
         </scene>
-        <!--View Controller - App Settings-->
-        <scene sceneID="sQT-Zt-67f">
-            <objects>
-                <viewController id="PUY-cx-zKS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sRc-g3-ivt"/>
-                        <viewControllerLayoutGuide type="bottom" id="RHf-dG-v2P"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lsn-7q-1KK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="App Settings" id="g7D-Ut-bgk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4r1-Ye-r44" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1746" y="1889"/>
-        </scene>
         <!--View Controller - About-->
         <scene sceneID="Km5-at-zVK">
             <objects>
@@ -1766,7 +1750,8 @@ an @purchase.edu e-mail</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qu2-f9-eOd"/>
         <segue reference="fxf-FE-jCp"/>
+        <segue reference="qu2-f9-eOd"/>
+        <segue reference="DrH-Va-zmJ"/>
     </inferredMetricsTieBreakers>
 </document>
