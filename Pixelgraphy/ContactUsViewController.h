@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *CommentBox;
 @property (weak, nonatomic) IBOutlet UITextField *EmailBox;
 - (IBAction)submit:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIView *LoadingRO;
 
 @property (strong, nonatomic) IBOutlet UITextView *ContactUsText;
 @property (strong, nonatomic) IBOutlet UITextField *PersonalEmail;

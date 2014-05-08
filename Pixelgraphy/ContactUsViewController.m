@@ -42,6 +42,7 @@
 
 - (IBAction)submit:(UIButton *)sender
 {
+    [_LoadingRO setHidden:NO];
     if ([[_CommentBox text] isEqualToString:@""])
     {
         UIAlertView* anAlert = [ [UIAlertView alloc]
@@ -64,7 +65,18 @@
                                 ];
         [anAlert show];
     }
-    else if ([self verifyPurchaseEmail:[_EmailBox text]])
+    else if (![self verifyPurchaseEmail:[_EmailBox text]])
+    {
+        UIAlertView* anAlert = [ [UIAlertView alloc]
+                                initWithTitle:@"Error"
+                                message:@"Email must be an @purchase.edu email!"
+                                delegate:self
+                                cancelButtonTitle:@"OK"
+                                otherButtonTitles: nil
+                                ];
+        [anAlert show];
+    }
+    else
     {
         NSUserDefaults *userInfo = [NSUserDefaults standardUserDefaults];
         NSString* loginName = [userInfo stringForKey:@"username"];
@@ -76,15 +88,8 @@
         [newForm closeForm];
         [newForm sendForm];
         
-        UIAlertView* anAlert = [ [UIAlertView alloc]
-                                initWithTitle:@"Success"
-                                message:@"Your feedback has been recieved"
-                                delegate:self
-                                cancelButtonTitle:@"OK"
-                                otherButtonTitles: nil
-                                ];
-        [anAlert show];
     }
+    [_LoadingRO setHidden:YES];
 }
 - (bool)verifyPurchaseEmail:(NSString *)email
 {
