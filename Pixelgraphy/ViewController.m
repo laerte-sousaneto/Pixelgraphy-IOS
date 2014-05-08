@@ -34,7 +34,6 @@
 }
 - (void)didShow
 {
-    NSLog(@"keyboard shown");
     _ScrollViewRO.scrollEnabled = true;
     
     CGPoint point = CGPointMake(0, _UsernameRO.frame.size.height * 3.5); //2.5
@@ -43,7 +42,6 @@
 
 - (void)didHide
 {
-    NSLog(@"Keyboard hidden");
     [_ScrollViewRO setContentOffset:CGPointZero animated:YES];
     _ScrollViewRO.scrollEnabled = false;
 }
