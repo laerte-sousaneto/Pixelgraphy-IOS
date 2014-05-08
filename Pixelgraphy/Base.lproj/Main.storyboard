@@ -1543,13 +1543,17 @@ an @purchase.edu e-mail</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitChangesTouchUp:" destination="gIr-GJ-IC9" eventType="touchUpInside" id="5lF-Q1-7S3"/>
+                                    <action selector="submit:" destination="4g9-q9-HsM" eventType="touchUpInside" id="Quk-AJ-VUo"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contact Us" id="LJ7-Nb-x6I"/>
+                    <connections>
+                        <outlet property="CommentBox" destination="ItB-cU-1se" id="sGS-41-dF5"/>
+                        <outlet property="EmailBox" destination="YU6-fl-UPO" id="i6m-KL-Sia"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyM-gj-aQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
