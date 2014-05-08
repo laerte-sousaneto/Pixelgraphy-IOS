@@ -51,7 +51,7 @@
 - (IBAction)AddPhoto:(UIButton *)sender
 {
     [[[UIActionSheet alloc] initWithTitle:nil
-                                 delegate:self
+                                 delegate:nil
                         cancelButtonTitle:@"Close"
                    destructiveButtonTitle:nil
                         otherButtonTitles:@"Take photo", @"Camera Roll", nil]
