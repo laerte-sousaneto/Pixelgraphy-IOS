@@ -52,8 +52,8 @@
 
 -(void)dismissKeyboard
 {
-    [_PersonalEmail resignFirstResponder];
-    [_ContactUsText resignFirstResponder];
+    [_CommentBox resignFirstResponder];
+    [_EmailBox resignFirstResponder];
 }
 
 
