@@ -1130,7 +1130,7 @@ an @purchase.edu e-mail</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="vXZ-lx-hvc" kind="modal" id="DrH-Va-zmJ"/>
+                                            <segue destination="vXZ-lx-hvc" kind="modal" modalTransitionStyle="crossDissolve" id="DrH-Va-zmJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
