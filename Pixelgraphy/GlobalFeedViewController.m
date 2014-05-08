@@ -135,7 +135,7 @@
         DataRequest* dataRequest = [DataRequest initWithUserID:userID];
         [dataRequest setDelegate:self];
         [dataRequest getGlobalPhotos];
-        NSLog(@"Shake!!!");
+        //NSLog(@"Shake!!!");
     } 
 }
 /*

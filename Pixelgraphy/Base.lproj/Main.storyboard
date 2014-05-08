@@ -1725,8 +1725,8 @@ an @purchase.edu e-mail</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="csF-Rk-U8H"/>
-        <segue reference="DdG-mX-aiP"/>
+        <segue reference="qu2-f9-eOd"/>
         <segue reference="fxf-FE-jCp"/>
+        <segue reference="DdG-mX-aiP"/>
     </inferredMetricsTieBreakers>
 </document>
