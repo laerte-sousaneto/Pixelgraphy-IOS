@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ContactUsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *CommentBox;
+@property (weak, nonatomic) IBOutlet UITextField *EmailBox;
+- (IBAction)submit:(UIButton *)sender;
 
 @property (strong, nonatomic) IBOutlet UITextView *ContactUsText;
 @property (strong, nonatomic) IBOutlet UITextField *PersonalEmail;
