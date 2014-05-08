@@ -36,7 +36,7 @@
 -(void)dismissKeyboard
 {
     [_PersonalEmail resignFirstResponder];
-    [_Submit resignFirstResponder];
+    [_ContactUsText resignFirstResponder];
 }
 
 
