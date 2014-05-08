@@ -43,8 +43,8 @@
     
     
     //UIImageView Border
-    [_ProfileImage.layer setBorderColor:[[UIColor blackColor] CGColor]];
-    [_ProfileImage.layer setBorderWidth: 2.0];
+    [_ProfileImage.layer setBorderColor:[[UIColor darkGrayColor] CGColor]];
+    [_ProfileImage.layer setBorderWidth: 1.0];
     
 }
 
