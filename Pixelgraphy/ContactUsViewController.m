@@ -27,6 +27,15 @@
 {
     [super viewDidLoad];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+}
+
+-(void)dismissKeyboard
+{
+    [_PersonalEmail resignFirstResponder];
+    [_Submit resignFirstResponder];
 }
 
 
