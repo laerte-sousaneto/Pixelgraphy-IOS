@@ -46,14 +46,12 @@
 }
 
 - (void)didShow
-{
-    NSLog(@"keyboard shown");
+{ 
     _ScrollViewRO.scrollEnabled = true;
 }
 
 - (void)didHide
 {
-    NSLog(@"Keyboard hidden");
     [_ScrollViewRO setContentOffset:CGPointZero animated:YES];
     _ScrollViewRO.scrollEnabled = false;
 }
