@@ -49,6 +49,7 @@
 		AAB479B1190D524A002CBCDB /* CommentsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479B0190D524A002CBCDB /* CommentsDataSource.m */; };
 		AAB479B4190D5301002CBCDB /* CommentData.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB479B3190D5301002CBCDB /* CommentData.m */; };
 		B35496BA1916059600901254 /* UploadProPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B35496B91916059600901254 /* UploadProPicViewController.m */; };
+		B39D337A191B06F40008E059 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39D3379191B06F40008E059 /* ContactUsViewController.m */; };
 		B3A1D0AE1917DD15007DC4AE /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3A1D0AD1917DD15007DC4AE /* EditProfileViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +131,8 @@
 		AAB479B3190D5301002CBCDB /* CommentData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentData.m; sourceTree = "<group>"; };
 		B35496B81916059600901254 /* UploadProPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadProPicViewController.h; sourceTree = "<group>"; };
 		B35496B91916059600901254 /* UploadProPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadProPicViewController.m; sourceTree = "<group>"; };
+		B39D3378191B06F40008E059 /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
+		B39D3379191B06F40008E059 /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
 		B3A1D0AC1917DD15007DC4AE /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		B3A1D0AD1917DD15007DC4AE /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +213,8 @@
 				AA8B8D2B18BC4218005C1C53 /* AppDelegate.h */,
 				AA8B8D2C18BC4218005C1C53 /* AppDelegate.m */,
 				AA8B8D2E18BC4218005C1C53 /* Main.storyboard */,
+				B39D3378191B06F40008E059 /* ContactUsViewController.h */,
+				B39D3379191B06F40008E059 /* ContactUsViewController.m */,
 				B3A1D0AC1917DD15007DC4AE /* EditProfileViewController.h */,
 				B3A1D0AD1917DD15007DC4AE /* EditProfileViewController.m */,
 				B35496B81916059600901254 /* UploadProPicViewController.h */,
@@ -401,6 +406,7 @@
 				AA2C0AD219089C8100F184EA /* PhotoInfo.m in Sources */,
 				AA8B8D2D18BC4218005C1C53 /* AppDelegate.m in Sources */,
 				AAB479B1190D524A002CBCDB /* CommentsDataSource.m in Sources */,
+				B39D337A191B06F40008E059 /* ContactUsViewController.m in Sources */,
 				AA10C6FD1906173A00BC36E3 /* AccountManager.m in Sources */,
 				8BD9025B18FEE403005D22A9 /* VerifyFieldsViewController.m in Sources */,
 				8BD9025E18FF00B7005D22A9 /* LoginSupportViewController.m in Sources */,

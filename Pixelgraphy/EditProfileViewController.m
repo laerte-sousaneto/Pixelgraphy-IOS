@@ -56,6 +56,10 @@
     [_Hometown resignFirstResponder];
     [_Major resignFirstResponder];
     [_PersonalEmail resignFirstResponder];
+    [_Biography resignFirstResponder];
+    [_Hobbies resignFirstResponder];
+    [_StateRO resignFirstResponder];
+    [_BirthdayRO resignFirstResponder];
 }
 -(void)onSuccess:(NSData*)data
 {
