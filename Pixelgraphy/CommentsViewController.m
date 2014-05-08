@@ -161,8 +161,6 @@
         _commentArea.text = @"";
     }
     
-    
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -221,7 +219,6 @@
 
 - (void)didHide
 {
-    NSLog(@"Keyboard hidden");
     [_ScrollView setContentOffset:CGPointZero animated:YES];
     _ScrollView.scrollEnabled = false;
 }
