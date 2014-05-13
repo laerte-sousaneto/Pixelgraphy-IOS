@@ -172,6 +172,7 @@
 }
 -(void)showLoading
 {
+    NSLog(@"Thread running");
     [_LoadingRO setHidden:NO];
 }
 -(void)hideLoading

@@ -51,7 +51,7 @@
 - (IBAction)AddPhoto:(UIButton *)sender
 {
     [[[UIActionSheet alloc] initWithTitle:nil
-                                 delegate:nil
+                                 delegate:self
                         cancelButtonTitle:@"Close"
                    destructiveButtonTitle:nil
                         otherButtonTitles:@"Take photo", @"Camera Roll", nil]
@@ -105,6 +105,7 @@
 
 - (IBAction)UploadPhoto:(UIButton *)sender
 {
+    [self performSelectorInBackground:@selector(showLoading) withObject:nil];
     if([_ProfImage image] == nil)
     {
         [self showMessage:@"Error" body:@"Please choose an image to upload."];
@@ -145,6 +146,8 @@
         
         [self clearUploader];
         
+        [self performSelectorInBackground:@selector(hideLoading) withObject:nil];
+        
         [self showMessage:@"Done!" body:@"Profile image changed."];
     }
 
@@ -154,6 +157,14 @@
 {
     [_PicName resignFirstResponder];
     [_ImageDescript resignFirstResponder];
+}
+-(void)showLoading
+{
+    [_LoadingRO setHidden:NO];
+}
+-(void)hideLoading
+{
+    [_LoadingRO setHidden:YES];
 }
 -(void)showMessage:(NSString*)title body:(NSString*)body
 {

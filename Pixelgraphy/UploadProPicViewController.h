@@ -18,6 +18,7 @@
 - (IBAction)AddPhoto:(UIButton *)sender;
 - (IBAction)UploadPhoto:(UIButton *)sender;
 -(void)clearUploader;
+@property (weak, nonatomic) IBOutlet UIView *LoadingRO;
 
 
 @end
