@@ -20,6 +20,7 @@
 -(void)showMessage:(NSString*)title body:(NSString*)body;
 -(void)clearUploader;
 @property (weak, nonatomic) IBOutlet UIView *viewRO;
+@property (weak, nonatomic) IBOutlet UIView *LoadingRO;
 
 
 @end

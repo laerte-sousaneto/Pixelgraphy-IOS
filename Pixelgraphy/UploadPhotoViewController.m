@@ -121,10 +121,11 @@
 {
     [picker dismissViewControllerAnimated:NO completion:nil];
 }
-
 - (IBAction)UploadTO:(UIButton *)sender
 {
-    [_viewRO setHidden:NO];
+    //This is needed because main thread freezes when form is being sent
+    [self performSelectorInBackground:@selector(showLoading) withObject:nil];
+    
     if([_ImageViewRO image] == nil)
     {
         [self showMessage:@"Error" body:@"Please choose an image to upload."];
@@ -166,10 +167,17 @@
         [self clearUploader];
         
         [self showMessage:@"Done!" body:@"Image has been uploaded"];
+        [self performSelectorInBackground:@selector(hideLoading) withObject:nil];
     }
-    [_viewRO setHidden:YES];
 }
-
+-(void)showLoading
+{
+    [_LoadingRO setHidden:NO];
+}
+-(void)hideLoading
+{
+    [_LoadingRO setHidden:YES];
+}
 -(void)dismissKeyboard
 {
     [_DescriptionRO resignFirstResponder];

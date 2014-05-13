@@ -673,17 +673,6 @@ an @purchase.edu e-mail</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view hidden="YES" alpha="0.74999999999999978" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KTW-Su-SRN">
-                                <rect key="frame" x="80" y="227" width="160" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="q6r-RA-WN3">
-                                        <rect key="frame" x="62" y="38" width="37" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X31-DD-wFS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="521"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -755,6 +744,24 @@ an @purchase.edu e-mail</string>
                                                 </subviews>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </view>
+                                            <view hidden="YES" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PW-D6-tKk">
+                                                <rect key="frame" x="40" y="147" width="241" height="205"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GC6-PS-WBt">
+                                                        <rect key="frame" x="102" y="84" width="37" height="37"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </activityIndicatorView>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Looking for new photos..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeK-RQ-0rI">
+                                                        <rect key="frame" x="22" y="145" width="196" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -785,8 +792,8 @@ an @purchase.edu e-mail</string>
                         <outlet property="DescriptionRO" destination="Fb1-5P-9hI" id="XYT-uL-4Af"/>
                         <outlet property="ImageNameRO" destination="fa8-Tx-azk" id="9Js-WV-Xv8"/>
                         <outlet property="ImageViewRO" destination="VPd-HZ-A3q" id="FVO-jj-V1X"/>
+                        <outlet property="LoadingRO" destination="3PW-D6-tKk" id="Ou9-xh-F8z"/>
                         <outlet property="ScrollViewRO" destination="X31-DD-wFS" id="ywu-ov-aIa"/>
-                        <outlet property="viewRO" destination="KTW-Su-SRN" id="oO4-nY-8Yo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ma-ZG-icX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1465,7 +1472,7 @@ an @purchase.edu e-mail</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iX8-Oq-qYo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iX8-Oq-qYo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -1766,7 +1773,7 @@ an @purchase.edu e-mail</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qu2-f9-eOd"/>
-        <segue reference="fxf-FE-jCp"/>
+        <segue reference="hkM-Kj-0LX"/>
         <segue reference="DdG-mX-aiP"/>
     </inferredMetricsTieBreakers>
 </document>
